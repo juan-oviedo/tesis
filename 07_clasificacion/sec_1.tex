@@ -1,0 +1,457 @@
+\section{Clasificación}
+La clasificación automática de textos según su nivel de dificultad lingüística constituye un componente central en múltiples escenarios educativos, especialmente en aquellos vinculados a la enseñanza de lenguas extranjeras. En este trabajo nos centramos en la tarea de asignar niveles del CEFR a textos en inglés, con el objetivo de automatizar la selección de materiales adecuados para distintos perfiles de estudiantes. Esta tarea resulta esencial en entornos donde se manejan grandes volúmenes de contenido educativo, y donde la escalabilidad, consistencia y adaptabilidad son requisitos fundamentales.
+
+Históricamente, la clasificación de dificultad textual se basó en enfoques estáticos construidos sobre características predefinidas: longitud de las oraciones, complejidad léxica, frecuencia de vocabulario, estructuras gramaticales recurrentes y otros indicadores superficiales de legibilidad. Si bien estos métodos han proporcionado resultados razonables en contextos específicos, presentan limitaciones importantes: requieren una intensa ingeniería de características, dependen de corpus anotados de alta calidad y son poco tolerantes a variaciones de estilo, dominio o género textual.
+
+Con el surgimiento de los LLMs, se abre la posibilidad de adoptar estrategias más flexibles, capaces de capturar patrones semánticos, sintácticos y discursivos sin necesidad de diseñar manualmente los rasgos relevantes. En este capítulo analizamos el rendimiento de distintos LLMs open-source y privativos en la clasificación CEFR, empleando estrategias livianas basadas en prompting, incluyendo prompts pedagógicos, descriptores CEFR, ejemplos seleccionados por docentes expertos y, cuando es relevante, técnicas de “conocimiento de dominio” incorporado mediante instrucciones estructuradas. Estas aproximaciones permiten explorar el conocimiento lingüístico latente en los modelos sin recurrir necesariamente a entrenamiento adicional.
+
+No obstante, dado que los LLMs no siempre alcanzan niveles de precisión suficientes mediante prompting, integramos también una etapa de fine-tuning específica para la tarea. A través de este proceso, buscamos evaluar hasta qué punto la adaptación supervisada de un modelo preentrenado mejora su capacidad para discriminar niveles cercanos y estabiliza su comportamiento ante variaciones en la longitud o estructura del prompt.
+
+La sección se organiza de la siguiente manera. En primer lugar, revisamos la literatura existente en evaluación de legibilidad, clasificación CEFR y aplicaciones de LLMs en educación. Luego describimos los experimentos diseñados, las métricas empleadas, el proceso de fine-tuning y, finalmente, presentamos un análisis detallado de los resultados.
+
+\subsection{Trabajo relacionado}
+La clasificación automática según niveles del CEFR se sitúa en la intersección de tres campos de investigación: la evaluación automática de legibilidad (ARA), la clasificación de textos en PLN y los enfoques específicos desarrollados para la predicción de niveles lingüísticos. En esta sección sintetizamos las principales contribuciones de cada área para contextualizar los enfoques adoptados en este trabajo.
+
+\subsubsection{Evaluación automática de legibilidad (ARA)}
+La Automatic Readability Assessment (ARA) se ocupa de modelar la dificultad de lectura y comprensión de un texto para una audiencia determinada. Los primeros enfoques se basaron en fórmulas de legibilidad tradicionales, como Flesch-Kincaid [cita] o SMOG [cita], que describen la complejidad textual a partir de indicadores superficiales (longitud de palabras, sílabas, longitud de oraciones). Aunque estas métricas han sido ampliamente utilizadas por su simplicidad y bajo costo computacional, resultan insuficientes para capturar aspectos más profundos del lenguaje, como la coherencia discursiva o la complejidad sintáctica.
+
+A partir de los años 2000, el campo incorporó técnicas de PLN que permiten modelar de manera más rica los fenómenos lingüísticos involucrados en la legibilidad. Se exploraron características léxicas (riqueza, diversidad), morfológicas, sintácticas (profundidad de árbol, ambigüedad), discursivas (marcadores, relaciones retóricas), así como representaciones distribucionales basadas en embeddings. Estas aproximaciones mejoraron significativamente la precisión en contextos para hablantes nativos y, posteriormente, comenzaron a adaptarse para aprendices L2, un avance especialmente relevante para CEFR.
+
+La evaluación para L2 presenta desafíos propios: el vocabulario disponible para un aprendiz crece de manera incremental, la gramática internalizada se desarrolla heterogéneamente y la familiaridad con distintos géneros textuales varía ampliamente. En consecuencia, las herramientas diseñadas para hablantes nativos no siempre se trasladan adecuadamente a contextos educativos de lengua extranjera. Esto motivó el desarrollo de sistemas especializados, muchos de ellos adoptados por plataformas educativas y pruebas estandarizadas.
+
+\subsubsection{Clasificación de textos en PLN [cita]}
+La clasificación de textos es una de las tareas más estudiadas del PLN. Los enfoques clásicos basados en bag-of-words o n-grams han sido progresivamente desplazados por arquitecturas profundas, especialmente CNNs, RNNs y transformers. La aparición de modelos preentrenados a gran escala, como BERT, RoBERTa o GPT, transformó por completo la manera de abordar esta tarea, desplazando la ingeniería de características hacia estrategias basadas en transferencia de conocimiento.
+
+Los estudios de revisión coinciden en que los transformers superan sistemáticamente a los métodos tradicionales, tanto en precisión como en estabilidad, incluso en escenarios con datos limitados. Esto es especialmente relevante para CEFR, donde la disponibilidad de corpus no siempre es uniforme y donde las fronteras entre clases adyacentes pueden resultar difusas incluso para anotadores humanos.
+
+\subsubsection{Clasificación CEFR con machine learning y LLMs}
+
+La investigación orientada específicamente a predecir niveles CEFR ha seguido una evolución coherente con el desarrollo de las técnicas de PLN:
+
+\begin{itemize}
+    \item \textbf{Modelos clásicos con features manuales [cita]}
+    
+    Enfoques iniciales combinaron características estilísticas, léxicas y sintácticas con algoritmos como SVMs o regresión logística. Aunque efectivos, su rendimiento se veía limitado por la necesidad de diseñar cuidadosamente los rasgos y por su baja capacidad de generalización.
+
+    \item \textbf{Transformers ajustados a corpus CEFR [cita]}
+    Con la llegada de modelos como BERT, los F1-scores mejoraron notablemente, alcanzando niveles de 67–69\%. Estos avances mostraron que las representaciones profundas capturan diferencias lingüísticas más sutiles que los enfoques basados en reglas.
+
+    \item \textbf{Herramientas especializadas}
+    Sistemas como el EDIA CEFR Tagger [cita], Text Inspector [cita] o Coh-Metrix [cita] integran modelos neuronales con recursos lingüísticos interpretables. Su uso se ha extendido en contextos educativos, aunque generalmente operan como cajas cerradas.
+    \todo{agregar referencias}
+
+    \item \textbf{LLMs y prompting}
+    Trabajos recientes investigan hasta qué punto los LLMs internalizan el conocimiento de la escala CEFR y pueden reproducir la toma de decisiones de un evaluador experto. Enfoques como CARP [cita] utilizan técnicas de prompting orientadas al razonamiento, mientras que otros evaluaron la sensibilidad de los LLMs a descriptores de nivel o ejemplos curados. Los resultados son dispares: los modelos tienden a captar diferencias amplias entre niveles pero les resulta más difícil distinguir entre clases adyacentes, especialmente B1–B2 y B2–C1 [cita].
+
+    \item \textbf{Corpus multilingües y estudios comparativos}
+    La publicación de datasets como UniversalCEFR [cita] habilitó investigaciones que exploran transfer learning entre lenguas, demostrando que los LLMs pueden beneficiarse de similitudes estructurales entre idiomas.
+\end{itemize}
+
+\subsection{Diseño de Experimentos}
+El objetivo de esta sección es describir de manera sistemática el diseño experimental utilizado para evaluar las capacidades de distintos modelos de lenguaje en la clasificación de textos según los niveles del CEFR. La organización de los experimentos se estructuró en torno a tres dimensiones principales: (i) la comparación entre modelos, (ii) la evaluación de diferentes estrategias de prompting, y (iii) la exploración del impacto de conocimiento lingüístico explícito mediante instrucciones o ejemplos seleccionados. A continuación se detallan estas dimensiones.
+
+\subsubsection{Selección de modelos}
+Se evaluaron tanto modelos open-source como propietarios, con el fin de obtener una perspectiva amplia del estado del arte. Entre los modelos abiertos se incluyeron representantes de las familias LLaMA, Mistral y Gemma, seleccionados por su disponibilidad pública, su rango de tamaños y su relevancia en aplicaciones educativas. Además, incorporamos ChatGPT y DeepSeek como referencia del rendimiento alcanzable con sistemas privativos ampliamente utilizados en entornos no académicos.
+
+Es importante señalar que, en el caso de los modelos propietarios como Chat GPT y DeepSeek, se accedió a su servicio a través de una API Key.
+Por motivos de costo y políticas de acceso, los modelos propietarios solo pudieron utilizarse en una fracción de los experimentos. Su inclusión no persiguió integrar estas herramientas en un flujo de trabajo reproducible, sino obtener una referencia comparativa respecto de soluciones altamente optimizadas pero cerradas.
+
+Por otro lado, incorporamos herramientas especializadas en análisis de dificultad textual, como Text Inspector y Coh-Metrix/Cathoven, utilizadas como referencias simbólicas off-the-shelf del estado del arte. Esta doble estrategia nos permitió contrastar las capacidades de los LLMs con aproximaciones tradicionales diseñadas específicamente para esta tarea.
+
+\subsection{Modalidades de prompting}
+\todo{citar https://cacm.acm.org/research/from-prompt-engineering-to-prompt-science-with-humans-in-the-loop/}
+Ademas de los modelos, se decidio comparar distintas estrategias de prompting que buscan orientar al modelo desde aproximaciones prompt simples, hasta variantes que incorporan conocimiento lingüístico explícito o ejemplos representativos.
+
+Se definieron tres grandes grupos:
+\begin{itemize}
+    \item \textbf{Prompting directo (0-shot)}
+    El modelo recibe únicamente el texto a clasificar y una instrucción breve que solicita la asignación de un nivel CEFR.
+
+    \item \textbf{Prompting con conocimiento de dominio}
+    Se añadieron elementos derivados de prácticas docentes de enseñanza de inglés como L2, como descriptores de nivel CEFR o listas de palabras por nivel.
+
+    \item \textbf{Prompting con ejemplos (1-shot y 2-shot)}
+    Los ejemplos fueron seleccionados por docentes expertos de manera cuidadosa. Se proporcionaron textos con su nivel CEFR correspondiente, con el fin de suministrar patrones lingüísticos representativos.
+\end{itemize}
+
+En todos los grupos, también se evaluó la influencia del sesgo de sobre-clasificación en B2 (descubierta en etapas tempranas del proyecto) y como mitigar esto, diseñando prompts que excluían explícitamente dicho nivel o que se le indicaba al modelo del problema y se le pedia que lo corrigiera. Además, se evaluó la diferencia entre la clasificacion dada si se pide que sea para una tarea de lecto comprensión o no.
+
+Esto dio lugar a un conjunto amplio de prompts, enumerados y resumidos posteriormente en la Tabla \ref{tab:resumen_prompts}. Luego, cada experimento corresponde a la combinación de un modelo y un prompt, asegurando la comparabilidad entre modelos y estrategias.
+
+\begin{landscape}
+\begin{table}[]
+\begin{tabular}{@{}clllllllll@{}}
+\toprule
+\textbf{número} &
+  \multicolumn{1}{c}{\textbf{0-shot}} &
+  \multicolumn{1}{c}{\textbf{1-shot}} &
+  \multicolumn{1}{c}{\textbf{2-shot}} &
+  \multicolumn{1}{c}{\makecell{\textbf{con lecto}\\\textbf{comprensión}}} &
+  \multicolumn{1}{c}{\makecell{\textbf{criterios}\\\textbf{pedagógicos}}} &
+  \multicolumn{1}{c}{\makecell{\textbf{corrección}\\\textbf{de sesgo}}} &
+  \multicolumn{1}{c}{\makecell{\textbf{eliminación de}\\\textbf{referencias B2}}} &
+  \multicolumn{1}{c}{\makecell{\textbf{descriptores}\\\textbf{de nivel}}} &
+  \multicolumn{1}{c}{\makecell{\textbf{palabras}\\\textbf{por nivel}}} \\ \midrule
+0 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+   &
+   &
+   &
+   \\
+1 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+   \\
+2 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   \\
+3 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   \\
+4 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   \\
+5 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   \\
+6 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   \\
+7 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   \\
+8 &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   \\
+9 &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+   &
+   &
+   \\
+10 &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+   \\
+11 &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   \\
+12 &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   \\
+13 &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   \\
+14 &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   \\
+15 &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+   &
+   \\
+16 &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+   &
+   \\
+17 &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   \\
+18 &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+  \multicolumn{1}{c}{x} &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   \\
+19 &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   \\
+20 &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+  \multicolumn{1}{c}{x} &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   &
+   \\
+21 &
+   &
+   &
+   &
+   &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+   \\
+22 &
+   &
+   &
+   &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} &
+  \multicolumn{1}{c}{x} &
+   \\
+23 &
+   &
+   &
+   &
+   &
+   &
+   &
+   &
+   &
+  \multicolumn{1}{c}{x} \\ \bottomrule
+\end{tabular}
+\caption{Resumen de las características lingüísticas y de prompting que tiene cada prompt.}
+\label{tab:resumen_prompts}
+\end{table}
+\end{landscape}
+
+Las diferentes aproximaciones para crear prompts producen largos de prompt también muy diferentes. Como se puede observar en la Figura \ref{fig:grafico_tokens} a medida que aumenta en número de prompt y en cantidad de ejemplos se aumenta el largo del prompt.
+
+\begin{figure*}[]
+  \centering
+  \includegraphics[width=\textwidth]{Graficos Tesis/grafico_tokens.png}
+  \caption{Cantidad de tokens de cada prompt utilizado en el trabajo}
+  \label{fig:grafico_tokens}
+\end{figure*}
+
+\todo{aumentar letra de las imagenes, remplazar otros por conocimiento de dominio}
+
+\subsubsection{Restricciones prácticas y diferencias entre modelos}
+No todos los modelos pudieron ejecutar la totalidad de los prompt. En el caso de ChatGPT y DeepSeek, el acceso se realizó mediante colaboración externa y solo permitía ejecutar la modalidad de 2-shot, que había mostrado el mejor rendimiento preliminar entre las variantes sin fine-tuning. Por razones de costo, estos modelos también se evaluaron únicamente sobre la partición de evaluación.
+
+Asimismo, algunos modelos abiertos, como Gemma 2 9B, presentaron limitaciones en la ventana de contexto que impidieron procesar prompts largos. En estos casos, el truncamiento de entrada hizo imposible completar ciertos experimentos, lo que se refleja en resultados anómalos discutidos más adelante en el análisis.
+
+Y por último, la herramienta de clasificacion Text Inspector no clasifica textos de menos de 100 palabras por lo cual, los textos que cumplen esta condición se clasificaron como sin categoria para este modelo.
+
+\subsection{Métodos y Métricas de Evaluación}
+La evaluación del desempeño de los modelos de lenguaje en la tarea de clasificación automática según los niveles del CEFR requiere un conjunto de métricas que capture tanto la precisión general como aspectos más finos del comportamiento del modelo. Dado que los niveles CEFR presentan una estructura ordinal en la que las distancias entre niveles tienen un significado educativo concreto, algunos errores son más graves que otros. Por ejemplo, confundir un texto de nivel A2 con uno de nivel C1 tiene un impacto pedagógico mayor que confundirlo con B1. Por este motivo, la estrategia de evaluación adoptada combina métricas estándar de clasificación multiclase con métricas diseñadas específicamente para este dominio.
+
+\subsubsection{Métricas estándar}
+Para obtener una medida general del rendimiento de cada modelo se utilizaron tres métricas ampliamente adoptadas en la literatura de clasificación:\\
+
+\noindent\textbf{Accuracy}\\
+Mide la proporción total de predicciones correctas sobre el conjunto de ejemplos evaluados. Es sencilla de interpretar, pero trata todos los errores por igual y no considera el balance entre clases, lo cual resulta problemático en datasets donde ciertos niveles CEFR están sobrerrepresentados.\\
+
+\noindent\textbf{Macro-F1}\\
+Calcula el F1-score por clase y luego promedia los resultados, sin ponderar por frecuencia. Esta métrica es especialmente útil en nuestro escenario, ya que penaliza a los modelos que se inclinan de forma excesiva hacia las clases más frecuentes, fenómeno habitual en tareas de clasificación CEFR.\\
+
+\noindent\textbf{Micro-F1}\\
+Calcula el F1-score acumulando los verdaderos positivos, falsos positivos y falsos negativos a lo largo de todas las clases. Es sensible al desbalance y suele favorecer el rendimiento en clases mayoritarias, pero sirve como complemento al análisis con Macro-F1.
+
+\subsubsection{Métricas adaptadas al dominio educativo}
+
+Si bien las métricas tradicionales permiten comparar modelos en términos generales, no capturan el hecho de que ciertos errores son pedagógicamente menos problemáticos que otros. Para abordar esta limitación, desarrollamos una métrica adicional que incorpora la estructura ordinal del CEFR.\\
+
+\noindent\textbf{Aproximated Acuraccy}\\
+Diseñada específicamente para este trabajo, asigna 0.5 puntos a aquellas predicciones que se encuentran a un nivel de distancia de la clase real. Esta métrica refleja mejor el impacto real de los errores en contextos educativos: entregar a un estudiante B1 un texto B2 puede ser adecuado o incluso beneficioso, mientras que entregar uno C2 resulta inadecuado.
+
+\subsubsection{Procedimientos de evaluación}
+La evaluación se realizó de acuerdo con dos esquemas, dependiendo del tipo de modelo considerado:\\
+
+\noindent\textbf{Modelos libres off-the-shelf}\\
+Para maximizar la evidencia empírica, se combinaron las particiones de entrenamiento y evaluación en un único conjunto más amplio. Esta decisión se justifica porque estos modelos no fueron ajustados sobre el dataset y no existe riesgo de sobreajuste. El objetivo era obtener una estimación robusta de su desempeño real como herramientas externas aplicadas directamente al problema.\\
+
+\noindent\textbf{Modelos propietarios y herramientas especializadas}\\
+En estos casos —incluyendo ChatGPT, DeepSeek, Text Inspector y Coh-Metrix/Cathoven— la evaluación se limitó exclusivamente a la partición de evaluación. Esto se debe tanto a restricciones de uso y costo, en el caso de los modelos privativos, como a la naturaleza cerrada de las herramientas especializadas.
+
+Estos resultados deben interpretarse como una aproximación comparativa, más que como un intento de integrarlos dentro de un sistema reproducible o soberano.
+
+\subsubsection{Métricas complementarias y trabajo futuro}
+Existen métricas más complejas que pueden aportar dimensiones de análisis no consideradas en esta etapa. Shared tasks como TSAR [cita] han propuesto indicadores específicos para tareas educativas y de simplificación textual que podrían resultar pertinentes para la clasificación CEFR. Entre ellas se incluyen métricas basadas en efectos pedagógicos, sensibilidad a cambios mínimos en el texto, y medidas de estabilidad ante perturbaciones.
+
+Explorar estas métricas queda planteado como trabajo futuro, con el objetivo de complementar la evaluación presentada y obtener una caracterización más rica del desempeño de los modelos en escenarios educativos reales.
+
+\subsection{Fine-tuning}
+A partir de los resultados obtenidos en los experimentos basados en prompting, observamos que los LLMs open-source presentan limitaciones para capturar con precisión las diferencias entre niveles CEFR, especialmente en los casos donde los niveles son adyacentes (por ejemplo, B1 vs. B2) o cuando el contenido del texto presenta estructuras con alta variabilidad temática o estilística. Estos hallazgos motivaron la segunda fase del estudio: la adaptación específica de un modelo de lenguaje mediante fine-tuning, con el objetivo de mejorar su sensibilidad a las características lingüísticas relevantes para la clasificación CEFR.
+
+\subsubsection{Preparación del conjunto de datos}
+
+Para entrenar un clasificador robusto, construimos un conjunto de datos adaptado al problema, compuesto por textos anotados con los seis niveles del CEFR (A1–C2). Como paso previo al entrenamiento, realizamos las siguientes acciones:
+
+\begin{itemize}
+    \item \textbf{Normalización de etiquetas:} cada nivel CEFR se mapeó a una etiqueta numérica entre 0 y 5.
+    \item \textbf{Partición del dataset:} organizamos los datos en una estructura DatasetDict con particiones de train y eval.
+    \item \textbf{Homogeneización de formato:} todos los textos fueron convertidos a un formato consistente, eliminando metadatos o artefactos irrelevantes presentes en los corpus originales.
+\end{itemize}
+
+Dado que la clasificación CEFR es sensible a pequeñas variaciones lingüísticas, fue fundamental preservar las características sintácticas y léxicas originales de los textos. No se aplicaron técnicas de data augmentation en esta etapa, para evitar introducir ruidos estructurales que afectan la calidad del entrenamiento.
+
+\subsubsection{Esquema de prompting instructivo para entrenamiento}
+A diferencia de los enfoques sin fine-tuning, donde el prompt es procesado en tiempo de inferencia, en esta etapa optamos por un prompt instructivo fijo, incorporado directamente en el proceso de preprocesamiento. Este prompt se utilizó para garantizar que el modelo recibiera una instrucción clara y uniforme en cada ejemplo. La plantilla general fue:
+
+\begin{quote}
+``you are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes, keep in mind that the label 0 is A1, label 1 is A1, label 2 is B1, label 3 is B2, label 4 is C1, label 5 is C2:
+\{texto\}''  
+\end{quote}
+
+Esta estrategia contribuyó a que el modelo convergiera más rápidamente y a que interpretará de manera unívoca las etiquetas numéricas durante el entrenamiento y evaluación.
+
+\subsubsection{Arquitectura y parámetros de entrenamiento}
+Como modelo base seleccionamos Meta-Llama-3.1-8B-Instruct, debido a su buen rendimiento en experimentos previos, su solidez en tareas relacionadas con análisis lingüístico y su equilibrio entre tamaño y capacidad expresiva. Para ajustarlo a la tarea CEFR:
+\begin{itemize}
+    \item Se agrego luego de la capa de salida del modelo una capa lineal con 6 neuronas, correspondiente a las seis clases CEFR.
+    \item Se aplicó fine-tuning parcial, congelando todos los parámetros del modelo excepto la capa clasificadora. Esta estrategia permitió:
+    \begin{itemize}
+        \item reducir significativamente los costos computacionales,
+        \item mitigar el riesgo de overfitting,
+        \item preservar el conocimiento lingüístico general del modelo.
+    \end{itemize}
+\end{itemize}
+
+Los hiperparámetros utilizados fueron:
+\begin{itemize}
+    \item Optimizador: AdamW
+    \item Learning rate: $1 \times 10^{-3}$
+    \item Batch size efectivo: 8 × gradiente acumulado cada 4 pasos
+    \item Épocas: 30
+    \item Loss function: entropía cruzada
+    \item Regularización: sin dropout adicional, weight decay = 0,
+    
+    label smoothing = 0
+    \item Métrica principal de selección: Accuracy
+    \item Ventana de contexto: 15000 tokens
+\end{itemize}
+
+Para mayor control sobre el proceso, se implementó una clase de entrenamiento personalizada que permitió verificar explícitamente la función de pérdida y la correcta gestión de los gradientes congelados.
+
+\subsubsection{Adaptación de prompts y coherencia entre etiquetas}
+Como variante adicional, exploramos una versión de los experimentos donde los prompts de entrada se enriquecieron con la instrucción explícita que vincula etiquetas numéricas con niveles CEFR.
+\begin{quote}
+``keep in mind that the label 0 is A1, label 1 is A1, label 2 is B1, label 3 is B2, label 4 is C1, label 5 is C2''
+\end{quote}
+
+Esta modificación buscaba eliminar confusiones del modelo sobre la codificación interna de categorías. La adaptación resultó beneficiosa tanto en entrenamiento como en evaluación, contribuyendo a predicciones más estables entre niveles adyacentes.
+

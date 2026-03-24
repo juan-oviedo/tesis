@@ -1,0 +1,31 @@
+\section{Introduction}
+En el contexto del aprendizaje del inglés como lengua extranjera, surgen múltiples necesidades tanto para los docentes como para los estudiantes. En particular, dos de ellas resultan centrales: la clasificación de textos según nivel de dificultad y la adaptación de textos de un nivel a otro. Ambas tareas son fundamentales para garantizar que los estudiantes trabajen con materiales adecuados a sus competencias lingüísticas y para facilitar a los docentes la preparación de clases más inclusivas y ajustadas a la diversidad de niveles dentro de un mismo grupo.
+
+En este trabajo nos proponemos investigar y evaluar aproximaciones basadas en modelos de lenguaje de gran escala (LLMs) de código abierto para abordar estas dos tareas. Por un lado, exploramos la clasificación automática de textos en niveles CEFR (Marco Común Europeo de Referencia para las Lenguas), lo que permite seleccionar materiales adecuados, diseñar actividades personalizadas y evaluar progresos de los estudiantes con mayor precisión. Por otro lado, estudiamos la adaptación de textos entre niveles, lo que abre la posibilidad de reutilizar un mismo contenido ajustándolo en términos de complejidad lingüística, ya sea para un estudiante individual, un subgrupo o la totalidad de un curso con niveles heterogéneos.
+
+Este trabajo se enmarca en el proyecto TaskGen, cuyo objetivo es aplicar técnicas de Natural Language Processing (NLP) para asistir a docentes de segundas lenguas en la creación de tareas y ejercicios adaptados a distintos perfiles de estudiantes. La disponibilidad actual de LLMs de código abierto, junto con herramientas y técnicas de ajuste fino, nos brinda una base tecnológica sólida para experimentar con soluciones prácticas y escalables a estas necesidades.
+
+\hl{En definitiva, el objetivo de esta tesis es comparar diferentes aproximaciones basadas en LLMs para las tareas de clasificación y adaptación de textos en inglés, evaluando sus fortalezas, limitaciones y posibles aplicaciones en escenarios educativos reales.}
+
+\subsection{Motivación}
+En la enseñanza de lenguas extranjeras, una tarea central es la creación de materiales pedagógicos adecuados al nivel de cada aprendiz. Si bien generar nuevos materiales desde cero resulta valioso para atender intereses específicos de un grupo o individuo, en la práctica esta tarea demanda un esfuerzo considerable y suele resolverse mediante la reutilización de materiales existentes. Sin embargo, esta estrategia no siempre garantiza que el contenido se ajuste de manera precisa a los niveles de los estudiantes.
+
+La clasificación automática de textos según el nivel CEFR surge como una herramienta clave para resolver este problema, ya que permite filtrar materiales de acuerdo con el nivel de competencia de los alumnos. De esta manera, los docentes pueden construir actividades más adecuadas, y los estudiantes pueden identificar qué textos resultan apropiados para su autoestudio.
+
+En paralelo, la adaptación automática de textos entre niveles habilita un uso más flexible de los materiales. Un mismo contenido puede transformarse en versiones de distinta complejidad lingüística, lo que resulta especialmente útil en escenarios educativos donde conviven estudiantes de distintos niveles de dominio de la lengua. Esto no solo facilita la inclusión, sino que además enriquece el proceso de enseñanza y aprendizaje al permitir que todos los estudiantes trabajen sobre una base común, ajustada a sus necesidades.
+
+Históricamente, estas tareas se abordaron mediante métodos tradicionales basados en la ingeniería manual de características textuales, tales como la longitud promedio de las oraciones, la complejidad léxica o la frecuencia de determinadas estructuras gramaticales. Aunque efectivos en ciertos contextos, dichos enfoques presentan limitaciones importantes: son estáticos, dependen de corpus etiquetados de difícil obtención y no se adaptan bien a nuevos dominios o estilos textuales. Frente a esto, los LLMs actuales ofrecen una alternativa más flexible y poderosa, capaz de generalizar y ajustarse a distintos contextos con menor esfuerzo de diseño manual.
+
+\subsection{Estructura del trabajo}
+\todo{revisar}
+El trabajo se organiza en ocho capítulos principales:
+\begin{itemize}
+\item En el Capítulo 1, presentamos la introducción general, junto con la motivación y la estructura del trabajo.
+\item En el Capítulo 2, desarrollamos el marco de referencia, que incluye aspectos teóricos sobre el aprendizaje de lenguas, modelos de lenguaje pre entrenados, programación con instrucciones y ajuste fino.
+\item En el Capítulo 3, describimos la arquitectura propuesta, detallando el stack tecnológico utilizado, tanto en términos de modelos como de hardware.
+\item En el Capítulo 4, presentamos los conjuntos de datos empleados, incluyendo datasets de textos clasificados con nivel CEFR y un dataset de adaptaciones, además de las modificaciones realizadas sobre los conjuntos preexistentes.
+\item En el Capítulo 5, abordamos la tarea de clasificación de textos. Analizamos trabajos relacionados, el diseño experimental, las métricas de evaluación, los experimentos de ajuste fino y los resultados obtenidos.
+\item En el Capítulo 6, nos concentramos en la tarea de adaptación de textos. Describimos trabajos previos, el diseño de experimentos, la evaluación y los resultados, así como las conclusiones específicas de esta parte.
+\item En el Capítulo 7, presentamos las conclusiones generales del trabajo, discutiendo los aportes alcanzados y las limitaciones encontradas.
+\item Finalmente, en el Capítulo 8, delineamos posibles líneas de trabajo futuro, proponiendo extensiones y mejoras que podrían explorarse en investigaciones posteriores.
+\end{itemize}

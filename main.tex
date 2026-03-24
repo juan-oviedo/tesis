@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{famafCover}
+\usepackage[spanish, es-tabla]{babel} % soporte para lenguaje español
+\usepackage[spanish, textsize=tiny]{todonotes}
+
+
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\newcommand{\revisar}[1]{%
+  \begin{tcolorbox}[
+    colback=yellow,
+    colframe=yellow,
+    boxrule=0pt,
+    arc=0pt,
+    left=2pt, right=2pt, top=2pt, bottom=2pt
+  ]
+  #1
+  \end{tcolorbox}%
+}
+
+\usepackage{hyperref}
+\usepackage[spanish, capitalize]{cleveref}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{makecell}
+\usepackage{float}
+
+\usepackage{caption}
+\captionsetup{skip=5pt}
+
+\includeonly{04_marco_de_ref/sect}
+
+\usepackage{csquotes}
+\usepackage[
+    backend=biber,
+    style=numeric,
+]{biblatex} % To add citations
+\addbibresource{example_citations.bib}
+
+\carrera{computacion}
+\title{Comparativa de aproximaciones basadas en LLMs para clasificación y adaptación de textos para enseñanza de inglés como segunda lengua}
+\author{Juan Cruz Oviedo Ferreyra}
+\date{MES, AÑO} % mes y año de la presentación
+\supervisors{Laura Alonso} % si tenés más de un director separarlos con \and y el paquete lso pone en diferentes lineas como está estipulado
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{02_resumen/resumen}
+%\input{02_resumen/abstract}
+
+%\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Índice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\tableofcontents
+
+%\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Artículo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{03_intro/intro}
+\include{04_marco_de_ref/sect}
+\include{05_arquitectura/sect}
+\include{06_datasets/sec}
+\include{07_clasificacion/sec_1}
+\include{07_clasificacion/sec_2}
+\include{07_clasificacion/sec_3}
+\include{99_conclusiones/conclusiones}
+
+
+%\todo{armar anexo con, tabla de resultados eval y train, prompts o descripcion de prompts?, git hub con recursos linguisticos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliografía
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\printbibliography
+
+\end{document}

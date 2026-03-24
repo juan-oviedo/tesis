@@ -1,0 +1,97 @@
+\section{Conjuntos de datos}
+En esta sección describimos los datasets utilizados en nuestros experimentos, tanto para la tarea de clasificación como para la tarea de adaptación de textos entre niveles del CEFR. Nuestro enfoque combina datasets ya existentes con mejoras diseñadas específicamente para este trabajo, así como la creación de un dataset propio de adaptaciones.
+\todo{agregar referencias y citar otros dataset}
+
+\subsection{Datasets de textos clasificados con nivel CEFR}
+En el campo de NLP aplicado a L2 learners, se han desarrollado recientemente varios datasets de textos en inglés clasificados por nivel CEFR. En este trabajo utilizamos principalmente dos de ellos:
+\begin{itemize}
+    \item CEFR Levelled English Texts (CLET) [cita].
+    \item Cambridge English Readability Dataset (CERD) [cita].
+\end{itemize}
+
+La diferencia fundamental entre ambos radica en la forma en que los textos fueron etiquetados. En CLET, la mayor parte de las etiquetas fueron asignadas automáticamente utilizando la herramienta Text Inspector. En cambio, en CERD, las etiquetas fueron asignadas por expertos humanos, lo que otorga una mayor fiabilidad a las clasificaciones.
+
+Otra diferencia importante es que CERD cubre únicamente los niveles A2 a C2, mientras que CLET incluye ejemplos de nivel A1, lo que resulta clave para tener cobertura completa de la escala CEFR.
+
+\subsubsection{CEFR Levelled English Texts (CLET)}
+
+El dataset CLET consiste en 1,494 textos clasificados automáticamente. Se puede observar la distribución por nivel CEFR en la tabla \ref{tab:kaggle}.
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cllllll@{}}
+\toprule
+\textbf{Nivel CEFR}         & A1  & A2  & B1  & B2  & C1  & C2  \\ \midrule
+\textbf{Cantidad de textos} & 288 & 272 & 205 & 286 & 241 & 202 \\ \bottomrule
+\end{tabular}
+\caption{Distribucion de la clasificacion de textos para Kaggle.}
+\label{tab:kaggle}
+\end{table}
+
+Los textos provienen de fuentes variadas como The British Council, ESLFast y el CNN/DailyMail dataset. El corpus incluye diferentes tipos textuales: diálogos, descripciones, historias cortas y noticias.
+
+Durante las primeras etapas de nuestro trabajo utilizamos este dataset como base. Sin embargo, tras una revisión realizada junto con profesores de inglés como lengua extranjera, detectamos que una proporción considerable de textos se encontraba mal clasificada. Esto motivó la búsqueda de un dataset de mayor calidad.
+
+\subsubsection{Cambridge English Readability Dataset (CERD)}
+El dataset CERD contiene 331 textos extraídos de pasajes de lectura de los cinco exámenes principales de Cambridge English KET (A2), PET (B1), FCE (B2), CAE (C1), CPE (C2). Su distribución por nivel se puede observar en la tabla \ref{tab:CERD}.
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+\textbf{Nivel CEFR}         & KET (A2) & PET (B1) & FCE (B2) & CAE (C1) & CPE (C2) \\ \midrule
+\textbf{Cantidad de textos} & 64       & 60       & 71       & 67       & 69       \\ \bottomrule
+\end{tabular}%
+}
+\caption{Distribucion de la clasificacion de textos para CERD.}
+\label{tab:CERD}
+\end{table}
+
+La principal ventaja de CERD es la calidad de la anotación: al estar directamente vinculada a los exámenes oficiales de Cambridge, cada texto tiene un nivel de dificultad CEFR claramente definido y validado por expertos.
+
+\subsubsection{Custom Dataset}
+Para adaptar estos dataset a la tarea que estamos realizando, la cual tiene todos los niveles CEFR, y dado que CERD no contiene textos de nivel A1, construimos un dataset combinado, al que denominamos CUSTOM dataset. A este dataset se le agregan 65 textos de nivel A1 seleccionados manualmente de CLET por profesores de inglés como segunda lengua.
+
+Para llevar adelante nuestros experimentos, realizamos un particionado estratificado del dataset Custom en tres subconjuntos. La estratificación asegura que la proporción de niveles CEFR se mantenga similar en cada división. La distribución final de cada paricion se puede observar en la tabla \ref{tab:Custom}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}cccccccc@{}}
+\toprule
+\textbf{Partición} & \textbf{Total de textos} & \textbf{A1} & \textbf{A2} & \textbf{B1} & \textbf{B2} & \textbf{C1} & \textbf{C2} \\ \midrule
+Train          & 316 & 52 & 51 & 48 & 57 & 53 & 55 \\
+Eval           & 39  & 6  & 6  & 6  & 7  & 7  & 7  \\
+Holdout        & 41  & 7  & 7  & 6  & 7  & 7  & 7  \\ \bottomrule
+\end{tabular}%
+\caption{Distribucion de la clasificacion de textos para las particiones del dataset Custom.}
+\label{tab:Custom}
+\end{table}
+
+El rol de cada partición es el siguiente:
+\begin{itemize}
+    \item Train: entrenamiento y fine-tuning de los LLMs.
+    \item Eval: evaluación intermedia durante la experimentación, sin que los modelos hayan sido entrenados con estos textos.
+    \item Holdout: evaluación final, estrictamente reservada para medir el rendimiento real en textos no vistos.
+\end{itemize}
+
+\subsection{Dataset de adaptaciones}
+\todo{Poner una tabla de distribución de pares de adaptaciones por dirección CEFR (cuando completes los números).
+Incluir también un ejemplo ilustrativo con un fragmento de texto adaptado (original vs. adaptación), para que el lector vea claramente la naturaleza del dataset.}
+Una de las principales limitaciones en el área es la ausencia de datasets que contengan pares de textos donde uno es la adaptación del otro a otro nivel CEFR. Si bien existen corpus de simplificación (como Simple English Wikipedia), estos no están organizados de acuerdo con la escala CEFR ni orientados a contextos de enseñanza de segundas lenguas.
+\todo{agregar referencias}
+
+Para suplir esta carencia, generamos un dataset propio de adaptaciones, creado en colaboración con profesores de inglés como segunda lengua con amplia experiencia. Cada ejemplo consiste en un par de textos donde uno es la adaptación del otro hacia un nivel CEFR distinto (ya sea hacia mayor o menor complejidad).
+
+La distribución inicial es la siguiente:
+
+Dirección de adaptación Cantidad de pares
+
+A1 → A2 … completar
+
+A2 → A1 … completar
+
+A2 → B1 … completar
+
+B1 → B2 … completar
+
+Este dataset constituye un recurso inédito en el dominio y representa un aporte significativo de este trabajo. Su diseño permite evaluar experimentalmente la capacidad de los LLMs no solo para clasificar textos por nivel CEFR, sino también para generar adaptaciones pedagógicamente adecuadas a perfiles concretos de estudiantes L2.
