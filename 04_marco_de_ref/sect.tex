@@ -1,5 +1,5 @@
 \section{Marco de referencia} \label{sec:marco_ref}
-En este capítulo presentamos los elementos comunes que sirven de base para las dos tareas centrales de este trabajo: la clasificación de textos por nivel y la adaptación de textos entre niveles. Para ello, comenzamos introduciendo algunos conceptos fundamentales (\Cref{subsec:concep_fund}), luego nos enfocamos en el marco de referencia para el aprendizaje de lenguas (\Cref{subsec:aprend_leng}), y posteriormente describimos el papel de los modelos de lenguaje pre-entrenados (\Cref{subsec:modelos_pretrain}). A continuación, revisamos las técnicas de programación con instrucciones sobre LLMs (\Cref{subsec:propmting}) y finalizamos con una \revisar{discusión} sobre el ajuste fino (\Cref{subsec:finetuning}).
+En este capítulo presentamos los elementos comunes que sirven de base para las dos tareas centrales de este trabajo: la clasificación de textos por nivel y la adaptación de textos entre niveles. Para ello, comenzamos introduciendo algunos conceptos fundamentales (\Cref{subsec:concep_fund}), luego nos enfocamos en el marco de referencia para el aprendizaje de lenguas (\Cref{subsec:aprend_leng}), y posteriormente describimos el papel de los modelos de lenguaje pre-entrenados (\Cref{subsec:modelos_pretrain}). A continuación, revisamos las técnicas de programación con instrucciones sobre LLMs (\Cref{subsec:propmting}) y finalizamos con una \revisar{discusión (no se si es la palabra correcta)} sobre el ajuste fino (\Cref{subsec:finetuning}).
 
 \subsection{Conceptos Fundamentales}\label{subsec:concep_fund}
 En esta sección presentamos algunos conceptos fundamentales que utilizaremos a lo largo del trabajo. Nuestro objetivo es establecer un marco terminológico común que facilite la comprensión de los capítulos posteriores y permita contextualizar los experimentos y análisis realizados.\\
@@ -10,7 +10,8 @@ En esta sección presentamos algunos conceptos fundamentales que utilizaremos a 
 Los LLMs son modelos de gran escala entrenados con enormes volúmenes de texto y con miles de millones de parámetros. Han demostrado un desempeño sobresaliente en múltiples tareas lingüísticas, muchas veces sin necesidad de entrenamiento adicional específico. En este trabajo nos enfocamos en LLMs de código abierto. \\
 
 \revisar{\noindent\textbf {Pre-Trained Models — Modelos Preentrenados.\cite{pretrained}} \\
-Un modelo pre entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores. \\}
+Un modelo pre entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores. \\
+no se si agregarlo porque se explica en detalle mas adelante}
 
 \noindent\textbf {Tokens — Unidades de procesamiento.\cite{Grefenstette1999}} \\
 Los tokens son las unidades mínimas con las que trabajan los modelos de lenguaje. Dependiendo del método de tokenización, un token puede representar una palabra, una sub-palabra o incluso un carácter. El número de tokens de un texto afecta directamente los recursos necesarios para procesarlo. \\
@@ -31,7 +32,8 @@ El in-context learning describe la capacidad de un LLM de aprender patrones o co
 El fine-tuning consiste en continuar el entrenamiento de un modelo pre entrenado en un conjunto de datos específico, con el fin de adaptarlo a una tarea concreta. En este trabajo, aplicamos esta técnica para mejorar el desempeño en la clasificación y adaptación de textos por nivel CEFR. \\
 
 \noindent\textbf {Common European Framework of Reference for Languages (CEFR) — Marco Común Europeo de Referencia para las Lenguas.\cite{cefr}} \\
-El CEFR es un estándar internacional que define niveles de competencia lingüística desde A1 (principiante) hasta C2 (dominio avanzado). Permite clasificar textos y producciones lingüísticas de acuerdo con el nivel de los estudiantes, y constituye la base de referencia que utilizamos para la clasificación y adaptación de textos en inglés. \\}
+El CEFR es un estándar internacional que define niveles de competencia lingüística desde A1 (principiante) hasta C2 (dominio avanzado). Permite clasificar textos y producciones lingüísticas de acuerdo con el nivel de los estudiantes, y constituye la base de referencia que utilizamos para la clasificación y adaptación de textos en inglés. \\
+no se si agregarlo porque se explica en detalle mas adelante}
 
 \noindent\textbf {Dataset — Conjunto de datos.} \\
 Un dataset es un conjunto estructurado de ejemplos que se utiliza para entrenar, ajustar o evaluar modelos. En nuestro caso, trabajamos tanto con datasets de clasificación de textos con etiquetas CEFR como con datasets diseñados para la adaptación de textos entre niveles. \\
@@ -60,7 +62,8 @@ Existen distintos paradigmas de pre-entrenamiento. Los modelos masked language m
 
 La evolución tecnológica ha permitido pasar de ventanas reducidas (512–1024 tokens en modelos como BERT o GPT-2) a context windows de decenas de miles en modelos recientes como GPT-4. Esto amplía el rango de aplicaciones posibles, pero también plantea restricciones de cómputo y memoria que debemos tener en cuenta en nuestro trabajo.
 
-\revisar{En el marco de esta tesis, los LLMs constituyen la base para experimentar con clasificación y adaptación de textos. Sin embargo, como discutiremos más adelante, su carácter generalista los hace propensos a producir salidas plausibles pero no necesariamente alineadas con criterios pedagógicos como los definidos por el CEFR.}
+\revisar{En el marco de esta tesis, los LLMs constituyen la base para experimentar con clasificación y adaptación de textos. Sin embargo, como discutiremos más adelante, su carácter generalista los hace propensos a producir salidas plausibles pero no necesariamente alineadas con criterios pedagógicos como los definidos por el CEFR.
+revisar si realmente esta la discucion}
 
 \subsection{Programación con instrucciones sobre LLMs} \label{subsec:propmting}
 Una de las formas más accesibles de adaptar un LLM a tareas específicas es a través de la programación con instrucciones. En lugar de modificar sus parámetros internos, se manipula su comportamiento mediante el diseño del prompt.

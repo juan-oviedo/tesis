@@ -1,6 +1,11 @@
 \documentclass[a4paper,12pt]{article}
+%\documentclass[draft,a4paper,12pt]{article}
 
-\usepackage{famafCover}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+\usepackage{lmodern}
 \usepackage[spanish, es-tabla]{babel} % soporte para lenguaje español
 \usepackage[spanish, textsize=tiny]{todonotes}
 
@@ -21,6 +26,9 @@
 
 \usepackage{hyperref}
 \usepackage[spanish, capitalize]{cleveref}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\crefname{table}{Tabla}{Tablas}
+\Crefname{table}{Tabla}{Tablas}
 
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -28,10 +36,10 @@
 \usepackage{makecell}
 \usepackage{float}
 
+\usepackage[title,titletoc]{appendix}
+
 \usepackage{caption}
 \captionsetup{skip=5pt}
-
-\includeonly{04_marco_de_ref/sect}
 
 \usepackage{csquotes}
 \usepackage[
@@ -39,6 +47,12 @@
     style=numeric,
 ]{biblatex} % To add citations
 \addbibresource{example_citations.bib}
+
+
+\usepackage{famafCover}
+
+%\includeonly{04_marco_de_ref/sect}
+
 
 \carrera{computacion}
 \title{Comparativa de aproximaciones basadas en LLMs para clasificación y adaptación de textos para enseñanza de inglés como segunda lengua}
@@ -52,45 +66,48 @@
 % Título
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\maketitle
+\maketitle
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\input{02_resumen/resumen}
-%\input{02_resumen/abstract}
+\input{02_resumen/resumen}
+\input{02_resumen/abstract}
 
-%\clearpage
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Índice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\tableofcontents
+\tableofcontents  
 
-%\clearpage
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Artículo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\include{03_intro/intro}
-\include{04_marco_de_ref/sect}
-\include{05_arquitectura/sect}
-\include{06_datasets/sec}
+%\include{03_intro/intro}
+%\include{04_marco_de_ref/sect}
+%\include{05_arquitectura/sect}
+%\include{06_datasets/sec}
 \include{07_clasificacion/sec_1}
-\include{07_clasificacion/sec_2}
-\include{07_clasificacion/sec_3}
 \include{99_conclusiones/conclusiones}
 
 
-%\todo{armar anexo con, tabla de resultados eval y train, prompts o descripcion de prompts?, git hub con recursos linguisticos}
+\todo{armar anexo con, tabla de resultados eval y train, git hub con recursos linguisticos, revisar el texto para asegurarse que esta escrito siempre en la misma voz}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \printbibliography
+
+\begin{appendices}
+  \include{anexos/Parametros}
+  \include{anexos/Prompts}
+\end{appendices}
 
 \end{document}

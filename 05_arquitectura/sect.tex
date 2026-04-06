@@ -1,36 +1,36 @@
-\section{Arquitectura}
-En este capítulo describimos la arquitectura general de nuestro trabajo experimental. Presentamos primero el technology stack empleado para el desarrollo, ejecución y análisis de los experimentos, seguido de una caracterización de los LLMs considerados, y finalmente los detalles del hardware utilizado. Esta descripción resulta clave para comprender tanto la reproducibilidad de los experimentos como las limitaciones y ventajas de cada aproximación.
+\section{Arquitectura}\label{sec:Arquitectura}
+En este capítulo describimos la arquitectura general de nuestro trabajo experimental. Presentamos primero la Tecnologia usada para el desarrollo, ejecución y análisis de los experimentos (\Cref{subsec:stack}), seguido de una caracterización de los LLMs considerados (\Cref{subsec:llms}), y finalmente los detalles de Infraestructura utilizada (\Cref{subsec:hardware}).
 
-\subsection{Technology Stack}
+\subsection{Tecnologia Usada}\label{subsec:stack}
 Para llevar adelante los experimentos, nos apoyamos en un entorno de trabajo centrado en Python y Jupyter Notebooks, complementado con un conjunto de bibliotecas de código abierto. Esta combinación nos brindó flexibilidad para diseñar y ejecutar pruebas, realizar análisis exploratorios, ajustar parámetros y visualizar resultados en tiempo real.
 
-Un componente esencial fue la plataforma Hugging Face [cita], y en particular la librería transformers, que nos permitió acceder a modelos pre-entrenados de diferentes familias (Meta, Google, Mistral, entre otros) a través de interfaces unificadas. Con esta herramienta pudimos cargar modelos, realizar tokenización, aplicar técnicas de prompt engineering y llevar a cabo experimentos de in-context learning sin necesidad de entrenar desde cero.
+Un componente esencial fue la plataforma Hugging Face, y en particular la librería transformers \cite{transformers}, que nos permitió acceder a modelos pre-entrenados de diferentes familias (Meta, Google, Mistral, entre otros) a través de interfaces unificadas. Con esta herramienta pudimos cargar modelos, realizar tokenización, aplicar técnicas de prompt engineering y llevar a cabo experimentos de in-context learning sin necesidad de entrenar desde cero.
 
-El uso de Jupyter fue especialmente valioso en la etapa exploratoria y en el fine-tuning de los modelos, ya que posibilitó iteraciones rápidas sobre distintas configuraciones de prompting, registro ordenado de resultados y visualización inmediata de métricas. Asimismo, esta herramienta favoreció la documentación reproducible del proceso, algo crucial para una tesis.
+El uso de Jupyter fue especialmente valioso en la etapa exploratoria y en el fine-tuning de los modelos, ya que posibilitó iteraciones rápidas sobre distintas configuraciones de prompting, registro ordenado de resultados y visualización inmediata de métricas.
 
-\subsection{Large Language Models (LLMs)}
+\subsection{Large Language Models (LLMs)}\label{subsec:llms}
 A lo largo de este trabajo comparamos diferentes familias de LLMs, tanto de acceso abierto como propietarios, con el objetivo de evaluar su desempeño en las tareas de clasificación y adaptación de textos para la enseñanza de inglés como segunda lengua. Nos interesó no solo la calidad de sus respuestas, sino también su factibilidad de desplegarlos en contextos de hardware limitado y su capacidad de personalización.
 Comparamos los siguientes modelos de acceso abierto, teniendo en cuenta las siguientes características interesantes:
 \begin{itemize}
-    \item LLaMA 3 (Meta)[cita]: balance entre rendimiento y eficiencia, buena respuesta a prompting y in-context learning.
-    \item Mistral[cita]: optimizados para velocidad y menor consumo de recursos, manteniendo un rendimiento competitivo.
-    \item Gemma 2 (Google)[cita]: licencia abierta, integración sencilla en ecosistemas de desarrollo y foco en reproducibilidad.
+    \item LLaMA 3 (Meta) \cite{llama}: balance entre rendimiento y eficiencia, buena respuesta a prompting y in-context learning.
+    \item Mistral \cite{mistral}: optimizados para velocidad y menor consumo de recursos, manteniendo un rendimiento competitivo.
+    \item Gemma 2 (Google) \cite{gemma}: licencia abierta, integración sencilla en ecosistemas de desarrollo y foco en reproducibilidad.
 \end{itemize}
 
 También se realizaron algunas pruebas con los siguientes productos basados en modelos de lenguaje propietarios:
 \begin{itemize}
-    \item ChatGPT (GPT-4, OpenAI)[cita]: modelo ampliamente utilizado, con gran capacidad de adaptación mediante prompt engineering, lo cual lo convierte en un buen baseline.
-    \item DeepSeek[cita]: modelos multilingües con fuerte foco en eficiencia computacional, adecuados para escenarios con limitaciones de hardware.
+    \item ChatGPT (GPT-4, OpenAI) \cite{gpt}: modelo ampliamente utilizado, con gran capacidad de adaptación mediante prompt engineering, lo cual lo convierte en un buen baseline.
+    \item DeepSeek \cite{deepsek}: modelos multilingües con fuerte foco en eficiencia computacional, adecuados para escenarios con limitaciones de hardware.
 \end{itemize}
 
-En todos los casos, los modelos fueron utilizados con sus parámetros de decodificación por defecto (detallados en el Anexo 1).
-\todo{agregar parametros de decodificacion}
-\subsection{Hardware}
-Los experimentos fueron realizados en la infraestructura de cómputo del Centro de Cómputo de Alto Desempeño (CCAD)[cita] de la Universidad Nacional de Córdoba. El acceso a este tipo de recursos resulta esencial, dado que los LLMs poseen altos requerimientos de memoria y procesamiento, imposibles de satisfacer en equipos personales convencionales.
+En todos los casos, los modelos fueron utilizados con sus parámetros de decodificación por defecto (detallados en el \Cref{sec:parametros}).
+
+\subsection{Infraestructura}\label{subsec:hardware}
+Los experimentos fueron realizados en la infraestructura de cómputo del Centro de Cómputo de Alto Desempeño (CCAD) \cite{ccad} de la Universidad Nacional de Córdoba. El acceso a este tipo de recursos resulta esencial, dado que los LLMs poseen altos requerimientos de memoria y procesamiento, imposibles de satisfacer en equipos personales convencionales.
 
 El uso del CCAD garantizó condiciones adecuadas de procesamiento para la ejecución de modelos de gran escala y permitió que la investigación se desarrollara en un marco de equidad tecnológica. Este aspecto cobra relevancia en países como Argentina, donde los recursos para investigación suelen ser limitados y el acceso a infraestructura de este tipo constituye una ventaja diferencial.
 
-Los diferentes modelos que se compararon presentan los requisitos de hardware que se describen en la Tabla \ref{tab:modelos-peso}. Como se puede observar, varios de estos modelos se pueden desplegar en servidores de capacidad modesta, comparables a los que pueden encontrarse en los servicios técnicos de la administración pública para educación, lo cual muestra la portabilidad de esta aproximación.
+Los diferentes modelos que se compararon presentan los requisitos de hardware que se describen en la \Cref{tab:modelos-peso}. Como se puede observar, varios de estos modelos se pueden desplegar en servidores de capacidad modesta, comparables a los que pueden encontrarse en los servicios técnicos de la administración pública para educación, lo cual muestra la portabilidad de esta aproximación.
 
 \begin{table}[H]
 \resizebox{\textwidth}{!}{%
