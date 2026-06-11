@@ -1,0 +1,158 @@
+\section{Prompts Adaptacion}\label{sec:ad_prompts}
+\todo{agregar textos utilizados en los prompts}
+\todo{modificar texto en prompts para aclarar si fueron de cerd o de trial}
+Prompts para las 3 estrategias utilizadas en la adaptacion de textos. La notacion y el conocimiento linguistico utilizado es la siguiente:
+
+\begin{itemize}
+    \item \prdescriptors Descriptores del nivel CEFR objetivo, según lo establecido por {CouncilEurope2020} [cita].
+    \item \prlist Lista de vocabulario correspondiente a cada nivel, provista por {Oxford3000} [cita].
+    \item \prgrammar Ejemplos que ilustran los 5 tipos de construcciones morfosintácticas de cada nivel especificadas en {North2010} [cita], disponibles en \url{https://github.com/juan-oviedo/Recursos-Linguisticos}.
+    \item \prlevel y \prlevel El nivel objetivo de la adaptación (es decir, A2 o B1).
+    \item \prinput El texto de entrada que será adaptado. Para la tarea compartida TSAR 2025, corresponde a cada uno de los textos proporcionados por la organización.
+    \item \proriginaltext El texto original dentro de un par de tipo $<$original, adaptado$>$.
+    \item \prsimplifiedtext El texto adaptado al nivel objetivo dentro de un par de tipo $<$original, adaptado$>$.
+\end{itemize}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. 
+
+Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. 
+
+To simplify you may use the CEFR \prlevel \prdescriptors, the \prcefrlevel vocabulary in \prlist and the \prcefrlevel grammar structures in \prgrammar. 
+
+Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. 
+
+Keep the order of the events. 
+
+Please avoid adding extra information to the text. 
+
+Omit any introduction or conclusion. 
+
+Only provide the simplified version of the text. 
+
+Make sure you simplify the text until the end.
+]
+{\label{fig:promptRun0}Prompt base para las estrategias 1 y 2.}
+\end{prompt}
+
+\begin{prompt}
+[You are given two texts:
+
+Original Text → contains the full meaning, details, and factual information.
+
+Adapted Text → written at the \prlevel EFL level, but it loses important meaning from the original.
+
+Your task is to rewrite the Original Text so that:
+
+The meaning, facts, and order of events from the Original Text are fully preserved.
+
+The grammatical structures and vocabulary complexity should match those in the Adapted Text. Use the Adapted Text as the reference for CEFR level.
+
+Do not add new information or remove important details from the Original Text.
+
+Do not copy sentences directly from the Adapted Text if they distort the meaning of the Original.
+
+Keep proper names, places, times, and dates unchanged.
+
+Omit any introductions, conclusions, or justifications. Provide only the simplified text.
+
+Input:
+
+Original Text: \proriginaltext
+
+Adapted Text: \prsimplifiedtext
+
+Output:
+
+Simplified version of the Original Text that preserves its meaning but matches the \prlevel CEFR EFL grammar and vocabulary style shown in the Adapted Text.
+]
+{\label{fig:promptRun1}Prompt de seguimiento para la estrategia 1, que toma como entrada la simplificacion hecha por el prompt base.}
+\end{prompt}
+
+\begin{prompt}
+[Please, make sure
+you remove all the introductions, conclusions and justifications related to the CEFR level and/or the task of text simplification from the following text, and do not introduce any new justifications or explanations regarding this instruction, but just reproduce the core text of the original: \prsimplifiedtext
+]
+{\label{fig:promptRun2}Prompt de seguimineto para la estrategia 2, que toma como entrada la simplificacion hecha por el prompt base.}
+\end{prompt}
+
+\subsection{Prompts para la estrategia 3}
+\label{subsection:PromptsRun3}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text.]
+{\label{fig:prompt1}Prompt 1 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may substitute difficult words for simpler ones. You may break down long complex sentences into shorter ones. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end.]
+{\label{fig:prompt2}Prompt 2 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may use the CEFR \prlevel \prdescriptors and the \prcefrlevel grammar structures in \prgrammar. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end.]
+{\label{fig:prompt3}Prompt 3 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may use the CEFR \prlevel \prdescriptors, the \prcefrlevel vocabulary in \prlist and the \prcefrlevel grammar structures in \prgrammar. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end.]
+{\label{fig:prompt4}Prompt 4 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may substitute difficult words for simpler ones. You may break down long complex sentences into shorter ones. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three  complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextu and its simplified \prcefrlevel \prsimplifiedtextu;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
+{\label{fig:prompt5}Prompt 5 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may use the CEFR \prlevel \prdescriptors, the \prcefrlevel vocabulary in \prlist and the \prcefrlevel grammar structures in \prgrammar. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three  complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
+{\label{fig:prompt6}Prompt 6 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may substitute difficult words for simpler ones. You may break down long complex sentences into shorter ones. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextu and its simplified \prcefrlevel \prsimplifiedtextu;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
+{\label{fig:prompt7}Prompt 7 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may use the CEFR \prlevel \prdescriptors, the \prcefrlevel vocabulary in \list and the \prcefrlevel grammar structures in \prgrammar. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextu and its simplified \prcefrlevel \prsimplifiedtextu;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
+{\label{fig:prompt8}Prompt 8 para la estrategia 3.}
+\end{prompt}
+
+\begin{prompt}
+[You are given two texts:
+
+Original Text → contains the full meaning, details, and factual information.
+
+Adapted Text → written at the \prlevel CEFR EFL level, but it loses important meaning from the original.
+
+Your task is to rewrite the Original Text so that:
+
+The meaning, facts, and order of events from the Original Text are fully preserved.
+
+The grammatical structures and vocabulary complexity should match those in the Adapted Text. Use the Adapted Text as the reference for CEFR level.
+
+Do not add new information or remove important details from the Original Text.
+
+Do not copy sentences directly from the Adapted Text if they distort the meaning of the Original.
+
+Keep proper names, places, times, and dates unchanged.
+
+Omit any introductions, conclusions, or justifications. Provide only the simplified text.
+
+Input:
+
+Original Text: \proriginaltext
+
+Adapted Text: \prsimplifiedtext
+
+Output:
+
+Simplified version of the Original Text that preserves its meaning but matches the \prlevel CEFR EFL grammar and vocabulary style shown in the Adapted Text.]
+{\label{fig:prompt9}Prompt 9, prompt de seguimiento para el prompt 4, para la estrategia 3}
+\end{prompt}
+
+\begin{prompt}
+[Please, make sure you remove all the introductions, conclusions and justifications related to the CEFR level and/or the task of text simplification from the following text, and do not introduce any new justifications or explanations regarding this instruction, but just reproduce the core text of the original: \prsimplifiedtext]
+{\label{fig:prompt10}Prompt 10, prompt de seguimiento para el prompt 4, para la estrategia 3}
+\end{prompt}

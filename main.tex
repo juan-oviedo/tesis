@@ -7,8 +7,10 @@
 
 \usepackage{lmodern}
 \usepackage[spanish, es-tabla]{babel} % soporte para lenguaje español
-\usepackage[spanish, textsize=tiny]{todonotes}
 
+
+\usepackage[spanish, textsize=tiny]{todonotes}
+\usepackage{comment}
 
 \usepackage{xcolor}
 \usepackage{tcolorbox}
@@ -25,14 +27,23 @@
 }
 
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
 \usepackage[spanish, capitalize]{cleveref}
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
 \crefname{table}{Tabla}{Tablas}
 \Crefname{table}{Tabla}{Tablas}
 
 \usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{lscape}
+\usepackage[normalem]{ulem}
 \usepackage{makecell}
 \usepackage{float}
 
@@ -49,16 +60,65 @@
 \addbibresource{example_citations.bib}
 
 
-\usepackage{famafCover}
+%\usepackage{famafCover}
 
-%\includeonly{04_marco_de_ref/sect}
+%\carrera{computacion}
+%\title{Comparativa de aproximaciones basadas en LLMs para clasificación y adaptación de textos para enseñanza de inglés como segunda lengua}
+%\author{Juan Cruz Oviedo Ferreyra}
+%\date{MES, AÑO} % mes y año de la presentación
+%\supervisors{Laura Alonso} % si tenés más de un director separarlos con \and y el paquete lso pone en diferentes lineas como está estipulado
 
 
-\carrera{computacion}
-\title{Comparativa de aproximaciones basadas en LLMs para clasificación y adaptación de textos para enseñanza de inglés como segunda lengua}
-\author{Juan Cruz Oviedo Ferreyra}
-\date{MES, AÑO} % mes y año de la presentación
-\supervisors{Laura Alonso} % si tenés más de un director separarlos con \and y el paquete lso pone en diferentes lineas como está estipulado
+
+\newtcolorbox{mybox}[3][]
+{
+  colframe = #2!25,
+  colback  = #2!10,
+  coltitle = #2!20!black,  
+  title    = {#3},
+  #1,
+}
+
+\newenvironment{prompt}[2][]
+{
+\begin{figure}[H]
+\begin{mybox}{blue}{}
+\footnotesize #1
+\end{mybox}
+\caption{{#2}}
+\end{figure}
+}
+
+\newenvironment{textexample}[4][]
+{
+  % Guardamos caption y label en macros temporales para el bloque de cierre
+  \newcommand{\tempcaption}{#3}%
+  \newcommand{\templabel}{#4}%
+  %
+  \begin{figure}[H]
+  \begin{mybox}[#1]{gray}{#2}
+  \footnotesize\itshape
+}{
+  \end{mybox}
+  % Aquí recuperamos los datos guardados sin que explote LaTeX
+  \caption{\tempcaption}\label{\templabel}
+  \end{figure}
+}
+
+\newcommand{\prparam}[1]{{\footnotesize \colorbox{yellow}{[#1]}}}
+\newcommand{\orparam}[1]{{\footnotesize \colorbox{orange}{[#1]}}}
+\newcommand{\prlevel}[0]{\prparam{Nivel}}
+\newcommand{\prcefrlevel}[0]{\prparam{Nivel CEFR}}
+\newcommand{\prdescriptors}[0]{\prparam{Descriptores}}
+\newcommand{\prlist}[0]{\prparam{Lista}}
+\newcommand{\prgrammar}[0]{\prparam{Gramatica}}
+\newcommand{\prinput}[0]{\orparam{Entrada}}
+\newcommand{\proriginaltext}[0]{\orparam{Texto Original}}
+\newcommand{\prsimplifiedtext}[0]{\orparam{Texto Simplificado}} 
+\newcommand{\proriginaltextu}[0]{\orparam{Texto Original 1}}
+\newcommand{\prsimplifiedtextu}[0]{\orparam{Texto simplificado 1}} 
+\newcommand{\proriginaltextd}[0]{\orparam{Texto original 2}}
+\newcommand{\prsimplifiedtextd}[0]{\orparam{Texto simplificado 2}} 
 
 \begin{document}
 
@@ -66,48 +126,54 @@
 % Título
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\maketitle
+%\maketitle
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{02_resumen/resumen}
-\input{02_resumen/abstract}
+%\input{00_resumen/resumen}
+%\input{00_resumen/abstract}
 
-\clearpage
+%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Índice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\tableofcontents  
+%\tableofcontents  
 
-\clearpage
+%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Artículo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\include{03_intro/intro}
-%\include{04_marco_de_ref/sect}
-%\include{05_arquitectura/sect}
-%\include{06_datasets/sec}
-\include{07_clasificacion/sec_1}
-\include{99_conclusiones/conclusiones}
+%\include{01_intro/intro}
+%\include{02_marco_de_ref/02}
+%\include{03_arquitectura/03}
+%\include{04_datasets/04}
+%\include{05_clasificacion/05}
+\include{06_Adaptacion/06}
+%\include{99_conclusiones/conclusiones}
 
+%\todo{concluciones generales, agregar la dificultad encontrada en la complejizacion de textos}
 
-\todo{armar anexo con, tabla de resultados eval y train, git hub con recursos linguisticos, revisar el texto para asegurarse que esta escrito siempre en la misma voz}
+%\todo{modificar tipo de citas}
+
+%\todo{armar anexo con, tabla de resultados eval y train, git hub con recursos linguisticos, revisar el texto para asegurarse que esta escrito siempre en la misma voz}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\printbibliography
+%\printbibliography
 
-\begin{appendices}
-  \include{anexos/Parametros}
-  \include{anexos/Prompts}
-\end{appendices}
+%\begin{appendices}
+%  \include{anexos/Parametros}
+%  \include{anexos/Prompts}
+%  \include{anexos/Tablas}
+%  \include{anexos/Ad_prompts}  
+%\end{appendices}
 
 \end{document}
