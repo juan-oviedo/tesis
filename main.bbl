@@ -1,0 +1,1702 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{aleman}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f252819851c26c60610eab8f8b0e6f1a}{%
+           family={Ahlers},
+           familyi={A\bibinitperiod},
+           given={Elias-Leander},
+           giveni={E\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=394a77b093cbedad2d7fcb099dbada5c}{%
+           family={Brunsmann},
+           familyi={B\bibinitperiod},
+           given={Witold},
+           giveni={W\bibinitperiod}}}%
+        {{hash=2aa86aaf4b296aacb549ee31f9da0750}{%
+           family={Schilling},
+           familyi={S\bibinitperiod},
+           given={Malte},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9642d9b529189233fa48eb51b12c8416}
+      \strng{fullhash}{9642d9b529189233fa48eb51b12c8416}
+      \strng{bibnamehash}{9642d9b529189233fa48eb51b12c8416}
+      \strng{authorbibnamehash}{9642d9b529189233fa48eb51b12c8416}
+      \strng{authornamehash}{9642d9b529189233fa48eb51b12c8416}
+      \strng{authorfullhash}{9642d9b529189233fa48eb51b12c8416}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.}
+      \field{title}{CLASSIFYING GERMAN LANGUAGE PROFICIENCY LEVELS USING LARGE LANGUAGE MODELS}
+      \keyw{cs.AI,cs.CL}
+    \endentry
+    \entry{Benedetto2025}{article}{}
+      \name{author}{4}{}{%
+        {{hash=da52cfbcb599f6b00692a9270e1155aa}{%
+           family={Benedetto},
+           familyi={B\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3c7b3e3205f793d75429e96133cba403}{%
+           family={Gaudeau},
+           familyi={G\bibinitperiod},
+           given={Gabrielle},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7ec8a3707393b8c440508c454b376fec}{%
+           family={Caines},
+           familyi={C\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dba71ff0fcbd380b6444e1f0cc485c48}{%
+           family={Buttery},
+           familyi={B\bibinitperiod},
+           given={Paula},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{fullhash}{b50b6b3217d330906a2b2852590747a0}
+      \strng{bibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorbibnamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authornamehash}{0b72deb42c3548d802ae4efd28cd1cbd}
+      \strng{authorfullhash}{b50b6b3217d330906a2b2852590747a0}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Large Language Models (LLMs) can have a transformative effect on a variety of domains, including education, and it is therefore pressing to understand whether these models have knowledge of – or, in other words, how they have encoded – the specific pedagogical requirements of different educational domains, and whether they use this when performing educational tasks. In this work, we propose an approach to evaluate the knowledge – or encoding – that the LLMs have of the Common European Framework of Reference for Languages (CEFR), and use it to evaluate five modern LLMs. Our study shows that the suite of tasks we propose is quite challenging for all the LLMs, and they often provide results which are not satisfactory and would be unusable in educational applications, suggesting that – even if they encode some information about the CEFR – this knowledge is not really leveraged when performing downstream tasks.}
+      \field{issn}{2666920X}
+      \field{journaltitle}{Computers and Education: Artificial Intelligence}
+      \field{month}{6}
+      \field{title}{Assessing how accurately large language models encode and apply the common European framework of reference for languages}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{100353}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.caeai.2024.100353
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.18653/v1/2022.acl-long.144
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.18653/v1/2022.acl-long.144
+      \endverb
+      \keyw{Common European Framework of Reference for Languages,Language learning,Large language models}
+    \endentry
+    \entry{Brown2020}{article}{}
+      \name{author}{31}{}{%
+        {{hash=7c16e8d36475e58d4f2d161e6ecb7704}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Tom\bibnamedelima B},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=d4543c3bcd6aaf414da4296b349603e5}{%
+           family={Mann},
+           familyi={M\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9ac58bd43db2434e8e1ffd6182c3fcda}{%
+           family={Ryder},
+           familyi={R\bibinitperiod},
+           given={Nick},
+           giveni={N\bibinitperiod}}}%
+        {{hash=9ed243177743da3e650f1cff6376bb3c}{%
+           family={Subbiah},
+           familyi={S\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9e85370e215d552f72c95a2b63a37802}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Jared},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4164e43d8cf919f5e3f8d80f5ea23f36}{%
+           family={Dhariwal},
+           familyi={D\bibinitperiod},
+           given={Prafulla},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4ca421ceeb5b516dd8fc64bea5a23f2a}{%
+           family={Neelakantan},
+           familyi={N\bibinitperiod},
+           given={Arvind},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ab5d7d7b9cfeaad635c4a60e8950d7dd}{%
+           family={Shyam},
+           familyi={S\bibinitperiod},
+           given={Pranav},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3c1d9a663596faaf544c1a65aac581be}{%
+           family={Sastry},
+           familyi={S\bibinitperiod},
+           given={Girish},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1e84eff933be9f4887bf369cf181bf12}{%
+           family={Askell},
+           familyi={A\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod}}}%
+        {{hash=abe4801e322e893b23785fd6d0800b5c}{%
+           family={Agarwal},
+           familyi={A\bibinitperiod},
+           given={Sandhini},
+           giveni={S\bibinitperiod}}}%
+        {{hash=787b9715a98ea66a8d5e6bae042ae0b9}{%
+           family={Herbert-Voss},
+           familyi={H\bibinithyphendelim V\bibinitperiod},
+           given={Ariel},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c3a5cc5e520e0d1a9f8bbf377c74cd27}{%
+           family={Krueger},
+           familyi={K\bibinitperiod},
+           given={Gretchen},
+           giveni={G\bibinitperiod}}}%
+        {{hash=eb1d3044b466619459c76843f0e98bb9}{%
+           family={Henighan},
+           familyi={H\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5c2f5c2e6d4a9ec8681377f8a8e5e6af}{%
+           family={Child},
+           familyi={C\bibinitperiod},
+           given={Rewon},
+           giveni={R\bibinitperiod}}}%
+        {{hash=82063a12702e7b2c026ae0ff03b8f102}{%
+           family={Ramesh},
+           familyi={R\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod}}}%
+        {{hash=18becbb5ea500211a8219e94dd0a975c}{%
+           family={Ziegler},
+           familyi={Z\bibinitperiod},
+           given={Daniel\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=495187f3a2c93ddb8083bd18a5702527}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fdaff50f84c08440dcb5fad75b559780}{%
+           family={Winter},
+           familyi={W\bibinitperiod},
+           given={Clemens},
+           giveni={C\bibinitperiod}}}%
+        {{hash=68a04c5006dbbf98f7719709540c6b56}{%
+           family={Hesse},
+           familyi={H\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=fb15a691583ec94aafe0be6e7da4878f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2a5f009f12a0567430729b5ace41435d}{%
+           family={Sigler},
+           familyi={S\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e5aa3a709cbe706efba113bec9789364}{%
+           family={Litwin},
+           familyi={L\bibinitperiod},
+           given={Mateusz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7006ca8c1ce969019b89de50fece60dd}{%
+           family={Gray},
+           familyi={G\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=01f70651539bbd7dccc01e86ed9c78c3}{%
+           family={Chess},
+           familyi={C\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1480c861b1a73e1d1de1b227e985b179}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ca86811e7a0582a9e7cb8d33e7ab445d}{%
+           family={Berner},
+           familyi={B\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=09eaa948aea24f56bf0b37b1f7bf59ba}{%
+           family={Mccandlish},
+           familyi={M\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a812c46caad94fc8701be37871f303ba}{%
+           family={Radford},
+           familyi={R\bibinitperiod},
+           given={Alec},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+        {{hash=23691ac13fcb2674edc42d6cd7c63738}{%
+           family={Openai},
+           familyi={O\bibinitperiod},
+           given={Dario\bibnamedelima Amodei},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0884233a667161739ddd01569813457f}
+      \strng{fullhash}{a66a1df9cd20973cc6ea7e2c0b9d557c}
+      \strng{bibnamehash}{0884233a667161739ddd01569813457f}
+      \strng{authorbibnamehash}{0884233a667161739ddd01569813457f}
+      \strng{authornamehash}{0884233a667161739ddd01569813457f}
+      \strng{authorfullhash}{a66a1df9cd20973cc6ea7e2c0b9d557c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions-something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.}
+      \field{title}{Language Models are Few-Shot Learners}
+      \field{year}{2020}
+    \endentry
+    \entry{cathoven}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{title}{Cefr Checker - Cathoven}
+      \verb{urlraw}
+      \verb https://www.cathoven.com/cefr-checker/
+      \endverb
+      \verb{url}
+      \verb https://www.cathoven.com/cefr-checker/
+      \endverb
+    \endentry
+    \entry{edia}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{title}{CEFR CLASSIFICATION BY EDIA — EDIA}
+      \verb{urlraw}
+      \verb https://www.edia.nl/cefr-classification
+      \endverb
+      \verb{url}
+      \verb https://www.edia.nl/cefr-classification
+      \endverb
+    \endentry
+    \entry{kagle}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{title}{CEFR Levelled English Texts}
+      \verb{urlraw}
+      \verb https://www.kaggle.com/datasets/amontgomerie/cefr-levelled-english-texts
+      \endverb
+      \verb{url}
+      \verb https://www.kaggle.com/datasets/amontgomerie/cefr-levelled-english-texts
+      \endverb
+    \endentry
+    \entry{cefr}{article}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9789287186218}
+      \field{title}{Companion volume COMMON EUROPEAN FRAMEWORK OF REFERENCE FOR LANGUAGES: LEARNING, TEACHING, ASSESSMENT}
+      \verb{urlraw}
+      \verb www.coe.int/lang-cefr
+      \endverb
+      \verb{url}
+      \verb www.coe.int/lang-cefr
+      \endverb
+    \endentry
+    \entry{wikipedia}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c2532543c76e935af0cc936d7313ce8b}{%
+           family={Coster},
+           familyi={C\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+        {{hash=0582db81566df6dabf0146eb50f90b65}{%
+           family={Kauchak},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{974f48500c2440665a5e7666e2897fae}
+      \strng{fullhash}{974f48500c2440665a5e7666e2897fae}
+      \strng{bibnamehash}{974f48500c2440665a5e7666e2897fae}
+      \strng{authorbibnamehash}{974f48500c2440665a5e7666e2897fae}
+      \strng{authornamehash}{974f48500c2440665a5e7666e2897fae}
+      \strng{authorfullhash}{974f48500c2440665a5e7666e2897fae}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we examine the task of sentence simplification which aims to reduce the reading complexity of a sentence by incorporating more accessible vocabulary and sentence structure. We introduce a new data set that pairs English Wikipedia with Simple English Wikipedia and is orders of magnitude larger than any previously examined for sentence simplification. The data contains the full range of simplification operations including rewording , reordering, insertion and deletion. We provide an analysis of this corpus as well as preliminary results using a phrase-based translation approach for simplification.}
+      \field{title}{Simple English Wikipedia: A New Text Simplification Task}
+      \field{pages}{665\bibrangedash 669}
+      \range{pages}{5}
+      \verb{urlraw}
+      \verb http://en.wikipedia.org/
+      \endverb
+      \verb{url}
+      \verb http://en.wikipedia.org/
+      \endverb
+    \endentry
+    \entry{benchmark}{article}{}
+      \name{author}{3}{}{%
+        {{hash=94e695a4e0904c4a11740fc6bf0940f7}{%
+           family={Cunha},
+           familyi={C\bibinitperiod},
+           given={Washington},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a4976b2bb0aa58561a1226c67c5633bb}{%
+           family={Rocha},
+           familyi={R\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dceef163151a4f41471a55786d11abe4}{%
+           family={Gonçalves},
+           familyi={G\bibinitperiod},
+           given={Marcos\bibnamedelima André},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{86fcc638dd2c07096c7e05c2ac8dcfc6}
+      \strng{fullhash}{86fcc638dd2c07096c7e05c2ac8dcfc6}
+      \strng{bibnamehash}{86fcc638dd2c07096c7e05c2ac8dcfc6}
+      \strng{authorbibnamehash}{86fcc638dd2c07096c7e05c2ac8dcfc6}
+      \strng{authornamehash}{86fcc638dd2c07096c7e05c2ac8dcfc6}
+      \strng{authorfullhash}{86fcc638dd2c07096c7e05c2ac8dcfc6}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Automatic text classification (ATC) has experienced remarkable advancements in the past decade, best exemplified by recent small and large language models (SLMs and LLMs), leveraged by Transformer architectures. Despite recent effectiveness improvements, a comprehensive cost-benefit analysis investigating whether the effectiveness gains of these recent approaches compensate their much higher costs when compared to more traditional text classification approaches such as SVMs and Logistic Regression is still missing in the literature. In this context, this work's main contributions are twofold: (i) we provide a scientifically sound comparative analysis of the cost-benefit of twelve traditional and recent ATC solutions including five open LLMs, and (ii) a large benchmark comprising 22 datasets, including sentiment analysis and topic classification, with their (train-validation-test) partitions based on folded cross-validation procedures, along with documentation, and code. The release of code, data, and documentation enables the community to replicate experiments and advance the field in a more scientifically sound manner. Our comparative experimental results indicate that LLMs outperform traditional approaches (up to 26\%-7.1\% on average) and SLMs (up to 4.9\%-1.9\% on average) in terms of effectiveness. However, LLMs incur significantly higher computational costs due to fine-tuning, being, on average 590x and 8.5x slower than traditional methods and SLMs, respectively. Results suggests the following recommendations: (1) LLMs for applications that require the best possible effectiveness and can afford the costs; (2) traditional methods such as Logistic Regression and SVM for resource-limited applications or those that cannot afford the cost of tuning large LLMs; and (3) SLMs like Roberta for near-optimal effectiveness-efficiency trade-off. Documentation, code, and datasets can be ac-cessed on GitHub-https://github.com/waashk/atcBench/.}
+      \field{journaltitle}{Proceedings of Washington Cunha et al.}
+      \field{title}{A thorough benchmark of automatic text classification From traditional approaches to large language models}
+      \field{volume}{1}
+      \verb{urlraw}
+      \verb https://github.com/waashk/atcBench/.
+      \endverb
+      \verb{url}
+      \verb https://github.com/waashk/atcBench/.
+      \endverb
+      \keyw{Benchmark,Small and Large Language Models,Text Classification}
+    \endentry
+    \entry{deepsek}{misc}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labeltitlesource}{title}
+      \field{title}{DeepSeek}
+      \verb{urlraw}
+      \verb https://www.deepseek.com/en/
+      \endverb
+      \verb{url}
+      \verb https://www.deepseek.com/en/
+      \endverb
+    \endentry
+    \entry{Devlin2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=13202969e372bc82318f9629cbdd199b}{%
+           family={Devlin},
+           familyi={D\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=35b79015768fa24a6ea6becf450391e3}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Ming\bibnamedelima Wei},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8dde73b4194f5bc4230c4808f3fc1534}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Kenton},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b92aa283415413bb8d2a1548716d0c7d}{%
+           family={Toutanova},
+           familyi={T\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics (ACL)}%
+      }
+      \strng{namehash}{ad8e2e2a80d28ade21e86852b804fc9b}
+      \strng{fullhash}{0ce4d896430ab82e49fb0f707f84eaac}
+      \strng{bibnamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
+      \strng{authorbibnamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
+      \strng{authornamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
+      \strng{authorfullhash}{0ce4d896430ab82e49fb0f707f84eaac}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5\% (7.7\% point absolute improvement), MultiNLI accuracy to 86.7\% (4.6\% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).}
+      \field{isbn}{9781950737130}
+      \field{journaltitle}{NAACL HLT 2019 - 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies - Proceedings of the Conference}
+      \field{month}{10}
+      \field{title}{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}
+      \field{volume}{1}
+      \field{year}{2018}
+      \field{pages}{4171\bibrangedash 4186}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/1810.04805
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/1810.04805
+      \endverb
+    \endentry
+    \entry{Feng2010}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e9d1987780d5932bc013bb1788da1177}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Lijun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ab6c90e8fe9f06941c9b8d9d5b76a0c4}{%
+           family={Jansche},
+           familyi={J\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=83e4d5ce9ed15553cd5b3c74d5c1d877}{%
+           family={Huenerfauth},
+           familyi={H\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bbc7b6837078687856ee53a548b6a300}{%
+           family={Elhadad},
+           familyi={E\bibinitperiod},
+           given={Noémie},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f131fdd4c097ff4687593ca40647f5b}
+      \strng{fullhash}{476ba95212ad5158b5d2a80c8790fbfa}
+      \strng{bibnamehash}{5f131fdd4c097ff4687593ca40647f5b}
+      \strng{authorbibnamehash}{5f131fdd4c097ff4687593ca40647f5b}
+      \strng{authornamehash}{5f131fdd4c097ff4687593ca40647f5b}
+      \strng{authorfullhash}{476ba95212ad5158b5d2a80c8790fbfa}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Several sets of explanatory variables-including shallow, language modeling, POS, syntactic, and discourse features-are compared and evaluated in terms of their impact on predicting the grade level of reading material for primary school students. We find that features based on in-domain language models have the highest predic-tive power. Entity-density (a discourse feature) and POS-features, in particular nouns, are individually very useful but highly correlated. Average sentence length (a shallow feature) is more useful-and less expensive to compute-than individual syntactic features. A judicious combination of features examined here results in a significant improvement over the state of the art.}
+      \field{title}{A Comparison of Features for Automatic Readability Assessment}
+      \field{year}{2010}
+      \field{pages}{276\bibrangedash 284}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb http://www.weeklyreader.com
+      \endverb
+      \verb{url}
+      \verb http://www.weeklyreader.com
+      \endverb
+    \endentry
+    \entry{Flesch1948}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6d3976c22bb5dbac876d14c50210fe07}{%
+           family={Flesch},
+           familyi={F\bibinitperiod},
+           given={Rudolph},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d3976c22bb5dbac876d14c50210fe07}
+      \strng{fullhash}{6d3976c22bb5dbac876d14c50210fe07}
+      \strng{bibnamehash}{6d3976c22bb5dbac876d14c50210fe07}
+      \strng{authorbibnamehash}{6d3976c22bb5dbac876d14c50210fe07}
+      \strng{authornamehash}{6d3976c22bb5dbac876d14c50210fe07}
+      \strng{authorfullhash}{6d3976c22bb5dbac876d14c50210fe07}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The author provides a revised system for determining the comprehension difficulty of written material through the use of two new formulae which measure reading ease and human interest. The following elements are used in analyzing text passages: (1) average sentence length in words; (2) average word length in syllables; (3) average percentage of ``personal words''; (4) average percentage of personal sentences. A step-by-step procedure for using the formulae, and interpretative table of scores, and an analysis of passages in ``Life'' and ``The New Yorker'' are given. 20-item bibliography. (PsycINFO Database Record (c) 2006 APA, all rights reserved). © 1948 American Psychological Association.}
+      \field{issn}{00219010}
+      \field{issue}{3}
+      \field{journaltitle}{Journal of Applied Psychology}
+      \field{month}{6}
+      \field{title}{A new readability yardstick}
+      \field{volume}{32}
+      \field{year}{1948}
+      \field{pages}{221\bibrangedash 233}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1037/h0057532
+      \endverb
+      \keyw{BUSINESS &,COMMERCE,COMMUNICATION,FLESCH INDEX,DESCRIPTION,LANGUAGE &,READABILITY,FLESCH FORMULA}
+    \endentry
+    \entry{gemma}{misc}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeltitlesource}{title}
+      \field{title}{Gemma 2 Release - a google Collection}
+      \verb{urlraw}
+      \verb https://huggingface.co/collections/google/gemma-2-release
+      \endverb
+      \verb{url}
+      \verb https://huggingface.co/collections/google/gemma-2-release
+      \endverb
+    \endentry
+    \entry{gpt}{misc}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeltitlesource}{title}
+      \field{title}{GPT-4 | OpenAI}
+      \verb{urlraw}
+      \verb https://openai.com/es-419/index/gpt-4/
+      \endverb
+      \verb{url}
+      \verb https://openai.com/es-419/index/gpt-4/
+      \endverb
+    \endentry
+    \entry{Grefenstette1999}{article}{}
+      \name{author}{1}{}{%
+        {{hash=48d703d6ded9d02d702625c7f2c84cc1}{%
+           family={Grefenstette},
+           familyi={G\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Dordrecht}%
+      }
+      \strng{namehash}{48d703d6ded9d02d702625c7f2c84cc1}
+      \strng{fullhash}{48d703d6ded9d02d702625c7f2c84cc1}
+      \strng{bibnamehash}{48d703d6ded9d02d702625c7f2c84cc1}
+      \strng{authorbibnamehash}{48d703d6ded9d02d702625c7f2c84cc1}
+      \strng{authornamehash}{48d703d6ded9d02d702625c7f2c84cc1}
+      \strng{authorfullhash}{48d703d6ded9d02d702625c7f2c84cc1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The linguistic annotation of naturally occurring text can be seen as a progression of transformations of the original text, with each step abstracting away surface differences. Tokenization is one of the earliest steps in this transformation during natural language...}
+      \field{isbn}{978-94-015-9273-4}
+      \field{title}{Tokenization}
+      \field{year}{1999}
+      \field{pages}{117\bibrangedash 133}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/978-94-015-9273-4_9
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/chapter/10.1007/978-94-015-9273-4_9
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/chapter/10.1007/978-94-015-9273-4_9
+      \endverb
+    \endentry
+    \entry{smog}{article}{}
+      \name{author}{2}{}{%
+        {{hash=36d157d885a9def2f265fc6d6c218cfe}{%
+           family={Harry},
+           familyi={H\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod}}}%
+        {{hash=78704669f026a6e155f79c13746f5df8}{%
+           family={Laughlin},
+           familyi={L\bibinitperiod},
+           given={M\bibnamedelima C},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0c9bcd3c3a5b4e35e78c6120101ac5b}
+      \strng{fullhash}{c0c9bcd3c3a5b4e35e78c6120101ac5b}
+      \strng{bibnamehash}{c0c9bcd3c3a5b4e35e78c6120101ac5b}
+      \strng{authorbibnamehash}{c0c9bcd3c3a5b4e35e78c6120101ac5b}
+      \strng{authornamehash}{c0c9bcd3c3a5b4e35e78c6120101ac5b}
+      \strng{authorfullhash}{c0c9bcd3c3a5b4e35e78c6120101ac5b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SMOG Grading-a New Readability Formula}
+    \endentry
+    \entry{Imperial2025}{article}{}
+      \name{author}{19}{}{%
+        {{hash=03de6f2497d4ed5e5405469010e2047b}{%
+           family={Imperial},
+           familyi={I\bibinitperiod},
+           given={Joseph\bibnamedelima Marvin},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9a16c241d4f0b86dd1fa4490a2486933}{%
+           family={Barayan},
+           familyi={B\bibinitperiod},
+           given={Abdullah},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9b33c896dbe14b101ad2aa675cbfa22a}{%
+           family={Stodden},
+           familyi={S\bibinitperiod},
+           given={Regina},
+           giveni={R\bibinitperiod}}}%
+        {{hash=68cc9d457c9401e34bcef0c8b7a236ec}{%
+           family={Wilkens},
+           familyi={W\bibinitperiod},
+           given={Rodrigo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fc4dcbba6fba82a953a7e85f77a792b8}{%
+           family={Sánchez},
+           familyi={S\bibinitperiod},
+           given={Ricardo\bibnamedelima Muñoz},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=26eab34370e574d5998896d2c5a3a8dd}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Lingyun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e2fab3b8a71ca49dcd54414ac3251de8}{%
+           family={Torgbi},
+           familyi={T\bibinitperiod},
+           given={Melissa},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bd064c2413c185408fcef569c501d1f9}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Dawn},
+           giveni={D\bibinitperiod}}}%
+        {{hash=00a074401d384637d851ce2403fa2f61}{%
+           family={Forey},
+           familyi={F\bibinitperiod},
+           given={Gail},
+           giveni={G\bibinitperiod}}}%
+        {{hash=439fd36706523fa4b848ccc5350c8a5d}{%
+           family={Jablonkai},
+           familyi={J\bibinitperiod},
+           given={Reka\bibnamedelima R},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e2824d74516f3d641c3a70dfb76fa8fc}{%
+           family={Reynolds},
+           familyi={R\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ff48230bbc2ffca747936aa96e2e8b43}{%
+           family={Ribeiro},
+           familyi={R\bibinitperiod},
+           given={Eugénio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9c64a04423df54f4b8a0c897a023033d}{%
+           family={Saggion},
+           familyi={S\bibinitperiod},
+           given={Horacio},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3e4e0bd253c6fa903192501cd0db5859}{%
+           family={Volodina},
+           familyi={V\bibinitperiod},
+           given={Elena},
+           giveni={E\bibinitperiod}}}%
+        {{hash=77d0a89d3aaafe8c646daa561b087a04}{%
+           family={Vajjala},
+           familyi={V\bibinitperiod},
+           given={Sowmya},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1ced3ac226f0d9d941ca90107499df87}{%
+           family={François},
+           familyi={F\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ff5dcf24c09ec9e1f4388b18f5c059ba}{%
+           family={Alva-Manchego},
+           familyi={A\bibinithyphendelim M\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=51c21fa4b4dee5af144150701c0bb302}{%
+           family={Madabushi},
+           familyi={M\bibinitperiod},
+           given={Harish\bibnamedelima Tayyar},
+           giveni={H\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{70efd45f68b3ece5995191d0d1e2afb8}
+      \strng{fullhash}{3e5cccad4aadc7d787fb1dee1681a2ae}
+      \strng{bibnamehash}{70efd45f68b3ece5995191d0d1e2afb8}
+      \strng{authorbibnamehash}{70efd45f68b3ece5995191d0d1e2afb8}
+      \strng{authornamehash}{70efd45f68b3ece5995191d0d1e2afb8}
+      \strng{authorfullhash}{3e5cccad4aadc7d787fb1dee1681a2ae}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce UNIVERSALCEFR, a large-scale multilingual multidimensional dataset of texts annotated according to the CEFR (Com-mon European Framework of Reference) scale in 13 languages. To enable open research in both automated readability and language proficiency assessment, UNIVERSALCEFR comprises 505,807 CEFR-labeled texts cu-rated from educational and learner-oriented resources , standardized into a unified data format to support consistent processing, analysis, and modeling across tasks and languages. To demonstrate its utility, we conduct benchmark experiments using three modelling paradigms: a\) linguistic feature-based classification, b\) fine-tuning pre-trained LLMs, and c\) descriptor-based prompting of instruction-tuned LLMs. Our results further support using linguistic features and fine-tuning pretrained models in multilingual CEFR level assessment. Overall, UNI-VERSALCEFR aims to establish best practices in data distribution in language proficiency research by standardising dataset formats and promoting their accessibility to the global research community. universalcefr.github.io huggingface.co/UniversalCEFR github.com/UniversalCEFR}
+      \field{title}{UNIVERSALCEFR: Enabling Open Multilingual Research on Language Proficiency Assessment}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.coe.int/en/web/common-european-f
+      \endverb
+      \verb{url}
+      \verb https://www.coe.int/en/web/common-european-f
+      \endverb
+      \keyw{cs.CL}
+    \endentry
+    \entry{Kerz2021}{article}{}
+      \name{author}{5}{}{%
+        {{hash=6e7488d1ca0cbd4ebd0ae6357b731e31}{%
+           family={Kerz},
+           familyi={K\bibinitperiod},
+           given={Elma},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2d1104bbabd0d5d333d1539e80021143}{%
+           family={Wiechmann},
+           familyi={W\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2addc56ce0ea3a8fc05ff9b0995f74f4}{%
+           family={Qiao},
+           familyi={Q\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=928e3253bf4e95c36c75bce3dc492e94}{%
+           family={Tseng},
+           familyi={T\bibinitperiod},
+           given={Emma},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1b7c1bd9e220231281bf9ebfa9fed76b}{%
+           family={Ströbel},
+           familyi={S\bibinitperiod},
+           given={Marcus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{939ce7f45a85eff5267aadc90546c290}
+      \strng{fullhash}{fdce5d8a7f44f0fb89be1eaa4fbb36dc}
+      \strng{bibnamehash}{939ce7f45a85eff5267aadc90546c290}
+      \strng{authorbibnamehash}{939ce7f45a85eff5267aadc90546c290}
+      \strng{authornamehash}{939ce7f45a85eff5267aadc90546c290}
+      \strng{authorfullhash}{fdce5d8a7f44f0fb89be1eaa4fbb36dc}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Automatically predicting the level of second language (L2) learner proficiency is an emerging topic of interest and research based on machine learning approaches to language learning and development. The key to the present paper is the combined use of what we refer to as 'complexity contours', a series of measurements of indices of L2 proficiency obtained by a computational tool that implements a sliding window technique, and recurrent neural network (RNN) classifiers that adequately capture the sequential information in those contours. We used the EF-Cambridge Open Language Database (Geertzen et al., 2014) with its labelled Common European Framework of Reference (CEFR) levels (Council of Europe, 2018) to predict six classes of L2 proficiency levels (A1, A2, B1, B2, C1, C2) in the assessment of writing skills. Our experiments demonstrate that an RNN classifier trained on complexity contours achieves higher classification accuracy than one trained on text-average complexity scores. In a secondary experiment, we determined the relative importance of features from four distinct categories through a sensitivity-based pruning technique. Our approach makes an important contribution to the field of automated identification of language proficiency levels, more specifically, to the increasing efforts towards the empirical validation of CEFR levels.}
+      \field{title}{Automated Classification of Written Proficiency Levels on the CEFR-Scale through Complexity Contours and RNNs}
+      \field{year}{2021}
+      \field{pages}{199\bibrangedash 209}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb http://evkk.tlu.ee/?language=en
+      \endverb
+      \verb{url}
+      \verb http://evkk.tlu.ee/?language=en
+      \endverb
+    \endentry
+    \entry{Kincaid1975}{article}{}
+      \name{author}{5}{}{%
+        {{hash=5cb65e85dac81cff6ca533430090ecf4}{%
+           family={Kincaid},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=b86dd9c1a794e66415d07d026b628654}{%
+           family={Fishburne},
+           familyi={F\bibinitperiod},
+           given={Jr.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5fe8ef4925c5a55838e402e3bf109d08}{%
+           family={P.},
+           familyi={P\bibinitperiod},
+           given={Rogers\bibnamedelima Robert},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=05fab294f3a2d3cabf4bec44eccd066a}{%
+           family={L.},
+           familyi={L\bibinitperiod},
+           given={Chissom\bibnamedelima Richard},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=f12820ccf0c4fc0c929d491a836e4463}{%
+           family={S.},
+           familyi={S\bibinitperiod},
+           given={Brad},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {US Dept of the Navy}%
+      }
+      \strng{namehash}{c4b679266972e3aac4a00a290c23f933}
+      \strng{fullhash}{6870203c411fd4362f255f3aaf1b1e5d}
+      \strng{bibnamehash}{c4b679266972e3aac4a00a290c23f933}
+      \strng{authorbibnamehash}{c4b679266972e3aac4a00a290c23f933}
+      \strng{authornamehash}{c4b679266972e3aac4a00a290c23f933}
+      \strng{authorfullhash}{6870203c411fd4362f255f3aaf1b1e5d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Three readability formulas were recalculated to be more suitable for Navy use. The three formulas are the Automated Readability Index ARI, Fog Count, and Flesch Reading Ease Formula. They were derived from test results of 531 Navy enlisted personnel enrolled in four technical training schools. Personnel were tested for their reading comprehension level according to the comprehension section of the Gates-McGinitie reading test. At the same time, they were tested for their comprehension of 18 passages taken from Rate Training Manuals. Scores on the reading test and training material passages allowed the calculation of the grade level of the passages. This scaled reading grade level is based on Navy personnel reading Navy training material and comprehending it.}
+      \field{month}{2}
+      \field{title}{Derivation of New Readability Formulas (Automated Readability Index, Fog Count and Flesch Reading Ease Formula) for Navy Enlisted Personnel}
+      \field{year}{1975}
+      \verb{doi}
+      \verb 10.21236/ADA006655
+      \endverb
+      \verb{urlraw}
+      \verb https://apps.dtic.mil/sti/citations/tr/ADA006655
+      \endverb
+      \verb{url}
+      \verb https://apps.dtic.mil/sti/citations/tr/ADA006655
+      \endverb
+      \keyw{Accuracy,Air Force,Comprehension,Education,Enlisted Personnel,Equations,Fresh Water,Geographic Regions,Globe Valves,Human Resources,Human Systems,Humanities And History,Instructions,Intelligibility,Manuals,Materials,Naval Air Stations,Navy,Personnel Management,Reading,Standards,Students,Test Methods,United States,United States Government,Weapons Technologies,Wind Velocity}
+    \endentry
+    \entry{finetuning_2}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9e80e643ac8b114248693d7f50935ae6}{%
+           family={Lester},
+           familyi={L\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6fdea7728f40679d54135ffed015aec3}{%
+           family={Al-Rfou},
+           familyi={A\bibinithyphendelim R\bibinitperiod},
+           given={Rami},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6a8ed325a5622cf4ec06f17777376a1b}{%
+           family={Constant},
+           familyi={C\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=5b9e27c341713586dafd7304f6db987d}{%
+           family={Research},
+           familyi={R\bibinitperiod},
+           given={Google},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{34f29224435f155a9dd84703008f1fa8}
+      \strng{fullhash}{09438ef890cc1793d4f95a7efac70d86}
+      \strng{bibnamehash}{34f29224435f155a9dd84703008f1fa8}
+      \strng{authorbibnamehash}{34f29224435f155a9dd84703008f1fa8}
+      \strng{authornamehash}{34f29224435f155a9dd84703008f1fa8}
+      \strng{authorfullhash}{09438ef890cc1793d4f95a7efac70d86}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this work, we explore ``prompt tuning,'' a simple yet effective mechanism for learning ``soft prompts'' to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through back-propagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3's few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method ``closes the gap'' and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed ``prefix tuning'' of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient ``prompt ensembling.'' We release code and model checkpoints to reproduce our experiments. 1}
+      \field{title}{The Power of Scale for Parameter-Efficient Prompt Tuning}
+      \field{pages}{3045\bibrangedash 3059}
+      \range{pages}{15}
+      \verb{urlraw}
+      \verb https://github.com/google-research/
+      \endverb
+      \verb{url}
+      \verb https://github.com/google-research/
+      \endverb
+    \endentry
+    \entry{Li2021}{article}{}
+      \name{author}{8}{}{%
+        {{hash=9885f16be76c4e68e9c2aaf363a53600}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=ed7b2de2f08bfa6638d5d174d55d839b}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Philip\bibnamedelima S},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a7a55881cb261787fefdc7f2311dab03}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=221d23a1cc1702c31044af688c0b7c39}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jianxin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f7ed3faac4d91973292caae805eeaa3e}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Congying},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bd1a7f88ec7d4f6f29d6096e8253f801}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Renyu},
+           giveni={R\bibinitperiod}}}%
+        {{hash=48972a9b89e478f69f1b1e95205c6278}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Lichao},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c8372b20d7d81ba738946c6a64be6386}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Lifang\bibnamedelima 2021},
+           giveni={L\bibinitperiod\bibinitdelim 2\bibinitperiod}}}%
+      }
+      \strng{namehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{fullhash}{d01ed2e3cf92cb0ffccd4e0bc1bb26b5}
+      \strng{bibnamehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{authorbibnamehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{authornamehash}{ccc14e5f8134b4693620e899bbc01e0d}
+      \strng{authorfullhash}{d01ed2e3cf92cb0ffccd4e0bc1bb26b5}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Text classification is the most fundamental and essential task in natural language processing. The last decade has seen a surge of research in this area due to the unprecedented success of deep learning. Numerous methods, datasets, and evaluation metrics have been proposed in the literature, raising the need for a comprehensive and updated survey. This paper fills the gap by reviewing the state-of-the-art approaches from 1961 to 2021, focusing on models from traditional models to deep learning. We create a taxonomy for text classification according to the text involved and the models used for feature extraction and classification. We then discuss each of these categories in detail, dealing with both the technical developments and benchmark datasets that support tests of predictions. A comprehensive comparison between different techniques, as well as identifying the pros and cons of various evaluation metrics are also provided in this survey. Finally, we conclude by summarizing key implications, future research directions, and the challenges facing the research area.}
+      \field{issue}{111}
+      \field{journaltitle}{ACM Trans. Intell. Syst. Technol}
+      \field{title}{A Survey on Text Classification: From Traditional to Deep Learning; A Survey on Text Classification: From Traditional to Deep Learning}
+      \field{volume}{37}
+      \field{year}{2021}
+      \field{pages}{39}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1145/1122445.1122456
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/1122445.1122456
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/1122445.1122456
+      \endverb
+      \keyw{challenges.,deep learning,evaluation metrics,text classification,traditional models}
+    \endentry
+    \entry{llama}{misc}{}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{title}
+      \field{title}{meta-llama (Meta Llama)}
+      \verb{urlraw}
+      \verb https://huggingface.co/meta-llama
+      \endverb
+      \verb{url}
+      \verb https://huggingface.co/meta-llama
+      \endverb
+    \endentry
+    \entry{mistral}{misc}{}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{title}
+      \field{title}{mistralai (Mistral AI)}
+      \verb{urlraw}
+      \verb https://huggingface.co/mistralai
+      \endverb
+      \verb{url}
+      \verb https://huggingface.co/mistralai
+      \endverb
+    \endentry
+    \entry{paper_gpt}{article}{}
+      \name{author}{4}{}{%
+        {{hash=8dc6e6613167ac3020428030563f7232}{%
+           family={Openai},
+           familyi={O\bibinitperiod},
+           given={Alec\bibnamedelima Radford},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=9e4804ca6d8335d5dd374691ba471eb0}{%
+           family={Openai},
+           familyi={O\bibinitperiod},
+           given={Karthik\bibnamedelima Narasimhan},
+           giveni={K\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=3ca448386ba7dff45829e0da46bb6e28}{%
+           family={Openai},
+           familyi={O\bibinitperiod},
+           given={Tim\bibnamedelima Salimans},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=ea798f8642d8157286f81596d35af761}{%
+           family={Openai},
+           familyi={O\bibinitperiod},
+           given={Ilya\bibnamedelima Sutskever},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0705033e83be975f8cfe238f1128dcbf}
+      \strng{fullhash}{297c509265aec15277dc75ddf617a788}
+      \strng{bibnamehash}{0705033e83be975f8cfe238f1128dcbf}
+      \strng{authorbibnamehash}{0705033e83be975f8cfe238f1128dcbf}
+      \strng{authornamehash}{0705033e83be975f8cfe238f1128dcbf}
+      \strng{authorfullhash}{297c509265aec15277dc75ddf617a788}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Natural language understanding comprises a wide range of diverse tasks such as textual entailment, question answering, semantic similarity assessment, and document classification. Although large unlabeled text corpora are abundant, labeled data for learning these specific tasks is scarce, making it challenging for discriminatively trained models to perform adequately. We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding. Our general task-agnostic model outperforms discriminatively trained models that use architectures specifically crafted for each task, significantly improving upon the state of the art in 9 out of the 12 tasks studied. For instance, we achieve absolute improvements of 8.9\% on commonsense reasoning (Stories Cloze Test), 5.7\% on question answering (RACE), and 1.5\% on textual entailment (MultiNLI).}
+      \field{title}{Improving Language Understanding by Generative Pre-Training}
+      \verb{urlraw}
+      \verb https://gluebenchmark.com/leaderboard
+      \endverb
+      \verb{url}
+      \verb https://gluebenchmark.com/leaderboard
+      \endverb
+    \endentry
+    \entry{oviedo2024recursos}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=fbd9f7389217866237ad8e975db23ade}{%
+           family={Oviedo},
+           familyi={O\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{fbd9f7389217866237ad8e975db23ade}
+      \strng{fullhash}{fbd9f7389217866237ad8e975db23ade}
+      \strng{bibnamehash}{fbd9f7389217866237ad8e975db23ade}
+      \strng{authorbibnamehash}{fbd9f7389217866237ad8e975db23ade}
+      \strng{authornamehash}{fbd9f7389217866237ad8e975db23ade}
+      \strng{authorfullhash}{fbd9f7389217866237ad8e975db23ade}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/juan-oviedo/Recursos-Linguisticos}}
+      \field{journaltitle}{GitHub Repository}
+      \field{note}{Accedido el 9 de junio de 2026}
+      \field{title}{Recursos Lingüísticos para Experimentos de Adaptación de Texto}
+      \field{year}{2024}
+    \endentry
+    \entry{JulianaSchmalz2021}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7b550d53e34455fbb2a1a94f82a898f5}{%
+           family={Schmalz},
+           familyi={S\bibinitperiod},
+           given={Veronica\bibnamedelima Juliana},
+           giveni={V\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=41af51744e4155a5e9cacb20effd0cef}{%
+           family={Brutti},
+           familyi={B\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3b950127308e740f560513afdb4a6c28}{%
+           family={Kessler},
+           familyi={K\bibinitperiod},
+           given={Fondazione\bibnamedelima Bruno},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=02b6449cf3a3c34f1bc3a20430d5fe49}{%
+           family={Leuven},
+           familyi={L\bibinitperiod},
+           given={Ku},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1a4768e03f99214994a7f269a3cbde4}
+      \strng{fullhash}{cc2d03615f9b24e13b0fa64827df9e6d}
+      \strng{bibnamehash}{b1a4768e03f99214994a7f269a3cbde4}
+      \strng{authorbibnamehash}{b1a4768e03f99214994a7f269a3cbde4}
+      \strng{authornamehash}{b1a4768e03f99214994a7f269a3cbde4}
+      \strng{authorfullhash}{cc2d03615f9b24e13b0fa64827df9e6d}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The automatic assessment of language learners' competences represents an increasingly promising task thanks to recent developments in NLP and deep learning technologies. In this paper, we propose the use of neural models for classifying En-glish written exams into one of the Common European Framework of Reference for Languages (CEFR) competence levels. We employ pre-trained Bidirectional En-coder Representations from Transformers (BERT) models which provide efficient and rapid language processing on account of attention-based mechanisms and the capacity of capturing long-range sequence features. In particular, we investigate on augmenting the original learner's text with corrections provided by an automatic tool or by human evaluators. We consider different architectures where the texts and corrections are combined at an early stage, via concatenation before the BERT network , or as late fusion of the BERT em-beddings. The proposed approach is evaluated on two open-source datasets: the English First Cambridge open language Database (EFCAMDAT) and the Cam-bridge Learner Corpus for the First Certificate in English (CLC-FCE). The experimental results show that the proposed approach can predict the learner's competence level with remarkably high accuracy, in particular when large labelled corpora are available. In addition, we observed that augmenting the input text with corrections provides further improvement in the automatic language assessment task.}
+      \field{title}{Automatic Assessment of English CEFR Levels Using BERT Embeddings-mitted under Creative Commons License Attribution 4.0 In-ternational (CC BY 4.0)}
+      \field{year}{2021}
+    \endentry
+    \entry{Schulhoff2025}{article}{}
+      \name{author}{31}{}{%
+        {{hash=572b48d10d1ca3e03df3bc08618dd048}{%
+           family={Schulhoff},
+           familyi={S\bibinitperiod},
+           given={Sander},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f773aed534a538a4d3ae125e53c149ea}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=808d5cf88672b716f29359a1f06601a7}{%
+           family={Balepur},
+           familyi={B\bibinitperiod},
+           given={Nishant},
+           giveni={N\bibinitperiod}}}%
+        {{hash=5656eef590db99fef15521bd8d6664a2}{%
+           family={Kahadze},
+           familyi={K\bibinitperiod},
+           given={Konstantine},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7db5a7d413ea00d686fedd2fca543e76}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod}}}%
+        {{hash=50e55ce524a6cabd5d5e862c580e6869}{%
+           family={Si},
+           familyi={S\bibinitperiod},
+           given={Chenglei},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f29f16103d47cb547a785ee081268c6c}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yinheng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9296da738820f1b8b76320d669ddf026}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Aayush},
+           giveni={A\bibinitperiod}}}%
+        {{hash=db9f0f5b3e963ed8b1e903a1daaff852}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Hyojung},
+           giveni={H\bibinitperiod}}}%
+        {{hash=585714f3d76ef67cccb61d198cf96414}{%
+           family={Schulhoff},
+           familyi={S\bibinitperiod},
+           given={Sevien},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ecf854451ee44b99aed3d2a8f75f16f7}{%
+           family={Dulepet},
+           familyi={D\bibinitperiod},
+           given={Pranav\bibnamedelima Sandeep},
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=5273e3b95f1d5e352c8928ac085b77dd}{%
+           family={Vidyadhara},
+           familyi={V\bibinitperiod},
+           given={Saurav},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4faf825befa660f75adda8a62fbfb09c}{%
+           family={Ki},
+           familyi={K\bibinitperiod},
+           given={Dayeon},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f4421642bbde13def706feefe9c39cd7}{%
+           family={Agrawal},
+           familyi={A\bibinitperiod},
+           given={Sweta},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c29742d2f39170d7cf9a84130831a615}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={Chau},
+           giveni={C\bibinitperiod}}}%
+        {{hash=56c2ff6af16c277a949b37c15764cea3}{%
+           family={Kroiz},
+           familyi={K\bibinitperiod},
+           given={Gerson},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ab0ec45eff644771d4bff0e3c40ea5b4}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Feileen},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fc4392d541b6736084a5924ff2835aee}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Hudson},
+           giveni={H\bibinitperiod}}}%
+        {{hash=99ef240a2d6161f24bf8e184d702b858}{%
+           family={Srivastava},
+           familyi={S\bibinitperiod},
+           given={Ashay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3d1e53ef82e068c9b4c0ac36b5a62465}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Hevander\bibnamedelima Da},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=cabc6222f57be750e3994dd409393bcb}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Saloni},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dddf87565cbd257bcff294fa6895bb9b}{%
+           family={Rogers},
+           familyi={R\bibinitperiod},
+           given={Megan\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ffeb4cadd4e7a686ad942605402b1421}{%
+           family={Goncearenco},
+           familyi={G\bibinitperiod},
+           given={Inna},
+           giveni={I\bibinitperiod}}}%
+        {{hash=8e98891b7c731d9cde323ca7421d57c3}{%
+           family={Sarli},
+           familyi={S\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1ec2a89421c1103dd9b9d95f01373ea8}{%
+           family={Galynker},
+           familyi={G\bibinitperiod},
+           given={Igor},
+           giveni={I\bibinitperiod}}}%
+        {{hash=881557f79cb190ba4cc79eb775dc3db7}{%
+           family={Peskoff},
+           familyi={P\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9cf67a53d9ebd335c787b143ec098196}{%
+           family={Carpuat},
+           familyi={C\bibinitperiod},
+           given={Marine},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d224ecfefc70293d1b9b28a1915cf6f2}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Jules},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9a831d318c9a798d7b9d1aff1545943e}{%
+           family={Anadkat},
+           familyi={A\bibinitperiod},
+           given={Shyamal},
+           giveni={S\bibinitperiod}}}%
+        {{hash=44177551d66b6f0da271276a2b65f585}{%
+           family={Hoyle},
+           familyi={H\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ba57143778a42bc76658900fe675e760}{%
+           family={Resnik},
+           familyi={R\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef0db98bd7be90261474bc3de8f33007}
+      \strng{fullhash}{2251424ed6bb061cf3bde3495aa133c3}
+      \strng{bibnamehash}{ef0db98bd7be90261474bc3de8f33007}
+      \strng{authorbibnamehash}{ef0db98bd7be90261474bc3de8f33007}
+      \strng{authornamehash}{ef0db98bd7be90261474bc3de8f33007}
+      \strng{authorfullhash}{2251424ed6bb061cf3bde3495aa133c3}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Generative Artificial Intelligence (GenAI) systems are increasingly being deployed across diverse industries and research domains. Developers and end-users interact with these systems through the use of prompting and prompt engineering. Although prompt engineering is a widely adopted and extensively researched area, it suffers from conflicting terminology and a fragmented ontological understanding of what constitutes an effective prompt due to its relatively recent emergence. We establish a structured understanding of prompt engineering by assembling a taxonomy of prompting techniques and analyzing their applications. We present a detailed vocabulary of 33 vocabulary terms, a taxonomy of 58 LLM prompting techniques, and 40 techniques for other modalities. Additionally, we provide best practices and guidelines for prompt engineering, including advice for prompting engineering ChatGPT and other state-of-the-art (SOTA) LLMs. We further present a meta-analysis of the entire literature on natural language prefix-prompting. As a culmination of these efforts, this paper presents the most comprehensive survey on prompt engineering to date.}
+      \field{title}{The Prompt Report: A Systematic Survey of Prompt Engineering Techniques}
+      \field{year}{2025}
+    \endentry
+    \entry{text_inspector}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{title}{Text Inspector: Analyse the Difficulty Level of English Texts}
+      \verb{urlraw}
+      \verb https://textinspector.com/
+      \endverb
+      \verb{url}
+      \verb https://textinspector.com/
+      \endverb
+    \endentry
+    \entry{ccad}{misc}{}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labeltitlesource}{title}
+      \field{title}{UNC Supercómputo – Centro de Computación de Alto Desempeño – Universidad Nacional de Córdoba}
+      \verb{urlraw}
+      \verb https://supercomputo.unc.edu.ar/
+      \endverb
+      \verb{url}
+      \verb https://supercomputo.unc.edu.ar/
+      \endverb
+    \endentry
+    \entry{llms}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{title}{What Are Large Language Models (LLMs)? | IBM}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/large-language-models
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/large-language-models
+      \endverb
+    \endentry
+    \entry{context_window}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{title}{What is a context window? | IBM}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/context-window
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/context-window
+      \endverb
+    \endentry
+    \entry{pretrained}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{title}{What Is A Pretrained Model? | IBM}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/pretrained-model
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/pretrained-model
+      \endverb
+    \endentry
+    \entry{nlp}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{title}{What Is NLP (Natural Language Processing)? | IBM}
+      \verb{urlraw}
+      \verb https://www.ibm.com/think/topics/natural-language-processing
+      \endverb
+      \verb{url}
+      \verb https://www.ibm.com/think/topics/natural-language-processing
+      \endverb
+    \endentry
+    \entry{Wisniewski2017}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6b043d8535911a56a9e08112936bd449}{%
+           family={Wisniewski},
+           familyi={W\bibinitperiod},
+           given={Katrin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Blackwell Publishing Ltd}%
+      }
+      \strng{namehash}{6b043d8535911a56a9e08112936bd449}
+      \strng{fullhash}{6b043d8535911a56a9e08112936bd449}
+      \strng{bibnamehash}{6b043d8535911a56a9e08112936bd449}
+      \strng{authorbibnamehash}{6b043d8535911a56a9e08112936bd449}
+      \strng{authornamehash}{6b043d8535911a56a9e08112936bd449}
+      \strng{authorfullhash}{6b043d8535911a56a9e08112936bd449}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Common European Framework of Reference (CEFR) is the most widespread reference tool for linking language tests, curricula, and national educational standards to levels of foreign language proficiency in Europe. In spite of this, little is known about how the CEFR levels (A1–C2) relate to empirical learner language(s). This article sums up recent trends to meet the need of empirical CEFR level research, where learner corpus-based analyses play an increasing role. A first focus of the article is on studies that aim at illustrating CEFR levels by analyzing rated learner texts (“criterial features”). Furthermore, research that tries to disentangle the empirical validity of the CEFR scales by operationalizing its descriptors is presented. Before concluding with an outline of the most urgent research needs, potentials, and boundaries of interdisciplinary work between the fields of language testing and assessment, second language acquisition, and learner corpus research are discussed.}
+      \field{issn}{14679922}
+      \field{issue}{S1}
+      \field{journaltitle}{Language Learning}
+      \field{month}{6}
+      \field{title}{Empirical Learner Language and the Levels of the Common European Framework of Reference}
+      \field{volume}{67}
+      \field{year}{2017}
+      \field{pages}{232\bibrangedash 253}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1111/lang.12223
+      \endverb
+      \verb{urlraw}
+      \verb /doi/pdf/10.1111/lang.12223 https://onlinelibrary.wiley.com/doi/abs/10.1111/lang.12223 https://onlinelibrary.wiley.com/doi/10.1111/lang.12223
+      \endverb
+      \verb{url}
+      \verb /doi/pdf/10.1111/lang.12223%20https://onlinelibrary.wiley.com/doi/abs/10.1111/lang.12223%20https://onlinelibrary.wiley.com/doi/10.1111/lang.12223
+      \endverb
+      \keyw{CEFR,CEFR scales,criterial features,learner corpora,proficiency levels,scale validity}
+    \endentry
+    \entry{transformers}{article}{}
+      \name{author}{22}{}{%
+        {{hash=c34c67badfd5b3624027e9c8c77a69f6}{%
+           family={Wolf},
+           familyi={W\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4996c576ebaf91c8655cee3341764e3b}{%
+           family={Debut},
+           familyi={D\bibinitperiod},
+           given={Lysandre},
+           giveni={L\bibinitperiod}}}%
+        {{hash=b17a6e4a2e8a51a0d77017d50c2ef700}{%
+           family={Sanh},
+           familyi={S\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod}}}%
+        {{hash=79bf176bccb31f7489fcf1895b225764}{%
+           family={Chaumond},
+           familyi={C\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e62b33de0b0f2c7b4ac5e9dc6b77b754}{%
+           family={Delangue},
+           familyi={D\bibinitperiod},
+           given={Clement},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a106785413050c01a6a0ac6f0abef459}{%
+           family={Moi},
+           familyi={M\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d37a5a08104030cc7da7f707c8cca77f}{%
+           family={Cistac},
+           familyi={C\bibinitperiod},
+           given={Pierric},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bc8b8c6f2d75eb26cbbd360ec7400fd5}{%
+           family={Rault},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e76b5af702e0b98b096e1808e1e43512}{%
+           family={Louf},
+           familyi={L\bibinitperiod},
+           given={Rémi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=91d34245e8eaf3e4cb599b6cb1c7b6aa}{%
+           family={Funtowicz},
+           familyi={F\bibinitperiod},
+           given={Morgan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7915e7c2f5406f21e3071c706ba303fe}{%
+           family={Davison},
+           familyi={D\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1ded257dc5971d5c24baab3098ad8cbf}{%
+           family={Shleifer},
+           familyi={S\bibinitperiod},
+           given={Sam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=90db664d10046e5264bef3b2c7efbd25}{%
+           family={Platen},
+           familyi={P\bibinitperiod},
+           given={Patrick\bibnamedelima Von},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=1287b8a94fef838bbc4c5082b35115ad}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Clara},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7ac0678b9ae57db7ec09752056af6dd4}{%
+           family={Jernite},
+           familyi={J\bibinitperiod},
+           given={Yacine},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7eb8f72d050b556d9efd79bc5915bb23}{%
+           family={Plu},
+           familyi={P\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+        {{hash=85c8ce7059401b93c2b0e6525a0f7732}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Canwen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=761b98e2f87c0718576d10e3d2f4028f}{%
+           family={Scao},
+           familyi={S\bibinitperiod},
+           given={Teven\bibnamedelima Le},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e8a58125af15e56d1db521647af99086}{%
+           family={Gugger},
+           familyi={G\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e52f4e4fdc397218d0c31660a7bef492}{%
+           family={Drame},
+           familyi={D\bibinitperiod},
+           given={Mariama},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6d3a340cadbc002ee63f9d77109d8d59}{%
+           family={Lhoest},
+           familyi={L\bibinitperiod},
+           given={Quentin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=f242a0a9b3b93ccf3879646ed9ab662f}{%
+           family={Rush},
+           familyi={R\bibinitperiod},
+           given={Alexander\bibnamedelima M},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{255f44073360cf5497333775e34f00d6}
+      \strng{fullhash}{babc5c05acdd07d1c3c5e2c8a8634894}
+      \strng{bibnamehash}{255f44073360cf5497333775e34f00d6}
+      \strng{authorbibnamehash}{255f44073360cf5497333775e34f00d6}
+      \strng{authornamehash}{255f44073360cf5497333775e34f00d6}
+      \strng{authorfullhash}{babc5c05acdd07d1c3c5e2c8a8634894}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent progress in natural language processing has been driven by advances in both model architecture and model pretraining. Transformer architectures have facilitated building higher-capacity models and pretraining has made it possible to effectively utilize this capacity for a wide variety of tasks. Transformers is an open-source library with the goal of opening up these advances to the wider machine learning community. The library consists of carefully engineered state-of-the art Transformer architectures under a unified API. Backing this library is a cu-rated collection of pretrained models made by and available for the community. Transformers is designed to be extensible by researchers , simple for practitioners, and fast and robust in industrial deployments. The library is available at https://github.com/ huggingface/transformers.}
+      \field{title}{Transformers: State-of-the-Art Natural Language Processing}
+      \verb{urlraw}
+      \verb https://github.com/huggingface/
+      \endverb
+      \verb{url}
+      \verb https://github.com/huggingface/
+      \endverb
+    \endentry
+    \entry{Xia2019}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f7a58a4ad43bb7057c0b601b2f19e529}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Menglin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=99fc80aee89e42a6ff1dde48a2aabb65}{%
+           family={Kochmar},
+           familyi={K\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=aa58ebc25e8f8fff0c2bce0a3e6906c9}{%
+           family={Briscoe},
+           familyi={B\bibinitperiod},
+           given={Ted},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{681d7c0ee64b78dcc1b05762d7041862}
+      \strng{fullhash}{681d7c0ee64b78dcc1b05762d7041862}
+      \strng{bibnamehash}{681d7c0ee64b78dcc1b05762d7041862}
+      \strng{authorbibnamehash}{681d7c0ee64b78dcc1b05762d7041862}
+      \strng{authornamehash}{681d7c0ee64b78dcc1b05762d7041862}
+      \strng{authorfullhash}{681d7c0ee64b78dcc1b05762d7041862}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper addresses the task of readability assessment for the texts aimed at second language (L2) learners. One of the major challenges in this task is the lack of significantly sized level-annotated data. For the present work, we collected a dataset of CEFR-graded texts tailored for learners of English as an L2 and investigated text readability assessment for both native and L2 learners. We applied a generalization method to adapt models trained on larger native corpora to estimate text readability for learners, and explored domain adaptation and self-learning techniques to make use of the native data to improve system performance on the limited L2 data. In our experiments, the best performing model for readability on learner texts achieves an accuracy of 0.797 and P CC of 0.938.}
+      \field{title}{Text Readability Assessment for Second Language Learners}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb http://www.cl.cam.ac.uk/
+      \endverb
+      \verb{url}
+      \verb http://www.cl.cam.ac.uk/
+      \endverb
+    \endentry
+    \entry{finetuning_1}{article}{}
+      \name{author}{8}{}{%
+        {{hash=001a803bb045c71933873cc0e78f4ee6}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Hongling},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f1625e69dd01e4d86402e9815bebb102}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1917d2f14d05a758943a187554aaa6f4}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Anke},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1050de1118f050bbbdf6ae6dd1c3eb0d}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Yong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f19295c2c8bee05248e05cdbfd48b247}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Han},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cb482f65052ae3fd62547593e324f0d0}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=39087d50c8e12fffe07830bb9607b00c}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Yonggang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f15b34a2bc944a9f055fd6e2e3a7c460}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Dacheng},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4252f79037beadd98b9be78a4220f16}
+      \strng{fullhash}{68cad67326a051ae71110c117cc5e23e}
+      \strng{bibnamehash}{a4252f79037beadd98b9be78a4220f16}
+      \strng{authorbibnamehash}{a4252f79037beadd98b9be78a4220f16}
+      \strng{authornamehash}{a4252f79037beadd98b9be78a4220f16}
+      \strng{authorfullhash}{68cad67326a051ae71110c117cc5e23e}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Foundation models (FM) have demonstrated remarkable performance across a wide range of tasks (especially in the fields of natural language processing and computer vision), primarily attributed to their ability to comprehend instructions and access extensive, high-quality data. This not only showcases their current effectiveness but also sets a promising trajectory towards the development of artificial general intelligence. Unfortunately, due to multiple constraints, the raw data of the model used for large model training are often inaccessible, so the use of end-to-end models for downstream tasks has become a new research trend, which we call Learn From Model (LFM) in this article. LFM focuses on the research, modification, and design of FM based on the model interface, so as to better understand the model structure and weights (in a black box environment), and to generalize the model to downstream tasks. The study of LFM techniques can be broadly categorized into five major areas: model tuning, model distillation, model reuse, meta learning and model editing. Each category encompasses a repertoire of methods and strategies that aim to enhance the capabilities and performance of FM. This paper gives a comprehensive review of the current methods based on FM from the perspective of LFM, in order to help readers better understand the current research status and ideas. To conclude, we summarize the survey by highlighting several critical areas for future exploration and addressing open issues that require further attention from the research community. The relevant papers we investigated in this article can be accessed at https://github.com/ruthless-man/Awesome-Learn-from-Model.}
+      \field{title}{Learning from models beyond fine-tuning}
+      \verb{urlraw}
+      \verb https://github.com/ruthless-man/Awesome-Learn-from-Model.
+      \endverb
+      \verb{url}
+      \verb https://github.com/ruthless-man/Awesome-Learn-from-Model.
+      \endverb
+      \keyw{Fine-tuning,Foundation model,Index Terms-Learn from model,Knowledge distillation ✦}
+    \endentry
+    \entry{Zhou2020}{article}{}
+      \name{author}{8}{}{%
+        {{hash=112b419fd2e22b51695085502a5cbc2a}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Xujuan},
+           giveni={X\bibinitperiod}}}%
+        {{hash=81c0413f2a1ae48e7f06a4d52ea6d93a}{%
+           family={Gururajan},
+           familyi={G\bibinitperiod},
+           given={Raj},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e3262f19ae9be84f0e7252af7a6e3729}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yuefeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=57fc55755e5d139cad7cdd1afdd09c99}{%
+           family={Venkataraman},
+           familyi={V\bibinitperiod},
+           given={Revathi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0908e054c2263361e673ff1799ac2177}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod}}}%
+        {{hash=fad8ee355d12e936e17702c624fa3b08}{%
+           family={Bargshady},
+           familyi={B\bibinitperiod},
+           given={Ghazal},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d35c5de905f2c9de93af1fe6f529fd3b}{%
+           family={Barua},
+           familyi={B\bibinitperiod},
+           given={Prabal\bibnamedelima D.},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0db145a8139f2206857334fbcfe551ea}{%
+           family={Kondalsamy-Chennakesavan},
+           familyi={K\bibinithyphendelim C\bibinitperiod},
+           given={Srinivas},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press BV}%
+      }
+      \strng{namehash}{63a61c35ba6f5ed3410dbe3cf12d869c}
+      \strng{fullhash}{ef84f210808f1f2ff562f74f51f612c6}
+      \strng{bibnamehash}{63a61c35ba6f5ed3410dbe3cf12d869c}
+      \strng{authorbibnamehash}{63a61c35ba6f5ed3410dbe3cf12d869c}
+      \strng{authornamehash}{63a61c35ba6f5ed3410dbe3cf12d869c}
+      \strng{authorfullhash}{ef84f210808f1f2ff562f74f51f612c6}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Text classification (a.k.a text categorisation) is an effective and efficient technology for information organisation and management. With the explosion of information resources on the Web and corporate intranets continues to increase, it has being become more and more important and has attracted wide attention from many different research fields. In the literature, many feature selection methods and classification algorithms have been proposed. It also has important applications in the real world. However, the dramatic increase in the availability of massive text data from various sources is creating a number of issues and challenges for text classification such as scalability issues. The purpose of this report is to give an overview of existing text classification technologies for building more reliable text classification applications, to propose a research direction for addressing the challenging problems in text mining.}
+      \field{issn}{24056464}
+      \field{issue}{3}
+      \field{journaltitle}{Web Intelligence}
+      \field{title}{A survey on text classification and its applications}
+      \field{volume}{18}
+      \field{year}{2020}
+      \field{pages}{205\bibrangedash 216}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.3233/WEB-200442
+      \endverb
+      \verb{urlraw}
+      \verb /doi/pdf/10.3233/WEB-200442?download=true
+      \endverb
+      \verb{url}
+      \verb /doi/pdf/10.3233/WEB-200442?download=true
+      \endverb
+      \keyw{Text classification,feature selection,machine learning,text mining}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

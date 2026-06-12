@@ -1,74 +1,377 @@
 \section{Prompts Clasificacion}\label{sec:prompts}
+Estructura de los 24 prompts utilizados en la clasificacion de textos. La notacion y el conocimiento linguistico utilizado es la siguiente:
 
+\begin{itemize}
+    \item \proriginaltextC Ejemplos de textos originales de cada nivel, seleccionados y extraídos de los datasets de Kaggel.
+    \item \prdescriptorsN{A1}, \prdescriptorsN{A2}, etc. Descriptores del nivel CEFR objetivo, según lo establecido por {CouncilEurope2020} [cita]
+    \item \prlistN{A1}, \prlistN{A2}, etc. Lista de vocabulario correspondiente a cada nivel, provista por {Oxford3000} [cita].
+\end{itemize}
 
 \subsection{Base: 0-shot prompts}
 
-\textbf{Prompt 0}: you are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|B1|C1|A2|B2|C2). Without introduction.
+\begin{prompt}
+    [You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 0 (sin lectocomprecion)}
+\end{prompt}
 
-\textbf{Prompt 1}: you are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|B1|C1|A2|B2|C2), without introduction.
+\begin{prompt}
+    [You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 1 (con lectocomprecion)}
+\end{prompt}
 
-\textbf{Prompt 2}: you are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|B1|C1|A2|B2|C2). Without introduction.
+\begin{prompt}
+    [You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.\\
+    I detect that you have a bias to classify everything as B2, correct it.]
+{Prompt 2 (Prompt 0 + corrección de sesgo B2)}
+\end{prompt}
 
-\textbf{Prompt 3}: you are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|B1|C1|A2|B2|C2). without introduction.
+\begin{prompt}
+    [You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.\\
+    I detect that you have a bias to classify everything as B2, correct it.]
+{Prompt 3 (Prompt 1 + corrección de sesgo B2)}
+\end{prompt}
 
-\textbf{Prompt 4}:  Can you classify the following text according to its Common European Framework of Reference (CEFR) readibility level? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [Can you classify the following text according to its Common European Framework of Reference (CEFR) readibility level? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 4}
+\end{prompt}
 
-\textbf{Prompt 5}: I'm a teacher of English who is preparing a reading task. Can you classify the following text regarding its readability based on the CEFR? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [I'm a teacher of English who is preparing a reading task. Can you classify the following text regarding its readibility based on the CEFR? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 5}
+\end{prompt}
 
-\textbf{Prompt 6}: I'm a teacher of English as a foreign language. I'm preparing a reading task for my students and I would like to use the following text. Can you tell me which CEFR level is the following text suitable for? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [I'm a teacher of English as a foreign language. I'm preparing  a reading task for my students and I would like to use the following text. Can you tell me which CEFR level is the following text suitable for? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 6}
+\end{prompt}
 
-\textbf{Prompt 7}: I'm a teacher of English as a foreign language. I'm preparing a reading task for my students and I would like to use the following text. Can you classify the following text according to its CEFR readability level? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [I'm a teacher of English as a foreign language. I'm preparing  a reading task for my students and I would like to use the following text. Can you classify the following test according to its CEFR readibility level? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 7}
+\end{prompt}
 
-\textbf{Prompt 8}: I'm a teacher of English as a foreign language. I'm preparing a reading task for my students and I would like to use the following text. Can you annotate the following text according to its CEFR readability level? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [I'm a teacher of English as a foreign language. I'm preparing  a reading task for my students and I would like to use the following text. Can you annotate the following test according to its CEFR readibility level? I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 8}
+\end{prompt}
 
 \subsection{1-shot y 2-shot prompts}
 
-\textbf{Prompt 9 (1 ejemplo por cada nivel + Prompt 0)}: this is an example of a text for level A1 $<Ejemplo>$\\
-this is an example of a text for level B1  $<Ejemplo>$\\
-this is an example of a text for level B2  $<Ejemplo>$\\
-this is an example of a text for level C1 $<Ejemplo>$\\
-this is an example of a text for level C2  $<Ejemplo>$\\
-you are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to responds only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 9 (1 ejemplo por cada nivel + Prompt 0)}
+\end{prompt}
 
-\textbf{Prompt 10 (1 ejemplo por cada nivel + Prompt 1)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 10 (1 ejemplo por cada nivel + Prompt 1)}
+\end{prompt}
 
-\textbf{Prompt 11 (1 ejemplo por cada nivel + Prompt 2)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.\\
+    I detect that you have a bias to classify everything as B2, correct it.]
+{Prompt 11 (1 ejemplo por cada nivel + Prompt 2)}
+\end{prompt}
 
-\textbf{Prompt 12 (1 ejemplo por cada nivel + Prompt 3)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.\\
+    I detect that you have a bias to classify everything as B2, correct it.]
+{Prompt 12 (1 ejemplo por cada nivel + Prompt 3)}
+\end{prompt}
 
-\textbf{Prompt 13 (1 ejemplo por cada nivel salvo el nivel B2 + Prompt 0)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 13 (1 ejemplo por cada nivel salvo el nivel B2 + Prompt 0)}
+\end{prompt}
 
-\textbf{Prompt 14 (1 ejemplo por cada nivel salvo el nivel B2 + Prompt 1)}, tal como el Prompt 9.
-2-shot prompts
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 14 (1 ejemplo por cada nivel salvo el nivel B2 + Prompt 1)}
+\end{prompt}
 
-\textbf{Prompt 15 (2 ejemplos por cada nivel + Prompt 0)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 15 (2 ejemplos por cada nivel + Prompt 0)}
+\end{prompt}
 
-\textbf{Prompt 16 (2 ejemplos por cada nivel + Prompt 1)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 16 (2 ejemplos por cada nivel + Prompt 1)}
+\end{prompt}
 
-\textbf{Prompt 17 (2 ejemplos por cada nivel + Prompt 2)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.\\
+    I detect that you have a bias to classify everything as B2, correct it.]
+{Prompt 17 (2 ejemplos por cada nivel + Prompt 2)}
+\end{prompt}
 
-\textbf{Prompt 18 (2 ejemplos por cada nivel + Prompt 2)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.\\
+    I detect that you have a bias to classify everything as B2, correct it.]
+{Prompt 18 (2 ejemplos por cada nivel + Prompt 3)}
+\end{prompt}
 
-\textbf{Prompt 19 (2 ejemplos por cada nivel salvo el nivel B2 + Prompt 0)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 19 (2 ejemplos por cada nivel salvo el nivel B2 + Prompt 0)}
+\end{prompt}
 
-\textbf{Prompt 20 (2 ejemplos por cada nivel salvo el nivel B2 + Prompt 1)}, tal como el Prompt 9.
+\begin{prompt}
+    [this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A1:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level A2:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level B1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C1:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    this is an example of a text for level C2:\\
+    \proriginaltextC\\
+    You are an English teacher and I want you to classify the following text for reading comprehension according to the CEFR classes. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 20 (2 ejemplos por cada nivel salvo el nivel B2 + Prompt 1)}
+\end{prompt}
 
 \subsection{Prompts con conocimiento de dominio}
 
-\textbf{Prompt 21}: this is a list of CEFR level descriptors for level A1: $<$Descriptores A1$>$\\
-this is a list of CEFR level descriptors for level A2: $<$Descriptores A2$>$\\
-this is a list of CEFR level descriptors for level B1: $<$Descriptores B1$>$\\
-this is a list of CEFR level descriptors for level B2: $<$Descriptores B2$>$\\
-this is a list of CEFR level descriptors for level C1: $<$Descriptores C1$>$\\
-this is a list of CEFR level descriptors for level C2: $<$Descriptores C2$>$\\
-Using the above descriptors I want you to classify the following text according to its Common European Framework of Reference (CEFR) level. I want you to responds only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [this is a list of CEFR level descriptors for level A1:\\
+    \prdescriptorsN{A1}\\
+    this is a list of CEFR level descriptors for level A2:\\
+    \prdescriptorsN{A2}\\
+    this is a list of CEFR level descriptors for level B1:\\
+    \prdescriptorsN{B1}\\
+    this is a list of CEFR level descriptors for level B2:\\
+    \prdescriptorsN{B2}\\
+    this is a list of CEFR level descriptors for level C1:\\
+    \prdescriptorsN{C1}\\
+    this is a list of CEFR level descriptors for level C2:\\
+    \prdescriptorsN{C2}\\
+    Using the above descriptors I want you to classify the following text according to its Common European Framework of Reference (CEFR) level. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 21 (descriptores de cada nivel)}
+\end{prompt}
 
-\textbf{Prompt 22}: Igual al Prompt 21, sin los descriptores para el nivel B2
+\begin{prompt}
+    [this is a list of CEFR level descriptors for level A1:\\
+    \prdescriptorsN{A1}\\
+    this is a list of CEFR level descriptors for level A2:\\
+    \prdescriptorsN{A2}\\
+    this is a list of CEFR level descriptors for level B1:\\
+    \prdescriptorsN{B1}\\
+    this is a list of CEFR level descriptors for level C1:\\
+    \prdescriptorsN{C1}\\
+    this is a list of CEFR level descriptors for level C2:\\
+    \prdescriptorsN{C2}\\
+    Using the above descriptors I want you to classify the following text according to its Common European Framework of Reference (CEFR) level. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 22 (descriptores de cada nivel salvo para el nivel B2)}
+\end{prompt}
 
-\textbf{Prompt 23}: This is a list of words sorted by levels A1, A2, B1, B2, C1, C2. In each level you will find words that a text of that level should have. In addition, the words of each higher level include the words of the lower level.\\
-These are the words of level A1 $<$Vocabulario A1$>$\\
-These are the words of level A2 $<$Vocabulario A2$>$\\
-These are the words of level B1 $<$Vocabulario B1$>$\\
-These are the words of level B2 $<$Vocabulario B2$>$\\
-These are the words of level C1 and C2 $<$Vocabulario C1 y C2$>$\\
-Using the above words, I want you to classify the following text according to its Common European Framework of Reference (CEFR) level. I want you to responds only with the class (A1|A2|B1|B2|C1|C2). Without introduction.
+\begin{prompt}
+    [This is a list of words sorted by levels A1, A2, B1, B2, C1, C2. In each level you will find words that a text of that level should have. In addition, the words of each higher level include the words of the lower level.\\
+    These are the words of level A1: 
+    \prlistN{A1}\\
+    These are the words of level A2: 
+    \prlistN{A2}\\
+    These are the words of level B1: 
+    \prlistN{B1}\\
+    These are the words of level B2: 
+    \prlistN{B2}\\
+    These are the words of level C1 and C2: 
+    \prlistN{C1 y C2}\\
+    Using the above worsds, I want you to classify the following text according to its Common European Framework of Reference (CEFR) level. I want you to respond only with the class (A1|A2|B1|B2|C1|C2). Without introduction.]
+{Prompt 23 (listas de palabras de cada nivel)}
+\end{prompt}

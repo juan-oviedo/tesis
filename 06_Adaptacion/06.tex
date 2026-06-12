@@ -7,13 +7,13 @@ En este trabajo, el enfoque se centra exclusivamente en la simplificación de te
 
 \subsection{Trabajo relacionado}\label{subsection:ad_trabajo}
 La tarea de adaptación de textos se apoya sobre dos pilares fundamentales que han sido objeto de estudio intenso en la literatura de PLN: la evaluación automática de legibilidad (ARA) y la simplificación de textos (TS). En esta sección revisamos la evolución de ambas áreas, con especial énfasis en los enfoques que incorporan control explícito sobre el nivel objetivo, conocidos como Readability-Controlled Text Simplification (RCTS), dado que constituyen el antecedente más directo del trabajo presentado en este capítulo.
-\subsubsection{Evaluación automática de legibilidad (ARA)}
+\subsubsection*{Evaluación automática de legibilidad (ARA)}
 Como se introdujo en el capítulo de clasificación (\Cref{subsection:clas_trabajo}), la ARA busca modelar la dificultad de lectura y comprensión de un texto para una audiencia determinada \cite{Feng2010}. Su relevancia para la adaptación es doble: por un lado, permite caracterizar el nivel de un texto de entrada antes de transformarlo; por otro, sirve como criterio de validación para verificar que el texto generado haya alcanzado el nivel objetivo.
 Las fórmulas tradicionales, como Flesch-Kincaid \cite{Kincaid1975} o SMOG \cite{smog}, fueron los primeros instrumentos utilizados para este fin. Sin embargo, su capacidad de capturar la complejidad real de un texto es limitada, ya que no consideran aspectos semánticos ni discursivos que resultan centrales para juzgar si una adaptación es pedagógicamente adecuada para un estudiante L2. Trabajos posteriores incorporaron características lingüísticas más ricas y modelos de aprendizaje automático \cite{Xia2019}, mejorando la sensibilidad del sistema ante variaciones sutiles de complejidad, lo que resulta especialmente relevante cuando se evalúan adaptaciones entre niveles adyacentes del CEFR.
-\subsubsection{Simplificación de textos (TS)}
+\subsubsection*{Simplificación de textos (TS)}
 La simplificación de textos busca transformar un documento en una versión de menor complejidad léxica y sintáctica, preservando su contenido informativo. Los enfoques iniciales fueron basados en reglas o métodos estadísticos. Con la llegada de los modelos neuronales, la calidad de las simplificaciones mejoró sustancialmente, permitiendo realizar operaciones de reescritura más naturales y coherentes.
 Con el surgimiento de los LLMs, la investigación en TS se ha desplazado hacia el ajuste fino y la ingeniería de prompts, lo que ha reducido la dependencia de corpus paralelos de gran tamaño y ha abierto la posibilidad de adaptar el sistema a distintos dominios y audiencias con menor esfuerzo de anotación.
-\subsubsection{Simplificación controlada por nivel de legibilidad (RCTS)}
+\subsubsection*{Simplificación controlada por nivel de legibilidad (RCTS)}
 La RCTS extiende la TS introduciendo un control explícito sobre el nivel de dificultad del texto resultante. Esto la hace especialmente valiosa en contextos educativos, donde no basta con simplificar, sino que es necesario garantizar que el texto generado sea adecuado para un perfil concreto de estudiante. La mayoría de los trabajos en esta área han seguido enfoques de entrenamiento supervisado, apoyándose en corpus paralelos donde cada par de textos contiene el original y su versión adaptada a un nivel objetivo. La principal limitación de esta estrategia es la escasez de datos disponibles, un problema que se agudiza cuando se trabaja con la escala CEFR, dado que los corpus de pares de adaptaciones alineadas a niveles específicos son prácticamente inexistentes para el inglés como L2.
 Frente a esta limitación, los avances recientes en LLMs han abierto nuevas direcciones para la RCTS, explorando tanto la simplificación a nivel de oración como a nivel de pasaje completo, en configuraciones de zero-shot y few-shot. Estos trabajos muestran resultados prometedores en cuanto a la capacidad de los modelos para respetar el nivel objetivo sin necesidad de entrenamiento específico, aunque también evidencian limitaciones en la preservación del significado y en la consistencia de las adaptaciones, especialmente cuando se trabaja con niveles del CEFR muy distantes entre sí.
 En este trabajo nos posicionamos en esta línea de investigación, abordando la RCTS a nivel de documento completo y evaluando el desempeño de LLMs open-source mediante distintas estrategias de prompting, con el objetivo de determinar en qué medida estos modelos son capaces de producir adaptaciones pedagógicamente adecuadas para estudiantes de inglés como segunda lengua.
@@ -21,10 +21,10 @@ En este trabajo nos posicionamos en esta línea de investigación, abordando la 
 \subsection{Diseño de Experimentos}\label{subsection:ad_diseño}
 El objetivo de esta sección es describir el diseño experimental utilizado para evaluar la capacidad de LLMs en la tarea de adaptación de textos según los niveles del CEFR. A diferencia de la clasificación, donde la salida esperada es una etiqueta discreta, la adaptación requiere generar un texto completo que satisfaga simultáneamente múltiples criterios: adecuación al nivel objetivo, preservación del significado del texto original y coherencia lingüística. Esta mayor complejidad motivó un diseño experimental que combina distintas estrategias de prompting, procedimientos de refinamiento iterativo y un mecanismo de selección por votación.
 
-\subsubsection{Selección del modelo}
+\subsubsection*{Selección del modelo}
 A diferencia del capítulo de clasificación, donde se compararon múltiples modelos open-source y privativos, en los experimentos de adaptación se optó por trabajar exclusivamente con el modelo Meta-Llama-3.1-8B-Instruct. Esta decisión se fundamenta en tres razones: (i) su carácter open-source y bajo costo computacional relativo; (ii) su buen desempeño en la tarea de clasificación CEFR documentado en el capítulo anterior; y (iii) evidencia previa en la literatura de que modelos de la familia Llama 3 8B han demostrado ser efectivos en tareas similares de simplificación controlada. El modelo fue ejecutado con precisión bfloat16 y los parámetros de decodificación por defecto detallados en el \Cref{sec:parametros}.
 
-\subsubsection{Tipos de prompting}
+\subsubsection*{Tipos de prompting}
 Se diseñaron y evaluaron de manera sistemática diez prompts distintos que se encuentran [cita], agrupados en dos tipos principales que representan 2 niveles de complejidad distintos:
 
 \begin{itemize}
@@ -49,7 +49,7 @@ Se diseñaron y evaluaron de manera sistemática diez prompts distintos que se e
 \end{figure}
 
 
-\subsubsection{Recursos lingüísticos utilizados}
+\subsubsection*{Recursos lingüísticos utilizados}
 Un aspecto distintivo de los experimentos de adaptación respecto a los de clasificación es el uso de recursos lingüísticos especializados incorporados directamente en los prompts. Estos recursos incluyen vocabulario graduado por nivel CEFR y ejemplos de construcciones morfosintácticas características de los niveles A2 y B1, que corresponden a los niveles objetivo de la tarea. Los recursos lingüísticos compilados para este trabajo se encuentran disponibles públicamente en este repositorio \cite{oviedo2024recursos} que recopila los datos utilizados a lo largo del trabajo.
 
 
@@ -58,9 +58,9 @@ Los experimentos se enmarcan en la shared task TSAR 2025, que propone simplifica
 
 De acuerdo con las bases de la competencia, se permitió el envío de hasta tres variantes o estrategias distintas (runs) para ser evaluadas formalmente. Para este trabajo, se seleccionaron tres aproximaciones con niveles crecientes de complejidad y esfuerzo de diseño, tras una evaluación sistemática sobre los datos de prueba y una inspección cualitativa de los textos generados, los prompts detallados para cada run se encuentran en [cite].
 
-\subsubsection{Estrategias de Adaptación}
+\subsubsection*{Estrategias de Adaptación}
 
-\noindent\textbf {Run 1: Refinamiento iterativo y preservación de contenido}
+\paragraph {Run 1: Refinamiento iterativo y preservación de contenido}
 
 Esta estrategia aborda la tensión entre la adecuación al nivel objetivo y la fidelidad al mensaje original mediante un procedimiento de dos pasos:
 
@@ -69,10 +69,10 @@ Esta estrategia aborda la tensión entre la adecuación al nivel objetivo y la f
 \item \textbf{Refinamiento de Contenido:} La salida anterior se procesa con un segundo prompt orientado exclusivamente a la preservación del contenido. Esta etapa prioriza la fidelidad semántica sobre la adecuación lingüística, intentando mitigar la pérdida de información que suele ocurrir en prompts excesivamente largos.
 \end{enumerate}
 
-\noindent\textbf {Run 2: Refinamiento iterativo y corrección de meta-información}
+\paragraph {Run 2: Refinamiento iterativo y corrección de meta-información}
 Basada en la misma configuración inicial del Run 1, esta estrategia busca solucionar un problema recurrente observado en los modelos de lenguaje: la inclusión de meta-explicaciones (ej. ``Aquí tienes el texto simplificado...''). A pesar de las instrucciones negativas en el prompt original, el modelo tiende a justificar su tarea. Por ello, el segundo paso de esta estrategia consiste en un prompt de ``limpieza'' diseñado para detectar y eliminar cualquier fragmento de texto que no sea la adaptación propiamente dicha.
 
-\noindent\textbf {Run 3: Sistema de votación}
+\paragraph {Run 3: Sistema de votación}
 
 Esta es la estrategia más compleja y la que obtuvo los mejores resultados. Consiste en generar diez adaptaciones distintas del mismo texto de entrada utilizando diez prompts de diversa naturaleza (desde instrucciones simples hasta few-shot). Las diez salidas son evaluadas por un mecanismo de votación heurístico basado en cuatro criterios:
 
@@ -89,7 +89,7 @@ En caso de empate en la puntuación, se selecciona el texto con mayor similitud 
 
 Para evaluar el desempeño de los sistemas de adaptación, se describe el marco de evaluación propuesto por la shared task TSAR 2025, el cual se basa en el estándar AUTORANK {Kocmi2025} [cita], para luego dar los resultados obtenidos en la tarea. Este enfoque combina múltiples métricas en un ranking único, permitiendo evaluar tres dimensiones críticas: el cumplimiento del nivel CEFR, la preservación del significado y la similitud con las referencias de expertos.
 
-\subsubsection{Dimensiones de Medición}
+\subsubsection*{Dimensiones de Medición}
 
 Se utilizaron tres variables principales para cuantificar la calidad de las adaptaciones generadas:
 
@@ -101,7 +101,7 @@ Se utilizaron tres variables principales para cuantificar la calidad de las adap
     \item \textbf{Similitud con Referencias:} Se utiliza nuevamente MeaningBERT para comparar la salida del sistema con las simplificaciones escritas por expertos (gold-standard). Esta métrica es crucial, ya que la similitud con una referencia humana suele correlacionar mejor con la calidad pedagógica de la adaptación.
 \end{itemize}
 
-\subsubsection{Normalización y Ponderación}
+\subsubsection*{Normalización y Ponderación}
 
 Dado que las métricas operan en escalas distintas (el RMSE puede tener varianzas altas mientras que MeaningBERT presenta valores agrupados), se aplica una normalización basada en el escalado de mediana e interpercentil (median-interpercentile scaling). Este método reduce la influencia de valores atípicos y permite que las métricas sean comparables entre sí. En el caso del RMSE, los valores se invierten tras la normalización para que, en todos los indicadores, una puntuación más alta represente un mejor desempeño.
 
@@ -114,7 +114,7 @@ Para obtener el puntaje final de cada run, se asignan pesos específicos que equ
 
 La decisión de otorgar el doble de peso a la similitud con la referencia respecto a la similitud con la fuente responde a que la primera refleja con mayor precisión el criterio de expertos sobre lo que constituye una simplificación exitosa.
 
-%\subsubsection{Agregación y Ranking Final (AUTORANK)}
+%\subsubsection*{Agregación y Ranking Final (AUTORANK)}
 
 %Tras la normalización y ponderación, se calcula un promedio ponderado para cada sistema. Estos puntajes se mapean linealmente en un rango de $[1, N]$, donde $N$ es el número total de envíos válidos. Bajo la convención de AUTORANK, el sistema con mejor desempeño recibe el valor 1, mientras que el de menor rendimiento recibe el valor $N$. Este mecanismo permite una interpretación clara de la posición relativa de cada estrategia frente al estado del arte actual en la competencia.
 
@@ -122,7 +122,7 @@ La decisión de otorgar el doble de peso a la similitud con la referencia respec
 
 En este apartado se presentan y analizan los resultados obtenidos por las tres estrategias de adaptación (runs) enviadas a la shared task TSAR 2025. Los resultados se evalúan siguiendo el marco oficial de la competencia, destacando el desempeño de nuestro sistema,\textit{TaskGen}, en comparación con el estado del arte.
 
-\subsubsection{Análisis comparativo de los sistemas enviados}
+\subsubsection*{Análisis comparativo de los sistemas enviados}
 
 De acuerdo con el reporte oficial de la competencia {alva-manchego-etal-2025-findings} [cita], nuestra tercera estrategia (\textbf{Run 3}), basada en un \textit{ensemble} por votación, obtuvo el mejor desempeño entre los envíos de nuestro equipo. Esta estrategia se posicionó como la 13ª mejor entre todos los participantes, situando a \textit{TaskGen} en el 6º lugar del ranking general por equipos. Aunque el RMSE respecto al nivel CEFR fue aceptable, con un promedio de 0,628, esta ejecución destacó en la preservación del significado respecto al original (meaning-orig) y a la referencia ( meaning-ref), con valores de 0,856 y 0,826 respectivamente.
 
@@ -151,7 +151,7 @@ El análisis de los datos permite extraer las siguientes observaciones:
     \item \textbf{Run 3 (Votación):} Aunque registró el peor RMSE de los tres (0.628), su desempeño en preservación de significado fue significativamente superior (0.856 respecto al original y 0.826 respecto a la referencia). Fue precisamente esta alta fidelidad semántica la que permitió que esta estrategia alcanzara el mejor ranking global bajo el marco AUTORANK.
 \end{itemize}
 
-\subsubsection{Análisis por nivel objetivo: A2 vs. B1}
+\subsubsection*{Análisis por nivel objetivo: A2 vs. B1}
 
 Dado que el cumplimiento del nivel CEFR fue el punto donde se observó mayor variabilidad, realizamos un análisis mas detallado por nivel objetivo. Como se observa en las \Cref{fig:rmse,fig:clasificacion_cuadrantes_global} las estrategias de refinamiento y limpieza,  mostraron mayores dificultades para adaptar textos hacia el nivel B1, mientras que el éxito fue al adaptar hacia el nivel A2, por otro lado la estrategia de votación, el desempeño fue mejoro un poco sobre B1, pero bajo mucho su rendimiento en A2. Esto puede deberse a que el sistema de votacion penaliza mas fuertemente la fidelidad semantica, quedando en menores posiciones las adaptaciones que logran un mejor cumplimiento del nivel CEFR pero a costa de una mayor perdida de significado, lo que se refleja en el RMSE mas alto con respecto a los otros runs y especialmente hacia A2.
 
@@ -182,7 +182,7 @@ Por otro lado, la preservación del significado mostró un comportamiento invers
   \label{fig:clasificacion_cuadrantes_global}
 \end{figure}
 
-\subsubsection{Ejemplos de salidas según los diferentes prompts}
+\subsubsection*{Ejemplos de salidas según los diferentes prompts}
 
 Se observó que el Run 3 fue especialmente capaz de adaptarse a diferentes tipologías textuales. Por ejemplo, las \Cref{fig:orginal,fig:texto-run1,fig:texto-run2,fig:texto-run3} muestran cómo los Run 1 y 2 no lograron producir un resultado adecuado para un texto que resultaba particularmente desafiante, debido a que el modelo de lenguaje podía interpretarlo fácilmente como una instrucción en sí misma. No obstante, el Run 3 generó una mejor adaptación que los demás, aunque todavía existe margen de mejora.
 
@@ -208,7 +208,7 @@ This way, people will appreciate the good things and feel happy when we give the
 \end{textexample}
 
 
-\subsubsection{Impacto de las estrategias complejas}
+\subsubsection*{Impacto de las estrategias complejas}
 Para evaluar el valor añadido de las estrategias de múltiples pasos, comparamos el desempeño de los prompts individuales frente a las ejecuciones combinadas (\Cref{tab:results_metrics_tsar_all}) sobre los datos de evaluacion. En particular, el prompt 4 sirvió como el prompt base para los Run 1 y 2.
 
 \begin{table}[H]
@@ -240,7 +240,7 @@ En cuanto al Run 2, no produjo una mejora en la preservación del significado, p
 
 Como trabajo futuro, se planea combinar estas aproximaciones complementarias para obtener textos que logren simultáneamente preservar el significado y cumplir con el nivel de legibilidad objetivo.
 
-\subsubsection{Análisis del corpus y limitaciones de la fragmentación}
+\subsubsection*{Análisis del corpus y limitaciones de la fragmentación}
 
 Un factor determinante en el comportamiento de los modelos durante la fase de adaptación es la naturaleza del conjunto de datos utilizado. El corpus de la competencia fue construido a partir de pasajes de lectura graduados extraídos del sitio web LearnEnglish del British Council. No obstante, el proceso de curación implicó la extracción de fragmentos aislados (generalmente uno o dos párrafos) de los textos originales. Esta fragmentación introduce un sesgo metodológico significativo: la clasificación CEFR original del texto completo no necesariamente se preserva en sus segmentos individuales. Al descontextualizar un pasaje, se eliminan estructuras discursivas complejas, referencias anafóricas de larga distancia y la progresión temática global, lo que puede resultar en una reducción ``mecánica'' del nivel de complejidad lingüística percibido por el modelo. Se pueder observar la diferencia entre la extraccion (\Cref{fig:trial-13}) y el original (\Cref{fig:org-cambridge}) de un mismo texto.
 
@@ -268,7 +268,7 @@ Para evaluar este fenómeno y determinar el punto de partida real de los textos,
   \label{fig:distribucion}
 \end{figure}
 
-\subsubsection{El dilema entre adecuación de nivel y preservación del significado}
+\subsubsection*{El dilema entre adecuación de nivel y preservación del significado}
 
 A partir de los experimentos realizados, se hace evidente la existencia de un relación de compromiso entre la precisión en la adecuación al nivel CEFR objetivo y la fidelidad semántica respecto al texto original.
 
@@ -281,7 +281,7 @@ Este fenómeno puede atribuirse a tres factores:
 \item \textbf{Naturaleza de la tarea:} La simplificación controlada es intrínsecamente más difícil que la clasificación, ya que requiere un equilibrio perfecto entre la reducción lingüística y la integridad del mensaje.
 \end{enumerate}
 
-\subsubsection{Benchmarking: Desempeño relativo frente al estado del arte}
+\subsubsection*{Benchmarking: Desempeño relativo frente al estado del arte}
 
 Para situar los resultados de \textit{TaskGen} en el contexto de la competencia, es necesario analizar las estrategias de los equipos que ocuparon las primeras posiciones del ranking:
 

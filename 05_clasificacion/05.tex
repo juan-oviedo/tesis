@@ -12,19 +12,19 @@ La sección se organiza de la siguiente manera. En primer lugar, revisamos la li
 \subsection{Trabajo relacionado}\label{subsection:clas_trabajo}
 La clasificación automática según niveles del CEFR se sitúa en la intersección de tres campos de investigación: la evaluación automática de legibilidad (ARA), la clasificación de textos en PLN y los enfoques específicos desarrollados para la predicción de niveles lingüísticos. En esta sección sintetizamos las principales contribuciones de cada área para contextualizar los enfoques adoptados en este trabajo.
 
-\subsubsection{Evaluación automática de legibilidad (ARA)}
+\subsubsection*{Evaluación automática de legibilidad (ARA)}
 La Automatic Readability Assessment (ARA) se ocupa de modelar la dificultad de lectura y comprensión de un texto para una audiencia determinada. Los primeros enfoques se basaron en fórmulas de legibilidad tradicionales, como Flesch-Kincaid \cite{Kincaid1975} o SMOG \cite{smog}, que describen la complejidad textual a partir de indicadores superficiales (longitud de palabras, sílabas, longitud de oraciones). Aunque estas métricas han sido ampliamente utilizadas por su simplicidad y bajo costo computacional, resultan insuficientes para capturar aspectos más profundos del lenguaje, como la coherencia discursiva o la complejidad sintáctica.
 
 A partir de los años 2000, el campo incorporó técnicas de PLN que permiten modelar de manera más rica los fenómenos lingüísticos involucrados en la legibilidad. Se exploraron características léxicas (riqueza, diversidad), morfológicas, sintácticas (profundidad de árbol, ambigüedad), discursivas (marcadores, relaciones retóricas), así como representaciones distribucionales basadas en embeddings. Estas aproximaciones mejoraron significativamente la precisión en contextos para hablantes nativos y, posteriormente, comenzaron a adaptarse para aprendices L2, un avance especialmente relevante para CEFR.
 
 La evaluación para L2 presenta desafíos propios: el vocabulario disponible para un aprendiz crece de manera incremental, la gramática internalizada se desarrolla heterogéneamente y la familiaridad con distintos géneros textuales varía ampliamente. En consecuencia, las herramientas diseñadas para hablantes nativos no siempre se trasladan adecuadamente a contextos educativos de lengua extranjera. Esto motivó el desarrollo de sistemas especializados, muchos de ellos adoptados por plataformas educativas y pruebas estandarizadas.
 
-\subsubsection{Clasificación de textos en PLN}
+\subsubsection*{Clasificación de textos en PLN}
 La clasificación de textos es una de las tareas más estudiadas del PLN. Los enfoques clásicos basados en bag-of-words o n-grams han sido progresivamente desplazados por arquitecturas profundas, especialmente CNNs, RNNs y transformers. La aparición de modelos preentrenados a gran escala, como BERT, RoBERTa o GPT, transformó por completo la manera de abordar esta tarea, desplazando la ingeniería de características hacia estrategias basadas en transferencia de conocimiento \cite{Zhou2020, Li2021, benchmark}.
 
 Los estudios de revisión coinciden en que los transformers superan sistemáticamente a los métodos tradicionales, tanto en precisión como en estabilidad, incluso en escenarios con datos limitados. Esto es especialmente relevante para CEFR, donde la disponibilidad de corpus no siempre es uniforme y donde las fronteras entre clases adyacentes pueden resultar difusas incluso para anotadores humanos \cite{Kerz2021, Wisniewski2017}.
 
-\subsubsection{Clasificación CEFR con machine learning y LLMs}
+\subsubsection*{Clasificación CEFR con machine learning y LLMs}
 
 La investigación orientada específicamente a predecir niveles CEFR ha seguido una evolución coherente con el desarrollo de las técnicas de PLN:
 
@@ -51,7 +51,7 @@ En conclusión, el análisis del trabajo relacionado expone que, si bien los LLM
 \subsection{Diseño de Experimentos}\label{subsection:clas_diseño}
 El objetivo de esta sección es describir de manera sistemática el diseño experimental utilizado para evaluar las capacidades de distintos modelos de lenguaje en la clasificación de textos según los niveles del CEFR. La organización de los experimentos se estructuró en torno a tres dimensiones principales: (i) la comparación entre modelos, (ii) la evaluación de diferentes estrategias de prompting, y (iii) la exploración del impacto de conocimiento lingüístico explícito mediante instrucciones o ejemplos seleccionados. A continuación se detallan estas dimensiones.
 
-\subsubsection{Selección de modelos}
+\subsubsection*{Selección de modelos}
 Se evaluaron tanto modelos open-source como propietarios, con el fin de obtener una perspectiva amplia del estado del arte. Entre los modelos abiertos se incluyeron representantes de las familias LLaMA, Mistral y Gemma, seleccionados por su disponibilidad pública, su rango de tamaños y su relevancia en aplicaciones educativas. Además, incorporamos ChatGPT y DeepSeek como referencia del rendimiento alcanzable con sistemas privativos ampliamente utilizados en entornos no académicos.
 
 Es importante señalar que, en el caso de los modelos propietarios como Chat GPT y DeepSeek, se accedió a su servicio a través de una API Key.
@@ -89,7 +89,7 @@ Las diferentes aproximaciones para crear prompts producen largos de prompt tambi
   \label{fig:grafico_tokens}
 \end{figure}
 
-\subsubsection{Restricciones prácticas y diferencias entre modelos}
+\subsubsection*{Restricciones prácticas y diferencias entre modelos}
 
 Debido a limitaciones presupuestarias y operativas, no fue posible aplicar la totalidad de las estrategias de prompting ni de evaluación de forma uniforme en todas las arquitecturas. En el caso de los modelos comerciales ChatGPT y DeepSeek, el acceso se gestionó a través de una colaboración externa, lo que restringió las pruebas exclusivamente a la modalidad 2-shot, dado que esta había exhibido el mejor desempeño preliminar entre las variantes sin fine-tuning. Asimismo, por razones de costo, estos dos modelos se evaluaron únicamente sobre las particiones de evaluación eval y holdout. Cabe destacar que los experimentos en ambas particiones se ejecutaron con una diferencia temporal considerable, lo que introdujo variaciones significativas en las métricas obtenidas debido a la evolución interna de las API.
 
@@ -102,29 +102,27 @@ Finalmente, la plataforma de evaluación Text Inspector presenta una restricció
 \subsection{Métodos y Métricas de Evaluación}\label{subsection:clas_metrica}
 La evaluación del desempeño de los modelos de lenguaje en la tarea de clasificación automática según los niveles del CEFR requiere un conjunto de métricas que capture tanto la precisión general como aspectos más finos del comportamiento del modelo. Dado que los niveles CEFR presentan una estructura ordinal en la que las distancias entre niveles tienen un significado educativo concreto, algunos errores son más graves que otros. Por ejemplo, confundir un texto de nivel A2 con uno de nivel C1 tiene un impacto pedagógico mayor que confundirlo con B1. Por este motivo, la estrategia de evaluación adoptada combina métricas estándar de clasificación multiclase con métricas diseñadas específicamente para este dominio.
 
-\subsubsection{Métricas estándar}
-Para obtener una medida general del rendimiento de cada modelo se utilizo la metrica mas adoptada en la literatura de clasificación:\\
+\subsubsection*{Métricas estándar}
+Para obtener una medida general del rendimiento de cada modelo se utilizó la métrica más adoptada en la literatura de clasificación:
 
-\noindent\textbf{Accuracy}\\
-Mide la proporción total de predicciones correctas sobre el conjunto de ejemplos evaluados. Es sencilla de interpretar, pero trata todos los errores por igual y no considera el balance entre clases, lo cual resulta problemático en datasets donde ciertos niveles CEFR están sobrerrepresentados.\\
+\paragraph{Accuracy}
+Mide la proporción total de predicciones correctas sobre el conjunto de ejemplos evaluados. Es sencilla de interpretar, pero trata todos los errores por igual y no considera el balance entre clases, lo cual resulta problemático en datasets donde ciertos niveles CEFR están sobrerrepresentados.
 
-\subsubsection{Accuracy adaptada al dominio CEFR}
+\subsubsection*{Accuracy adaptada al dominio CEFR}
+Si bien las métricas tradicionales permiten comparar modelos en términos generales, no capturan el hecho de que ciertos errores son pedagógicamente menos problemáticos que otros. Para abordar esta limitación, desarrollamos una métrica adicional que incorpora la estructura ordinal del CEFR.
 
-Si bien las métricas tradicionales permiten comparar modelos en términos generales, no capturan el hecho de que ciertos errores son pedagógicamente menos problemáticos que otros. Para abordar esta limitación, desarrollamos una métrica adicional que incorpora la estructura ordinal del CEFR.\\
-
-\noindent\textbf{Accuracy Aproximada}\\
+\paragraph{Accuracy Aproximada}
 Diseñada específicamente para este trabajo, asigna 0.5 puntos a aquellas predicciones que se encuentran a un nivel de distancia de la clase real. Esta métrica refleja mejor el impacto real de los errores en contextos educativos: entregar a un estudiante B1 un texto B2 puede ser adecuado o incluso beneficioso, mientras que entregar uno C2 resulta inadecuado.
 
-Como se vera mas adelante en [cita] adaptacion existe una correspondencia conceptual directa entre el RMSE y la Accuracy Aproximada propuesta en este trabajo: ambas asumen la estructura ordinal del CEFR. Sin embargo, lo hacen desde perspectivas complementarias. El RMSE opera en el espacio del error continuo, penalizando de manera cuadrática las predicciones severamente desviadas. Por el contrario, la Accuracy Aproximada introduce una noción de recompensa parcial en el espacio discreto, asignando valor pedagógico a los errores marginales.
+Como se verá más adelante en [cita] adaptación existe una correspondencia conceptual directa entre el RMSE y la Accuracy Aproximada propuesta en este trabajo: ambas asumen la estructura ordinal del CEFR. Sin embargo, lo hacen desde perspectivas complementarias. El RMSE opera en el espacio del error continuo, penalizando de manera cuadrática las predicciones severamente desviadas. Por el contrario, la Accuracy Aproximada introduce una noción de recompensa parcial en el espacio discreto, asignando valor pedagógico a los errores marginales.
 
-\subsubsection{Criterios de reporte de resultados}
-
+\subsubsection*{Criterios de reporte de resultados}
 Con el objetivo de garantizar la consistencia metodológica y permitir una comparación equitativa entre las diferentes arquitecturas, en el capítulo de resultados se exponen únicamente las métricas obtenidas sobre la partición de holdout. Debido a las restricciones operativas y de acceso detalladas en la sección anterior, la disponibilidad de datos varía según el modelo: mientras que algunas variantes disponen de registros para la totalidad del dataset, otras se limitan a combinaciones específicas de las particiones de entrenamiento, evaluación o holdout, o bien exclusivamente a esta última. A fin de preservar la claridad en el cuerpo principal del texto, el desglose completo de los rendimientos en las fases de train y eval para cada configuración evaluada se ha trasladado al [cita].
 
 \subsection{Fine-tuning}\label{subsection:clas_finetuning}
 A partir de los resultados obtenidos en los experimentos basados en prompting, observamos que los LLMs open-source presentan limitaciones para capturar con precisión las diferencias entre niveles CEFR, especialmente en los casos donde los niveles son adyacentes (por ejemplo, B1 vs. B2) o cuando el contenido del texto presenta estructuras con alta variabilidad temática o estilística. Estos hallazgos motivaron la segunda fase del estudio: la adaptación específica de un modelo de lenguaje mediante fine-tuning, con el objetivo de mejorar su sensibilidad a las características lingüísticas relevantes para la clasificación CEFR.
 
-\subsubsection{Preparación del conjunto de datos}
+\subsubsection*{Preparación del conjunto de datos}
 Para entrenar un clasificador robusto, construimos un conjunto de datos adaptado al problema, compuesto por textos anotados con los seis niveles del CEFR (A1-C2). Como paso previo al entrenamiento, realizamos las siguientes acciones:
 
 \begin{itemize}
@@ -135,7 +133,7 @@ Para entrenar un clasificador robusto, construimos un conjunto de datos adaptado
 
 Dado que la clasificación CEFR es sensible a pequeñas variaciones lingüísticas, fue fundamental preservar las características sintácticas y léxicas originales de los textos. No se aplicaron técnicas de data augmentation, para evitar introducir ruidos estructurales que afectan la calidad del entrenamiento.
 
-\subsubsection{Esquema de prompting instructivo para entrenamiento}
+\subsubsection*{Esquema de prompting instructivo para entrenamiento}
 A diferencia de los enfoques sin fine-tuning, donde el prompt es procesado en tiempo de inferencia, en esta etapa optamos por un prompt instructivo fijo, incorporado directamente en el proceso de preprocesamiento. Este prompt se utilizó para garantizar que el modelo recibiera una instrucción clara y uniforme en cada ejemplo. La plantilla general fue:
 
 \begin{quote}
@@ -145,7 +143,7 @@ A diferencia de los enfoques sin fine-tuning, donde el prompt es procesado en ti
 
 Esta estrategia contribuyó a que el modelo convergiera más rápidamente y a que interpretara de manera unívoca las etiquetas numéricas durante el entrenamiento y evaluación.
 
-\subsubsection{Arquitectura y parámetros de entrenamiento}
+\subsubsection*{Arquitectura y parámetros de entrenamiento}
 Como modelo base seleccionamos Meta-Llama-3.1-8B-Instruct, debido a su buen rendimiento en experimentos previos, su solidez en tareas relacionadas con análisis lingüístico y su equilibrio entre tamaño y capacidad expresiva. Para ajustarlo a la tarea CEFR:
 \begin{itemize}
     \item Se agregó luego de la capa de salida del modelo una capa lineal con 6 neuronas, correspondiente a las seis clases CEFR.
@@ -171,7 +169,7 @@ Los hiperparámetros utilizados fueron:
     \item Ventana de contexto: 15000 tokens
 \end{itemize}
 
-\subsubsection{Adaptación de prompts y coherencia entre etiquetas}
+\subsubsection*{Adaptación de prompts y coherencia entre etiquetas}
 Como variante adicional, exploramos una versión de los experimentos donde los prompts de entrada se enriquecieron con la instrucción explícita que vincula etiquetas numéricas con niveles CEFR.
 \begin{quote}
 ``keep in mind that the label 0 is A1, label 1 is A2, label 2 is B1, label 3 is B2, label 4 is C1, label 5 is C2''
@@ -180,12 +178,13 @@ Como variante adicional, exploramos una versión de los experimentos donde los p
 Esta modificación buscaba eliminar confusiones del modelo sobre la codificación interna de categorías. La adaptación resultó beneficiosa tanto en entrenamiento como en evaluación, contribuyendo a predicciones más estables entre niveles adyacentes.
 
 \subsection{Análisis de Resultados}\label{subsection:clas_resuslt}
-En esta sección presentamos y analizamos los resultados obtenidos en los experimentos de clasificación automática de textos según los niveles del CEFR. El objetivo es comparar el rendimiento de los distintos enfoques evaluados, prompting, prompting con conocimiento lingüístico, modelos libres, privativos y fine-tuning, así como entender en qué condiciones cada estrategia resulta más eficaz. A lo largo del análisis mostramos cómo las aproximaciones basadas en fine-tuning superan sistemáticamente al resto de alternativas, y discutimos los factores que explican estas diferencias.\\
+En esta sección presentamos y analizamos los resultados obtenidos en los experimentos de clasificación automática de textos según los niveles del CEFR. El objetivo es comparar el rendimiento de los distintos enfoques evaluados, prompting, prompting con conocimiento lingüístico, modelos libres, privativos y fine-tuning, así como entender en qué condiciones cada estrategia resulta más eficaz. A lo largo del análisis mostramos cómo las aproximaciones basadas en fine-tuning superan sistemáticamente al resto de alternativas, y discutimos los factores que explican estas diferencias.
 
-\noindent\textbf{Comparación general entre modelos con y sin fine-tuning}\\
+\paragraph{Comparación general entre modelos con y sin fine-tuning}
+
 En la Figura \ref{fig:finetuning} se observa una diferencia clara y consistente entre el modelo ajustado mediante fine-tuning y aquellos evaluados únicamente con estrategias de prompting (incluyendo prompting pedagógico, descriptores CEFR y prompting con conocimiento lingüístico).
 
-El modelo con fine-tuning alcanza niveles de precisión considerablemente superior, lo que evidencia la importancia de adaptar los LLMs preentrenados al dominio específico de clasificación CEFR.\\
+El modelo con fine-tuning alcanza niveles de precisión considerablemente superior, lo que evidencia la importancia de adaptar los LLMs preentrenados al dominio específico de clasificación CEFR.
 
 \begin{figure}[H]
   \centering
@@ -194,7 +193,7 @@ El modelo con fine-tuning alcanza niveles de precisión considerablemente superi
   \label{fig:finetuning}
 \end{figure}
 
-\noindent\textbf{Modelos privativos frente a modelos de código abierto}\\
+\paragraph{Modelos privativos frente a modelos de código abierto}
 La Figura~\ref{fig:privativos} presenta una comparación directa entre las arquitecturas abiertas y los modelos comerciales ChatGPT y DeepSeek. Debido a las restricciones operativas y de costos detalladas previamente, estos últimos solo fueron evaluados mediante el prompt 15, correspondiente a la estrategia de prompting con dos ejemplos seleccionados por docentes. 
 
 Al analizar la partición de holdout, se observa un desempeño sobresaliente por parte de ChatGPT, que establece una diferencia amplia respecto a las demás alternativas. Es destacable que, en comparación con las pruebas iniciales, ChatGPT exhibe una mejora significativa en su accuracy aproximada dentro de este conjunto, mientras que DeepSeek mantiene un rendimiento estable y similar al registrado anteriormente. Por su parte, el clasificador de TSAR, incorporado como línea de referencia en la ilustración, continúa siendo el modelo con mejores métricas globales en toda la comparativa, un aspecto cuyo análisis detallado se posterga para las secciones subsiguientes.
@@ -208,10 +207,11 @@ Al analizar la partición de holdout, se observa un desempeño sobresaliente por
 
 Este comportamiento en holdout contrasta parcialmente con los resultados obtenidos en la partición de evaluación, cuyos datos no se visualizan en el gráfico, sino que se detallan en la tabla del Apéndice~[cita]. En dicha partición de evaluación, los modelos privativos mostraban un rendimiento más homogéneo y apenas ligeramente superior a las variantes open-source sin fine-tuning. Esta ventaja inicial no resultaba determinante, dado que arquitecturas abiertas como LLaMA 3.1 8B y LLaMA 3.2 11B alcanzaban niveles de precisión comparables, consolidando la competitividad de las opciones de código abierto en instancias previas del experimento.
 
-\noindent\textbf{Comparación entre modelos open-source}\\
+\paragraph{Comparación entre modelos open-source}
+
 En la Figura \ref{fig:libres} se comparan los modelos libres. Una de las principales observaciones es que los valores promedio de accuracy se ubican dentro del rango 0.45-0.55. Luego LLaMA 3.1 8B y Gemma 2 9B obtienen las mejores medias de precisión. Ademas Mistral 12B presenta menor dispersión en los resultados, reflejando un comportamiento más estable, mientras que LLaMA 3.1 8B alcanza algunos de los valores máximos más altos de toda la comparación.
 
-En función de estos resultados y considerando además su menor tamaño y requerimientos computacionales, se seleccionó el modelo LLaMA 3.1 8B como candidato principal para aplicar fine-tuning.\\
+En función de estos resultados y considerando además su menor tamaño y requerimientos computacionales, se seleccionó el modelo LLaMA 3.1 8B como candidato principal para aplicar fine-tuning.
 
 \begin{figure}[H]
   \centering
@@ -223,7 +223,8 @@ En función de estos resultados y considerando además su menor tamaño y requer
 Por último hay que mencionar que estos resultados se mantienen para el resto de las particiones, el mejor promedio lo tiene el modelo LLaMA 3.1 8B y con muy poca diferencia estan Gemma 2 9B y Mistral 12B con valores similares.
 
 
-\noindent\textbf{Influencia del tipo de prompt y longitud del prompt}\\
+\paragraph{Influencia del tipo de prompt y longitud del prompt}
+
 La Figura \ref{fig:todos_los_modelos} y \ref{fig:modelos_ind} muestra el desempeño de los modelos comparando distintas estrategias experimentales (0-shot, 1-shot, 2-shot, prompting pedagógico, prompting con conocimiento lingüístico y variantes con corrección de sesgo).
 
 Se puede obsevar que los modelos con fine-tuning mantienen ventaja incluso frente a prompts largos. Aunque la longitud del prompt introduce variabilidad, los modelos ajustados continúan obteniendo mejores resultados que cualquier configuración sin entrenamiento adicional.
@@ -244,7 +245,7 @@ Las tendencias dependen del modelo.
     \item Fine-tuning adaptado: ligera mejora respecto a la versión sin adaptación, aunque con una variabilidad un poco mayor.
 \end{itemize}
 
-Estos resultados sugieren que, para algunos modelos, proporcionar más información no necesariamente mejora la predicción; en ciertos casos incluso introduce ruido estructural o saturación de contexto.\\
+Estos resultados sugieren que, para algunos modelos, proporcionar más información no necesariamente mejora la predicción; en ciertos casos incluso introduce ruido estructural o saturación de contexto.
 
 \begin{figure}[H]
   \centering
@@ -261,11 +262,13 @@ Estos resultados sugieren que, para algunos modelos, proporcionar más informaci
 \end{figure}
 
 \revisar{
-\noindent\textbf{Análisis de Tablas de resultados}\\
+\paragraph{Análisis de Tablas de resultados}
+
 En el Apendice de Tablas [cita] se muestran tablas detalladas con los resultados de cada modelo, cada prompt y cada particion del dataset. Estas tablas permiten un análisis más granular de las tendencias observadas en los gráficos anteriores, así como identificar casos específicos donde ciertos modelos o prompts presentan comportamientos atípicos.
+
 MANTENGO ESTE PARRAFO?}
 
-\noindent\textbf{Preferencias de los modelos}\\
+\paragraph{Preferencias de los modelos}
 
 Anteriormente mencionamos que existian modelos que tenian una preferencia (bias) hacia categorias particulares, en el grafico \ref{fig:bias} podemos observar que todos los modelos tienen una clase que tiene sobre representacion con respecto de la distribucion original del dataset. Se puede ver que para Llama 3.1 8B, Llama 3.2 11B, Mistral 12B, tiene un bias sobre B2.
 
@@ -278,10 +281,10 @@ Anteriormente mencionamos que existian modelos que tenian una preferencia (bias)
 
 Ademas se puede observar las categorias que tienen una baja representacion, como C2 para Gemma 2 9B o A1 para Llama 3.1 8B. Es de esperar que los extremos tengan una baja representacion, pero hay casos distintos como B2 para Llama 3.2 3B.
 
-Para el caso de los modelos con finetuning tiene una distribucion mas similar a la original, pero se puede observar que hay una sobre representacion de A2 y baja representacion hacia B1, esto necesita un estudio particular sobre los textos de la particion de evaluacion que se estan clasificando mal de B1, ya que es posible que sean estructuralemente parecidos a los textos de A2 de la particion de entrenamiento, o sean distintos a los textos de B1 de la particion de entrenamiento. Tambien esta la posibilidad de que se encuentren mal clasificados, ya que no hay una clara distincion entre los niveles.\\
+Para el caso de los modelos con finetuning tiene una distribucion mas similar a la original, pero se puede observar que hay una sobre representacion de A2 y baja representacion hacia B1, esto necesita un estudio particular sobre los textos de la particion de evaluacion que se estan clasificando mal de B1, ya que es posible que sean estructuralemente parecidos a los textos de A2 de la particion de entrenamiento, o sean distintos a los textos de B1 de la particion de entrenamiento. Tambien esta la posibilidad de que se encuentren mal clasificados, ya que no hay una clara distincion entre los niveles.
 
 
-\noindent\textbf{Matriz de confucion para los modelos}\\
+\paragraph{Matriz de confucion para los modelos}
 
 En la tabla \ref{tab:mejores_prompts_modelos} se encuentra el mejor prompt segun su Aproximated Acuraccy de cada modelo. En esta tabla se puede observar que no hay un prompt que destaque en para todos los modelos, tampoco se puede encontrar una estrategia de prompting que sea ampliamente superadora a las demas, ya que esta tabla sugiere que varios modelos mejoran con 2-shot, pero no es definitiva para todos los modelo.
 

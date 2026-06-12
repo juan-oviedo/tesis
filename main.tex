@@ -12,6 +12,9 @@
 \usepackage[spanish, textsize=tiny]{todonotes}
 \usepackage{comment}
 
+\usepackage{enumitem}
+\usepackage{microtype}
+
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \newcommand{\revisar}[1]{%
@@ -45,7 +48,27 @@
 \usepackage{lscape}
 \usepackage[normalem]{ulem}
 \usepackage{makecell}
+
+
 \usepackage{float}
+\usepackage{rotating}
+\usepackage{rotfloat}
+
+
+\usepackage{titlesec}
+% Configuramos \paragraph con salto de línea
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries}
+  {\theparagraph}
+  {1em}
+  {}
+
+% Aplicamos la sangría por defecto de LaTeX
+\titlespacing*{\paragraph}
+  {\parindent}                  % <--- Usa el valor nativo de sangría de tu documento
+  {3.25ex plus 1ex minus .2ex}  % Espacio vertical antes
+  {1.5ex plus .2ex}             % Espacio vertical después
+
 
 \usepackage[title,titletoc]{appendix}
 
@@ -60,13 +83,13 @@
 \addbibresource{example_citations.bib}
 
 
-%\usepackage{famafCover}
+\usepackage{famafCover}
 
-%\carrera{computacion}
-%\title{Comparativa de aproximaciones basadas en LLMs para clasificación y adaptación de textos para enseñanza de inglés como segunda lengua}
-%\author{Juan Cruz Oviedo Ferreyra}
-%\date{MES, AÑO} % mes y año de la presentación
-%\supervisors{Laura Alonso} % si tenés más de un director separarlos con \and y el paquete lso pone en diferentes lineas como está estipulado
+\carrera{computacion}
+\title{Comparativa de aproximaciones basadas en LLMs para clasificación y adaptación de textos para enseñanza de inglés como segunda lengua}
+\author{Juan Cruz Oviedo Ferreyra}
+\date{MES, AÑO} % mes y año de la presentación
+\supervisors{Laura Alonso} % si tenés más de un director separarlos con \and y el paquete lso pone en diferentes lineas como está estipulado
 
 
 
@@ -118,7 +141,10 @@
 \newcommand{\proriginaltextu}[0]{\orparam{Texto Original 1}}
 \newcommand{\prsimplifiedtextu}[0]{\orparam{Texto simplificado 1}} 
 \newcommand{\proriginaltextd}[0]{\orparam{Texto original 2}}
-\newcommand{\prsimplifiedtextd}[0]{\orparam{Texto simplificado 2}} 
+\newcommand{\prsimplifiedtextd}[0]{\orparam{Texto simplificado 2}}
+\newcommand{\proriginaltextC}[0]{\orparam{Ejemplo}}
+\newcommand{\prdescriptorsN}[1]{\prparam{Descriptores #1}}
+\newcommand{\prlistN}[1]{\prparam{Lista de palabras #1}}
 
 \begin{document}
 
@@ -126,54 +152,59 @@
 % Título
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\maketitle
+\maketitle
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\input{00_resumen/resumen}
-%\input{00_resumen/abstract}
+\input{00_resumen/resumen}
+\input{00_resumen/abstract}
 
-%\clearpage
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Índice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\tableofcontents  
+\tableofcontents  
 
-%\clearpage
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Artículo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\include{01_intro/intro}
-%\include{02_marco_de_ref/02}
-%\include{03_arquitectura/03}
-%\include{04_datasets/04}
-%\include{05_clasificacion/05}
+\include{01_intro/intro}
+\include{02_marco_de_ref/02}
+\include{03_arquitectura/03}
+\include{04_datasets/04}
+\include{05_clasificacion/05}
 \include{06_Adaptacion/06}
-%\include{99_conclusiones/conclusiones}
+\include{07_conclusiones/07}
+\include{08_agradecimientos/08}
 
-%\todo{concluciones generales, agregar la dificultad encontrada en la complejizacion de textos}
-
+%\todo{abstract}
+%\todo{agredecimientos}
 %\todo{modificar tipo de citas}
-
-%\todo{armar anexo con, tabla de resultados eval y train, git hub con recursos linguisticos, revisar el texto para asegurarse que esta escrito siempre en la misma voz}
+%\todo{revisar ortografia}
+%\todo{poner en negrita y italica}
+%\todo{mejorar formato parametros}
+%\todo{agregar textos utilizados en los prompts}
+%\todo{revisar el texto para asegurarse que esta escrito siempre en la misma voz}
+%\todo{git hub con recursos linguisticos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\printbibliography
+\printbibliography
 
-%\begin{appendices}
-%  \include{anexos/Parametros}
-%  \include{anexos/Prompts}
-%  \include{anexos/Tablas}
-%  \include{anexos/Ad_prompts}  
-%\end{appendices}
+\begin{appendices}
+  \include{anexos/Parametros}
+  \include{anexos/Prompts}
+  \include{anexos/Tablas}
+  \include{anexos/Ad_prompts}  
+\end{appendices}
 
 \end{document}

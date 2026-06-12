@@ -1,13 +1,12 @@
 \section{Prompts Adaptacion}\label{sec:ad_prompts}
-\todo{agregar textos utilizados en los prompts}
-\todo{modificar texto en prompts para aclarar si fueron de cerd o de trial}
+
 Prompts para las 3 estrategias utilizadas en la adaptacion de textos. La notacion y el conocimiento linguistico utilizado es la siguiente:
 
 \begin{itemize}
     \item \prdescriptors Descriptores del nivel CEFR objetivo, según lo establecido por {CouncilEurope2020} [cita].
     \item \prlist Lista de vocabulario correspondiente a cada nivel, provista por {Oxford3000} [cita].
     \item \prgrammar Ejemplos que ilustran los 5 tipos de construcciones morfosintácticas de cada nivel especificadas en {North2010} [cita], disponibles en \url{https://github.com/juan-oviedo/Recursos-Linguisticos}.
-    \item \prlevel y \prlevel El nivel objetivo de la adaptación (es decir, A2 o B1).
+    \item \prlevel y \prcefrlevel El nivel objetivo de la adaptación (es decir, A2 o B1).
     \item \prinput El texto de entrada que será adaptado. Para la tarea compartida TSAR 2025, corresponde a cada uno de los textos proporcionados por la organización.
     \item \proriginaltext El texto original dentro de un par de tipo $<$original, adaptado$>$.
     \item \prsimplifiedtext El texto adaptado al nivel objetivo dentro de un par de tipo $<$original, adaptado$>$.
@@ -101,22 +100,22 @@ you remove all the introductions, conclusions and justifications related to the 
 
 \begin{prompt}
 [I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may substitute difficult words for simpler ones. You may break down long complex sentences into shorter ones. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three  complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextu and its simplified \prcefrlevel \prsimplifiedtextu;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
-{\label{fig:prompt5}Prompt 5 para la estrategia 3.}
+{\label{fig:prompt5}Prompt 5 para la estrategia 3, textos extraidos y adaptados de Kaggel.}
 \end{prompt}
 
 \begin{prompt}
 [I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may use the CEFR \prlevel \prdescriptors, the \prcefrlevel vocabulary in \prlist and the \prcefrlevel grammar structures in \prgrammar. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three  complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
-{\label{fig:prompt6}Prompt 6 para la estrategia 3.}
+{\label{fig:prompt6}Prompt 6 para la estrategia 3, textos extraidos y adaptados de Kaggel.}
 \end{prompt}
 
 \begin{prompt}
 [I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may substitute difficult words for simpler ones. You may break down long complex sentences into shorter ones. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextu and its simplified \prcefrlevel \prsimplifiedtextu;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
-{\label{fig:prompt7}Prompt 7 para la estrategia 3.}
+{\label{fig:prompt7}Prompt 7 para la estrategia 3, textos extraidos de la particion de trial del dataset de la competencia.}
 \end{prompt}
 
 \begin{prompt}
 [I’m a teacher of English as a Foreign Language (EFL) and I’m preparing a reading task. Please, simplify this text so that it can be understood by \prlevel CEFR EFL learners. To simplify you may use the CEFR \prlevel \prdescriptors, the \prcefrlevel vocabulary in \list and the \prcefrlevel grammar structures in \prgrammar. Make sure you keep the core content of the source text. Keep all the factual information, proper names (the names of people, places, etc.), times and dates. Keep the order of the events. Please avoid adding extra information to the text. Omit any introduction or conclusion. Only provide the simplified version of the text. Make sure you simplify the text until the end. Here are examples of three complex texts and their \prcefrlevel simplified adaptations. Examples: \proriginaltextu and its simplified \prcefrlevel \prsimplifiedtextu;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd;  \proriginaltextd and its simplified \prcefrlevel \prsimplifiedtextd]
-{\label{fig:prompt8}Prompt 8 para la estrategia 3.}
+{\label{fig:prompt8}Prompt 8 para la estrategia 3, textos extraidos de la particion de trial del dataset de la competencia.}
 \end{prompt}
 
 \begin{prompt}

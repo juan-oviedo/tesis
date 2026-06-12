@@ -2,46 +2,46 @@
 En este capítulo presentamos los elementos comunes que sirven de base para las dos tareas centrales de este trabajo: la clasificación de textos por nivel y la adaptación de textos entre niveles. Para ello, comenzamos introduciendo algunos conceptos fundamentales (\Cref{subsec:concep_fund}), luego nos enfocamos en el marco de referencia para el aprendizaje de lenguas (\Cref{subsec:aprend_leng}), y posteriormente describimos el papel de los modelos de lenguaje pre-entrenados (\Cref{subsec:modelos_pretrain}). A continuación, revisamos las técnicas de programación con instrucciones sobre LLMs (\Cref{subsec:propmting}) y finalizamos con una discusión sobre el ajuste fino (\Cref{subsec:finetuning}).
 
 \subsection{Conceptos Fundamentales}\label{subsec:concep_fund}
-En esta sección presentamos algunos conceptos fundamentales que utilizaremos a lo largo del trabajo. Nuestro objetivo es establecer un marco terminológico común que facilite la comprensión de los capítulos posteriores y permita contextualizar los experimentos y análisis realizados.\\
+En esta sección presentamos algunos conceptos fundamentales que utilizaremos a lo largo del trabajo. Nuestro objetivo es establecer un marco terminológico común que facilite la comprensión de los capítulos posteriores y permita contextualizar los experimentos y análisis realizados.
 
-\noindent\textbf {Natural Language Processing (NLP) - Procesamiento de Lenguaje Natural (PLN).\cite{nlp}} \\ 
-El NLP es un área de la inteligencia artificial dedicada a la interacción entre los computadores y el lenguaje humano. Su meta es que las máquinas comprendan, procesen y generen texto en forma similar a como lo hace una persona. Incluye tareas como traducción automática, análisis de sentimientos, extracción de información, clasificación de textos y generación de lenguaje. \\
+\paragraph{Natural Language Processing (NLP) - Procesamiento de Lenguaje Natural (PLN).\cite{nlp}}
+El NLP es un área de la inteligencia artificial dedicada a la interacción entre los computadores y el lenguaje humano. Su meta es que las máquinas comprendan, procesen y generen texto en forma similar a como lo hace una persona. Incluye tareas como traducción automática, análisis de sentimientos, extracción de información, clasificación de textos y generación de lenguaje.
 
-\noindent\textbf {Large Language Models (LLMs) - Grandes Modelos de Lenguaje.\cite{llms}} \\
-Los LLMs son modelos de gran escala entrenados con enormes volúmenes de texto y con miles de millones de parámetros. Han demostrado un desempeño sobresaliente en múltiples tareas lingüísticas, muchas veces sin necesidad de entrenamiento adicional específico. En este trabajo nos enfocamos en LLMs de código abierto. \\
+\paragraph{Large Language Models (LLMs) - Grandes Modelos de Lenguaje.\cite{llms}}
+Los LLMs son modelos de gran escala entrenados con enormes volúmenes de texto y con miles de millones de parámetros. Han demostrado un desempeño sobresaliente en múltiples tareas lingüísticas, muchas veces sin necesidad de entrenamiento adicional específico. En este trabajo nos enfocamos en LLMs de código abierto.
 
-\noindent\textbf {Pre-Trained Models - Modelos Preentrenados.\cite{pretrained}} \\
-Un modelo pre entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores. \\
+\paragraph{Pre-Trained Models - Modelos Preentrenados.\cite{pretrained}}
+Un modelo pre entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores.
 
-\noindent\textbf {Tokens - Unidades de procesamiento.\cite{Grefenstette1999}} \\
-Los tokens son las unidades mínimas con las que trabajan los modelos de lenguaje. Dependiendo del método de tokenización, un token puede representar una palabra, una sub-palabra o incluso un carácter. El número de tokens de un texto afecta directamente los recursos necesarios para procesarlo. \\
+\paragraph{Tokens - Unidades de procesamiento.\cite{Grefenstette1999}}
+Los tokens son las unidades mínimas con las que trabajan los modelos de lenguaje. Dependiendo del método de tokenización, un token puede representar una palabra, una sub-palabra o incluso un carácter. El número de tokens de un texto afecta directamente los recursos necesarios para procesarlo.
 
-\noindent\textbf {Prompt - Instrucción de entrada.\cite{Schulhoff2025}} \\
-Un prompt es el texto de entrada que damos a un LLM para obtener una respuesta. La forma en que está redactado tiene un impacto directo en la calidad y relevancia de la salida generada. \\
+\paragraph{Prompt - Instrucción de entrada.\cite{Schulhoff2025}}
+Un prompt es el texto de entrada que damos a un LLM para obtener una respuesta. La forma en que está redactado tiene un impacto directo en la calidad y relevancia de la salida generada.
 
-\noindent\textbf {Context Window - Ventana de contexto.\cite{context_window}} \\
-El context window se refiere a la cantidad máxima de tokens que un modelo puede procesar simultáneamente. Una ventana más amplia permite trabajar con textos largos y mantener coherencia global, aunque incrementa los requerimientos de memoria y cómputo. \\
+\paragraph{Context Window - Ventana de contexto.\cite{context_window}}
+El context window se refiere a la cantidad máxima de tokens que un modelo puede procesar simultáneamente. Una ventana más amplia permite trabajar con textos largos y mantener coherencia global, aunque incrementa los requerimientos de memoria y cómputo.
 
-\noindent\textbf {Prompt Engineering - Ingeniería de prompts.\cite{Brown2020}} \\
-El prompt engineering hace referencia a las técnicas para diseñar prompts que guíen de forma efectiva el comportamiento de un LLM. Un buen diseño de prompt puede ser decisivo para obtener resultados útiles en tareas específicas. \\
+\paragraph{Prompt Engineering - Ingeniería de prompts.\cite{Brown2020}}
+El prompt engineering hace referencia a las técnicas para diseñar prompts que guíen de forma efectiva el comportamiento de un LLM. Un buen diseño de prompt puede ser decisivo para obtener resultados útiles en tareas específicas.
 
-\noindent\textbf {In-Context Learning - Aprendizaje en contexto.\cite{Brown2020}} \\
-El in-context learning describe la capacidad de un LLM de aprender patrones o comportamientos a partir de ejemplos incluidos en el mismo prompt, sin necesidad de ajustar parámetros del modelo. Esta propiedad permite adaptar rápidamente un modelo a nuevas tareas. \\
+\paragraph{In-Context Learning - Aprendizaje en contexto.\cite{Brown2020}}
+El in-context learning describe la capacidad de un LLM de aprender patrones o comportamientos a partir de ejemplos incluidos en el mismo prompt, sin necesidad de ajustar parámetros del modelo. Esta propiedad permite adaptar rápidamente un modelo a nuevas tareas.
 
-\noindent\textbf {Fine-Tuning - Ajuste fino. \cite{finetuning_1, finetuning_2}} \\
-El fine-tuning consiste en continuar el entrenamiento de un modelo pre entrenado en un conjunto de datos específico, con el fin de adaptarlo a una tarea concreta. En este trabajo, aplicamos esta técnica para mejorar el desempeño en la clasificación y adaptación de textos por nivel CEFR. \\
+\paragraph{Fine-Tuning - Ajuste fino. \cite{finetuning_1, finetuning_2}}
+El fine-tuning consiste en continuar el entrenamiento de un modelo pre entrenado en un conjunto de datos específico, con el fin de adaptarlo a una tarea concreta. En este trabajo, aplicamos esta técnica para mejorar el desempeño en la clasificación y adaptación de textos por nivel CEFR.
 
-\noindent\textbf {Common European Framework of Reference for Languages (CEFR) - Marco Común Europeo de Referencia para las Lenguas.\cite{cefr}} \\
-El CEFR es un estándar internacional que define niveles de competencia lingüística desde A1 (principiante) hasta C2 (dominio avanzado). Permite clasificar textos y producciones lingüísticas de acuerdo con el nivel de los estudiantes, y constituye la base de referencia que utilizamos para la clasificación y adaptación de textos en inglés. \\
+\paragraph{Common European Framework of Reference for Languages (CEFR) - Marco Común Europeo de Referencia para las Lenguas.\cite{cefr}}
+El CEFR es un estándar internacional que define niveles de competencia lingüística desde A1 (principiante) hasta C2 (dominio avanzado). Permite clasificar textos y producciones lingüísticas de acuerdo con el nivel de los estudiantes, y constituye la base de referencia que utilizamos para la clasificación y adaptación de textos en inglés.
 
-\noindent\textbf {Dataset - Conjunto de datos.} \\
-Un dataset es un conjunto estructurado de ejemplos que se utiliza para entrenar, ajustar o evaluar modelos. En nuestro caso, trabajamos tanto con datasets de clasificación de textos con etiquetas CEFR como con datasets diseñados para la adaptación de textos entre niveles. \\
+\paragraph{Dataset - Conjunto de datos.}
+Un dataset es un conjunto estructurado de ejemplos que se utiliza para entrenar, ajustar o evaluar modelos. En nuestro caso, trabajamos tanto con datasets de clasificación de textos con etiquetas CEFR como con datasets diseñados para la adaptación de textos entre niveles.
 
-\noindent\textbf {Second Language Learners (L2 learners) - Estudiantes de segunda lengua (L2).} \\
-Llamamos estudiantes L2 a las personas que aprenden un idioma distinto de su lengua materna. En esta tesis nos enfocamos en estudiantes que aprenden inglés como segunda lengua, quienes se benefician especialmente de materiales clasificados y adaptados a su nivel de competencia.\\
+\paragraph{Second Language Learners (L2 learners) - Estudiantes de segunda lengua (L2).}
+Llamamos estudiantes L2 a las personas que aprenden un idioma distinto de su lengua materna. En esta tesis nos enfocamos en estudiantes que aprenden inglés como segunda lengua, quienes se benefician especialmente de materiales clasificados y adaptados a su nivel de competencia.
 
-\noindent\textbf{Automatic Readability Assessment (ARA) - Evaluación Automática de Legibilidad.\cite{Feng2010}} \\
-La evaluación automática de legibilidad se refiere al uso de algoritmos y modelos computacionales para estimar la complejidad lingüística de un texto y determinar qué tan fácil o difícil resulta de leer para una audiencia específica. Tradicionalmente, esta tarea se realizaba mediante fórmulas basadas en características superficiales del texto, como longitud promedio de palabras y oraciones (por ejemplo, Flesch Reading Ease\cite{Flesch1948} o Flesch-Kincaid\cite{Kincaid1975}). Con el avance del NLP y los LLMs, los sistemas modernos de ARA pueden considerar aspectos más sofisticados como complejidad sintáctica, densidad léxica, cohesión textual y características semánticas.\\
+\paragraph{Automatic Readability Assessment (ARA) - Evaluación Automática de Legibilidad.\cite{Feng2010}}
+La evaluación automática de legibilidad se refiere al uso de algoritmos y modelos computacionales para estimar la complejidad lingüística de un texto y determinar qué tan fácil o difícil resulta de leer para una audiencia específica. Tradicionalmente, esta tarea se realizaba mediante fórmulas basadas en características superficiales del texto, como longitud promedio de palabras y oraciones (por ejemplo, Flesch Reading Ease\cite{Flesch1948} o Flesch-Kincaid\cite{Kincaid1975}). Con el avance del NLP y los LLMs, los sistemas modernos de ARA pueden considerar aspectos más sofisticados como complejidad sintáctica, densidad léxica, cohesión textual y características semánticas.
 
 \subsection{Marco de referencia para aprendizaje de lenguas} \label{subsec:aprend_leng}
 En el ámbito de la enseñanza y evaluación de lenguas extranjeras, adoptamos como referencia principal el Common European Framework of Reference for Languages (CEFR). Este marco, desarrollado por el Consejo de Europa, establece una escala estandarizada de seis niveles (A1, A2, B1, B2, C1, C2), que permiten describir de manera consistente las competencias lingüísticas de un aprendiz en distintas dimensiones: comprensión, producción y mediación.
