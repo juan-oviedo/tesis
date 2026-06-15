@@ -1,21 +1,11 @@
 \documentclass[a4paper,12pt]{article}
-%\documentclass[draft,a4paper,12pt]{article}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-\usepackage{fontspec}
-
-\usepackage{lmodern}
 \usepackage[spanish, es-tabla]{babel} % soporte para lenguaje español
 
-
 \usepackage[spanish, textsize=tiny]{todonotes}
-\usepackage{comment}
 
-\usepackage{enumitem}
 \usepackage{microtype}
 
-\usepackage{xcolor}
 \usepackage{tcolorbox}
 \newcommand{\revisar}[1]{%
   \begin{tcolorbox}[
@@ -30,29 +20,20 @@
 }
 
 \usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue,
-}
 
 \usepackage[spanish, capitalize]{cleveref}
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
 \crefname{table}{Tabla}{Tablas}
-\Crefname{table}{Tabla}{Tablas}
 
 \usepackage{booktabs}
 \usepackage{multirow}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{lscape}
 \usepackage[normalem]{ulem}
 \usepackage{makecell}
 
 
 \usepackage{float}
-\usepackage{rotating}
-\usepackage{rotfloat}
 
 
 \usepackage{titlesec}
@@ -78,7 +59,7 @@
 \usepackage{csquotes}
 \usepackage[
     backend=biber,
-    style=numeric,
+    style=authoryear,
 ]{biblatex} % To add citations
 \addbibresource{example_citations.bib}
 
@@ -185,9 +166,8 @@
 \include{07_conclusiones/07}
 \include{08_agradecimientos/08}
 
-%\todo{abstract}
 %\todo{agredecimientos}
-%\todo{modificar tipo de citas}
+%\todo{revisar que queden bien las citas}
 %\todo{revisar ortografia}
 %\todo{poner en negrita y italica}
 %\todo{mejorar formato parametros}

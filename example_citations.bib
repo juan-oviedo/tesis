@@ -1,3 +1,40 @@
+
+
+#04------------------------
+
+@inproceedings{alva-manchego-etal-2025-findings,
+    title = "Findings of the {TSAR} 2025 Shared Task on Readability-Controlled Text Simplification",
+    author = "Alva-Manchego, Fernando  and
+      Stodden, Regina  and
+      Imperial, Joseph Marvin  and
+      Barayan, Abdullah  and
+      North, Kai  and
+      Tayyar Madabushi, Harish",
+    editor = "Shardlow, Matthew  and
+      Alva-Manchego, Fernando  and
+      North, Kai  and
+      Stodden, Regina  and
+      Saggion, Horacio  and
+      Khallaf, Nouran  and
+      Hayakawa, Akio",
+    booktitle = "Proceedings of the Fourth Workshop on Text Simplification, Accessibility and Readability (TSAR 2025)",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.tsar-1.8/",
+    doi = "10.18653/v1/2025.tsar-1.8",
+    pages = "116--130",
+    ISBN = "979-8-89176-176-6",
+    abstract = "This paper presents the findings of the first Shared Task on Readability-Controlled Text Simplification at TSAR 2025. The task required systems to simplify English texts to specific target readability levels of the Common European Framework of Reference for Languages (CEFR). We received 48 submissions from 20 participating teams, with approaches predominantly based on large language models (LLMs), which included iterative refinement, multi-agent setups, and LLM-as-a-judge pipelines. For this shared task, we developed a new dataset of pedagogical texts and evaluated submissions using a weighted combination of semantic similarity and CEFR-level accuracy. The results of the participating teams demonstrate that while LLMs can perform substantially well on this task, dependable and controlled simplification often requires complex, multi-iterative processes. Our findings also suggest that the capabilities of current systems are beginning to saturate existing automatic evaluation metrics, underscoring the need for reevaluation and practicality."
+}
+
+#05---------------------------------
+
+
+
+
+
 @article{aleman,
   abstract = {Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.},
   author   = {Elias-Leander Ahlers and Witold Brunsmann and Malte Schilling},
@@ -358,4 +395,138 @@
   journal      = {GitHub Repository},
   howpublished = {\url{https://github.com/juan-oviedo/Recursos-Linguisticos}},
   note         = {Accedido el 9 de junio de 2026} % Revisa si tu estilo te pide fecha de acceso
+}
+
+
+@article{Siddharthan2014,
+   abstract = {Text simplification, defined narrowly, is the process of reducing the linguistic complexity of a text, while still retaining the original information and meaning. More broadly, text simplification encompasses other operations; for example, conceptual simplification to simplify content as well as form, elaborative modification, where redundancy and explicitness are used to emphasise key points, and text summarisation to omit peripheral or inappropriate information. There is substantial evidence that manual text simplification is an effective intervention for many readers, but automatic simplification has only recently become an established research field. There have been several recent papers on the topic, however, which bring to the table a multitude of methodologies, each with their strengths and weaknesses. The goal of this paper is to summarise the large interdisciplinary body of work on text simplification and highlight the most promising research directions to move the field forward.},
+   author = {Advaith Siddharthan},
+   doi = {10.1075/ITL.165.2.06SID},
+   issn = {0019-0829},
+   issue = {2},
+   journal = {ITL - International Journal of Applied Linguistics},
+   month = {12},
+   pages = {259-298},
+   publisher = {John Benjamins Publishing Company},
+   title = {A survey of research on text simplification},
+   volume = {165},
+   url = {https://www.researchgate.net/publication/276321865_A_survey_of_research_on_text_simplification},
+   year = {2014}
+}
+
+@book{CouncilEurope2020,
+  author    = {{Council of Europe}},
+  year      = {2020},
+  title     = {Common European Framework of Reference for Languages: Learning, teaching, assessment – Companion volume},
+  publisher = {Council of Europe Publishing},
+  address   = {Strasbourg},
+  url       = {https://www.coe.int/lang-cefr}
+}
+
+@misc{Oxford3000,
+  title        = {The Oxford 3000: The list of the 3000 most important words to learn in {E}nglish, from {A1} to {B2} level},
+  author       = {{Oxford University Press}},
+  howpublished = {\url{https://www.oxfordlearnersdictionaries.com/external/pdf/wordlists/oxford-3000-5000/The_Oxford_3000.pdf}},
+  note         = {Accessed: 2025-09-21}
+}
+
+@book{North2010,
+  author    = {North, Brian and Ortega, Angel and Sheehan, Susan},
+  year      = {2010},
+  title     = {A Core Inventory for General English},
+  publisher = {British Council and EAQUALS}
+}
+
+@article{Beauchemin2023,
+   abstract = {In the field of automatic text simplification, assessing whether or not the meaning of the original text has been preserved during simplification is of paramount importance. Metrics relying on n-gram overlap assessment may struggle to deal with simplifications which replace complex phrases with their simpler paraphrases. Current evaluation metrics for meaning preservation based on large language models (LLMs), such as BertScore in machine translation or QuestEval in summarization, have been proposed. However, none has a strong correlation with human judgment of meaning preservation. Moreover, such metrics have not been assessed in the context of text simplification research. In this study, we present a meta-evaluation of several metrics we apply to measure content similarity in text simplification. We also show that the metrics are unable to pass two trivial, inexpensive content preservation tests. Another contribution of this study is MeaningBERT (https://github.com/GRAAL-Research/MeaningBERT), a new trainable metric designed to assess meaning preservation between two sentences in text simplification, showing how it correlates with human judgment. To demonstrate its quality and versatility, we will also present a compilation of datasets used to assess meaning preservation and benchmark our study against a large selection of popular metrics.},
+   author = {David Beauchemin and Horacio Saggion and Richard Khoury},
+   doi = {10.3389/FRAI.2023.1223924/TEXT},
+   issn = {26248212},
+   journal = {Frontiers in Artificial Intelligence},
+   keywords = {automatic text simplification,evaluation of text simplification systems,few-shot evaluation of text simplification systems,lexical simplification,meaning preservation,syntactic simplification},
+   month = {9},
+   pages = {1223924},
+   publisher = {Frontiers Media SA},
+   title = {MeaningBERT: assessing meaning preservation between sentences},
+   volume = {6},
+   url = {https://github.com/GRAAL-Research/MeaningBERT},
+   year = {2023}
+}
+
+@article{Kocmi2025,
+   abstract = {We present the preliminary rankings of machine translation (MT) systems submitted to the WMT25 General Machine Translation Shared Task, as determined by automatic evaluation metrics. Because these rankings are derived from automatic evaluation, they may exhibit a bias toward systems that employ re-ranking techniques, such as Quality Estimation or Minimum Bayes Risk decoding. The official WMT25 ranking will be based on human evaluation, which is more reliable and will supersede these results. The official WMT25 ranking will be based on human evaluation, which is more reliable and will supersede these results. The purpose of releasing these findings now is to assist task participants with their system description papers; not to provide final findings.},
+   author = {Tom Kocmi and Eleftherios Avramidis and Rachel Bawden and Ondřej Bojar and Konstantin Dranch and Anton Dvorkovich and Sergey Dukanov and Natalia Fedorova and Mark Fishel and Markus Freitag and Thamme Gowda and Roman Grundkiewicz and Barry Haddow and Marzena Karpinska and Philipp Koehn and Howard Lakougna and Jessica Lundin and Kenton Murray and Masaaki Nagata and Stefano Perrella and Lorenzo Proietti and Martin Popel and Maja Popovi´c and Popovi´c Parker Riley and Mariya Shmatova and Steinþór Steingrímsson and Lisa Yankovskaya and Vilém Zouhar},
+   keywords = {cs.CL},
+   month = {8},
+   title = {Preliminary Ranking of WMT25 General Machine Translation Systems},
+   url = {https://arxiv.org/pdf/2508.14909},
+   year = {2025}
+}
+
+@article{Shimada2025,
+   abstract = {We describe our submission to the TSAR 2025 shared task on readability-controlled text simplification, which evaluates systems on their ability to adjust linguistic complexity to specified CEFR levels while preserving meaning and coherence. We explored two complementary frameworks leveraging the shared task CEFR classifier as feedback. The first is an ensemble approach generating diverse candidates using multiple LLMs under zero-shot prompting with level-specific instructions and vocabulary lists, one-shot prompting, and round-trip translation. Candidates were filtered by predicted CEFR level before an LLM judge selected the final output. The second framework is a self-refinement loop, where a single candidate is iteratively revised with classifier feedback until matching the target level or reaching a maximum number of iterations. This study is among the first to apply round-trip translation and iterative self-refinement to controlled simplification, broadening the toolkit for adapting linguistic complexity.},
+   author = {Mao Shimada and Kexin Bian and Zhidong Ling and Mamoru Komachi},
+   doi = {10.18653/V1/2025.TSAR-1.20},
+   month = {11},
+   pages = {231-241},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {HIT-YOU at TSAR 2025 Shared Task Leveraging Similarity-Based Few-Shot Prompting, Round-Trip Translation, and Self-Refinement for Readability-Controlled Text Simplification},
+   url = {https://aclanthology.org/2025.tsar-1.20/},
+   year = {2025}
+}
+@article{Hayakawa2025,
+   abstract = {The TSAR 2025 Shared Task on Readability-Controlled Text Simplification focuses on simplifying English paragraphs written at an advanced level (B2 or higher) and rewriting them to target CEFR levels (A2 or B1). The challenge is to reduce linguistic complexity without sacrificing coherence or meaning. We developed three complementary approaches based on large language models (LLMs). The first approach (Run 1) generates a diverse set of paragraph-level simplifications. It then applies filters to enforce CEFR alignment, preserve meaning, and encourage diversity, and finally selects the candidates with the lowest perceived risk. The second (Run 2) performs simplification at the sentence level, combining structured prompting, coreference resolution, and explainable AI techniques to highlight influential phrases, with candidate selection guided by automatic and LLM-based judges. The third hybrid approach (Run 3) integrates both strategies by pooling paragraph- and sentence-level simplifications, and subsequently applying the identical filtering and selection architecture used in Run 1. In the official TSAR evaluation, the hybrid system ranked 2nd overall, while its component systems also achieved competitive results.},
+   author = {Akio Hayakawa and Nouran Khallaf and Horacio Saggion and Serge Sharoff},
+   doi = {10.18653/V1/2025.TSAR-1.16},
+   month = {11},
+   pages = {193-210},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {UoL-UPF at TSAR 2025 Shared Task A Generate-and-Select Approach for Readability-Controlled Text Simplification},
+   url = {https://aclanthology.org/2025.tsar-1.16/},
+   year = {2025}
+}
+@article{Miyata2025,
+   abstract = {We introduce the EhiMeNLP submission, which won the TSAR 2025 Shared Task on Readability-Controlled Text Simplification. Our system employed a two-step strategy of candidate generation and reranking. For candidate generation, we simplified the given text into more readable versions by combining multiple large language models with prompts. Then, for reranking, we selected the best candidate by readability-based filtering and ranking based on semantic similarity to the original text.},
+   author = {Rina Miyata and Koki Horiguchi and Risa Kondo and Yuki Fujiwara and Tomoyuki Kajiwara},
+   doi = {10.18653/V1/2025.TSAR-1.18},
+   month = {11},
+   pages = {217-222},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {EhiMeNLP at TSAR 2025 Shared Task Candidate Generation via Iterative Simplification and Reranking by Readability and Semantic Similarity},
+   url = {https://aclanthology.org/2025.tsar-1.18/},
+   year = {2025}
+}
+@article{Oviedo2025,
+   abstract = {TaskGen ranked as 6th best team in the TSAR 2025 shared task for English text adaptation to a target CEFR level. Our experiments consisted of prompting a Llama-3.1-8B-Instruct model with linguistic descriptors of the target level, examples of adaptations and multi-step approaches. Our best run, 13th in the overall ranking, applied an ensemble strategy using a voting mechanism to find the most adequate among 10 texts, each produced by a different prompting strategy.},
+   author = {Juan Cruz Oviedo and Elisabet Comelles Pujadas and Laura Alonso Alemany and Jordi Atserias Batalla},
+   doi = {10.18653/V1/2025.TSAR-1.13},
+   month = {11},
+   pages = {160-172},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {taskGen at TSAR 2025 Shared Task Exploring prompt strategies with linguistic knowledge},
+   url = {https://aclanthology.org/2025.tsar-1.13/},
+   year = {2025}
+}
+
+@article{Rocan2025,
+   abstract = {Large language models (LLMs) have demonstrated strong performance in text simplification tasks, but their high computational cost and proprietary nature often limit practical use, especially in education. We explore open-source LLMs for CEFR-level text simplification. By reducing model size and computational requirements, our approach enables greater accessibility and deployment in educational environments. Our results show some of the lowest error rates in producing CEFR-compliant texts at TSAR 2025, using models with 8 billion and 1 billion parameters. Such approaches have the potential to democratize NLP technologies for real-world applications.},
+   author = {Rareş-Alexandru Roşcan and Sergiu Nisioi},
+   doi = {10.18653/V1/2025.TSAR-1.22},
+   month = {11},
+   pages = {251-260},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {Archaeology at TSAR 2025 Shared Task Teaching Small Models to do CEFR Simplifications},
+   url = {https://aclanthology.org/2025.tsar-1.22/},
+   year = {2025}
+}
+@article{Arias-Russi2025,
+   abstract = {We present an agent-based system for the TSAR 2025 Shared Task on Readability-Controlled Text Simplification, which requires simplifying English paragraphs from B2+ levels to target A2 or B1 levels while preserving meaning. Our approach employs specialized agents for keyword extraction, text generation, and evaluation, coordinated through an iterative refinement loop. The system integrates a CEFR vocabulary classifier, pretrained evaluation models, and few-shot learning from trial data. Through iterative feedback between the evaluator and writer agents, our system automatically refines outputs until they meet both readability and semantic preservation constraints. This architecture achieved 4th position among participating teams, showing the effectiveness of combining specialized LLMs with automated quality control strategies for text simplification.},
+   author = {Felipe Arias-Russi and Kevin Cohen Solano and Rubén Manrique},
+   doi = {10.18653/V1/2025.TSAR-1.17},
+   month = {11},
+   pages = {211-216},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {Uniandes at TSAR 2025 Shared Task Multi-Agent CEFR Text Simplification with Automated Quality Assessment and Iterative Refinement},
+   url = {https://aclanthology.org/2025.tsar-1.17/},
+   year = {2025}
 }

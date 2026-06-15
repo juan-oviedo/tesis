@@ -1,5 +1,5 @@
 \section{Conjuntos de datos}\label{sec:datos}
-En este capítulo describimos los conjuntos de datos (datasets) utilizados en nuestros experimentos, tanto para la tarea de clasificación de niveles como para la de adaptación lingüística. Presentamos primero los criterios de selección y la tipología de los textos considerados (\Cref{subsection:tipos_textos}), seguidos de una descripción detallada de los corpus existentes y la conformación de nuestro dataset combinado (Custom Dataset) (\Cref{subsection:datasets}). Luego presentamos el corpus que armaron los organizadores de la tarea de simplificacion de TSAR [cita](\Cref{subsection:dataset_tsar}). Finalmente, detallamos el proceso de construcción y validación de un nuevo recurso de adaptaciones alineadas al CEFR, desarrollado específicamente para suplir las necesidades actuales de recursos específicos (\Cref{subsection:dataset_adaptacion}).
+En este capítulo describimos los conjuntos de datos (datasets) utilizados en nuestros experimentos, tanto para la tarea de clasificación de niveles como para la de adaptación lingüística. Presentamos primero los criterios de selección y la tipología de los textos considerados (\Cref{subsection:tipos_textos}), seguidos de una descripción detallada de los corpus existentes y la conformación de nuestro dataset combinado (Custom Dataset) (\Cref{subsection:datasets}). Luego presentamos el corpus que armaron los organizadores de la tarea de simplificacion de TSAR (\Cref{subsection:dataset_tsar}). Finalmente, detallamos el proceso de construcción y validación de un nuevo recurso de adaptaciones alineadas al CEFR, desarrollado específicamente para suplir las necesidades actuales de recursos específicos (\Cref{subsection:dataset_adaptacion}).
 
 \subsection{Tipos de textos y criterios de selección}\label{subsection:tipos_textos}
 Antes de detallar los corpus utilizados, es preciso definir las dimensiones que caracterizan a los textos en el ámbito del procesamiento de lenguaje natural (NLP) para L2. La elección de los datos está condicionada por tres ejes fundamentales: la granularidad, el origen de la autoría y el género textual.
@@ -28,8 +28,8 @@ En cuanto a la tipología, los textos abarcan una amplia gama de géneros, inclu
 \subsection{Datasets de textos clasificados con nivel CEFR}\label{subsection:datasets}
 En el campo de NLP aplicado a L2 learners, se han desarrollado recientemente varios datasets de textos en inglés clasificados por nivel CEFR. En este trabajo utilizamos principalmente dos de ellos:
 \begin{itemize}
-    \item CEFR Levelled English Texts (CLET) \cite{kagle}.
-    \item Cambridge English Readability Dataset (CERD) \cite{Imperial2025}.
+    \item CEFR Levelled English Texts (CLET) \parencite{kagle}.
+    \item Cambridge English Readability Dataset (CERD) \parencite{Imperial2025}.
 \end{itemize}
 
 La diferencia fundamental entre ambos radica en la forma en que los textos fueron etiquetados. En CLET, la mayor parte de las etiquetas fueron asignadas automáticamente utilizando la herramienta Text Inspector. En cambio, en CERD, las etiquetas fueron asignadas por expertos humanos, lo que otorga una mayor fiabilidad a las clasificaciones.
@@ -107,7 +107,7 @@ Ademas de la distribucion por nivel CEFR, se analizó la distribución de la lon
 \end{figure}
 
 \subsection{Corpus de la Shared Task TSAR 2025}\label{subsection:dataset_tsar}
-El dataset principal utilizado para los experimentos de adaptación fue diseñado específicamente para la shared task TSAR 2025 [cita], con el objetivo de dar soporte a la simplificación controlada por niveles de legibilidad alineados con el marco CEFR.
+El dataset principal utilizado para los experimentos de adaptación fue diseñado específicamente para la shared task TSAR 2025 \parencite{alva-manchego-etal-2025-findings}, con el objetivo de dar soporte a la simplificación controlada por niveles de legibilidad alineados con el marco CEFR.
 
 \subsubsection*{Fuente de los Datos}
 Los textos originales fueron extraídos de la plataforma LearnEnglish del British Council, un recurso de acceso abierto que ofrece contenido pedagógico curado para estudiantes de inglés. El material seleccionado consiste en pasajes de lectura graduados, escritos y revisados por educadores profesionales.
@@ -130,7 +130,7 @@ Dada la naturaleza del trabajo de los expertos (quienes trabajaron sobre subconj
 Es importante señalar que el dataset presenta un formato a nivel de párrafo. Si bien existen otros recursos a nivel de oración, la elección de párrafos en TSAR 2025 responde a la necesidad de evaluar la coherencia discursiva en la adaptación, un aspecto central para materiales pedagógicos reales. Asimismo, aunque el dataset se limita al dominio de inglés del British Council, representa un nuevo estándar de oro (gold-standard) paralelo para la comunidad de investigación en simplificación controlada por niveles de suficiencia.
 
 \subsection{Dataset de adaptaciones}\label{subsection:dataset_adaptacion}
-Una de las principales limitaciones en el área es la ausencia de datasets que contengan pares de textos donde uno es la adaptación del otro a otro nivel CEFR. Si bien existen corpus de simplificación (como Simple English Wikipedia \cite{wikipedia}), estos no están organizados de acuerdo con la escala CEFR ni orientados a contextos de enseñanza de segundas lenguas.
+Una de las principales limitaciones en el área es la ausencia de datasets que contengan pares de textos donde uno es la adaptación del otro a otro nivel CEFR. Si bien existen corpus de simplificación (como Simple English Wikipedia \parencite{wikipedia}), estos no están organizados de acuerdo con la escala CEFR ni orientados a contextos de enseñanza de segundas lenguas.
 
 Para suplir esta carencia, planteamos un dataset propio de adaptaciones, creado en colaboración con profesores de inglés como segunda lengua con amplia experiencia. Donde cada ejemplo consiste en un par de textos donde uno es la adaptación del otro hacia un nivel CEFR distinto (ya sea hacia mayor o menor complejidad).
 

@@ -4,34 +4,34 @@ En este capítulo presentamos los elementos comunes que sirven de base para las 
 \subsection{Conceptos Fundamentales}\label{subsec:concep_fund}
 En esta sección presentamos algunos conceptos fundamentales que utilizaremos a lo largo del trabajo. Nuestro objetivo es establecer un marco terminológico común que facilite la comprensión de los capítulos posteriores y permita contextualizar los experimentos y análisis realizados.
 
-\paragraph{Natural Language Processing (NLP) - Procesamiento de Lenguaje Natural (PLN).\cite{nlp}}
+\paragraph{Natural Language Processing (NLP) - Procesamiento de Lenguaje Natural (PLN).\parencite{nlp}}
 El NLP es un área de la inteligencia artificial dedicada a la interacción entre los computadores y el lenguaje humano. Su meta es que las máquinas comprendan, procesen y generen texto en forma similar a como lo hace una persona. Incluye tareas como traducción automática, análisis de sentimientos, extracción de información, clasificación de textos y generación de lenguaje.
 
-\paragraph{Large Language Models (LLMs) - Grandes Modelos de Lenguaje.\cite{llms}}
+\paragraph{Large Language Models (LLMs) - Grandes Modelos de Lenguaje.\parencite{llms}}
 Los LLMs son modelos de gran escala entrenados con enormes volúmenes de texto y con miles de millones de parámetros. Han demostrado un desempeño sobresaliente en múltiples tareas lingüísticas, muchas veces sin necesidad de entrenamiento adicional específico. En este trabajo nos enfocamos en LLMs de código abierto.
 
-\paragraph{Pre-Trained Models - Modelos Preentrenados.\cite{pretrained}}
+\paragraph{Pre-Trained Models - Modelos Preentrenados.\parencite{pretrained}}
 Un modelo pre entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores.
 
-\paragraph{Tokens - Unidades de procesamiento.\cite{Grefenstette1999}}
+\paragraph{Tokens - Unidades de procesamiento.\parencite{Grefenstette1999}}
 Los tokens son las unidades mínimas con las que trabajan los modelos de lenguaje. Dependiendo del método de tokenización, un token puede representar una palabra, una sub-palabra o incluso un carácter. El número de tokens de un texto afecta directamente los recursos necesarios para procesarlo.
 
-\paragraph{Prompt - Instrucción de entrada.\cite{Schulhoff2025}}
+\paragraph{Prompt - Instrucción de entrada.\parencite{Schulhoff2025}}
 Un prompt es el texto de entrada que damos a un LLM para obtener una respuesta. La forma en que está redactado tiene un impacto directo en la calidad y relevancia de la salida generada.
 
-\paragraph{Context Window - Ventana de contexto.\cite{context_window}}
+\paragraph{Context Window - Ventana de contexto.\parencite{context_window}}
 El context window se refiere a la cantidad máxima de tokens que un modelo puede procesar simultáneamente. Una ventana más amplia permite trabajar con textos largos y mantener coherencia global, aunque incrementa los requerimientos de memoria y cómputo.
 
-\paragraph{Prompt Engineering - Ingeniería de prompts.\cite{Brown2020}}
+\paragraph{Prompt Engineering - Ingeniería de prompts.\parencite{Brown2020}}
 El prompt engineering hace referencia a las técnicas para diseñar prompts que guíen de forma efectiva el comportamiento de un LLM. Un buen diseño de prompt puede ser decisivo para obtener resultados útiles en tareas específicas.
 
-\paragraph{In-Context Learning - Aprendizaje en contexto.\cite{Brown2020}}
+\paragraph{In-Context Learning - Aprendizaje en contexto.\parencite{Brown2020}}
 El in-context learning describe la capacidad de un LLM de aprender patrones o comportamientos a partir de ejemplos incluidos en el mismo prompt, sin necesidad de ajustar parámetros del modelo. Esta propiedad permite adaptar rápidamente un modelo a nuevas tareas.
 
-\paragraph{Fine-Tuning - Ajuste fino. \cite{finetuning_1, finetuning_2}}
+\paragraph{Fine-Tuning - Ajuste fino. \parencite{finetuning_1, finetuning_2}}
 El fine-tuning consiste en continuar el entrenamiento de un modelo pre entrenado en un conjunto de datos específico, con el fin de adaptarlo a una tarea concreta. En este trabajo, aplicamos esta técnica para mejorar el desempeño en la clasificación y adaptación de textos por nivel CEFR.
 
-\paragraph{Common European Framework of Reference for Languages (CEFR) - Marco Común Europeo de Referencia para las Lenguas.\cite{cefr}}
+\paragraph{Common European Framework of Reference for Languages (CEFR) - Marco Común Europeo de Referencia para las Lenguas.\parencite{cefr}}
 El CEFR es un estándar internacional que define niveles de competencia lingüística desde A1 (principiante) hasta C2 (dominio avanzado). Permite clasificar textos y producciones lingüísticas de acuerdo con el nivel de los estudiantes, y constituye la base de referencia que utilizamos para la clasificación y adaptación de textos en inglés.
 
 \paragraph{Dataset - Conjunto de datos.}
@@ -40,8 +40,8 @@ Un dataset es un conjunto estructurado de ejemplos que se utiliza para entrenar,
 \paragraph{Second Language Learners (L2 learners) - Estudiantes de segunda lengua (L2).}
 Llamamos estudiantes L2 a las personas que aprenden un idioma distinto de su lengua materna. En esta tesis nos enfocamos en estudiantes que aprenden inglés como segunda lengua, quienes se benefician especialmente de materiales clasificados y adaptados a su nivel de competencia.
 
-\paragraph{Automatic Readability Assessment (ARA) - Evaluación Automática de Legibilidad.\cite{Feng2010}}
-La evaluación automática de legibilidad se refiere al uso de algoritmos y modelos computacionales para estimar la complejidad lingüística de un texto y determinar qué tan fácil o difícil resulta de leer para una audiencia específica. Tradicionalmente, esta tarea se realizaba mediante fórmulas basadas en características superficiales del texto, como longitud promedio de palabras y oraciones (por ejemplo, Flesch Reading Ease\cite{Flesch1948} o Flesch-Kincaid\cite{Kincaid1975}). Con el avance del NLP y los LLMs, los sistemas modernos de ARA pueden considerar aspectos más sofisticados como complejidad sintáctica, densidad léxica, cohesión textual y características semánticas.
+\paragraph{Automatic Readability Assessment (ARA) - Evaluación Automática de Legibilidad.\parencite{Feng2010}}
+La evaluación automática de legibilidad se refiere al uso de algoritmos y modelos computacionales para estimar la complejidad lingüística de un texto y determinar qué tan fácil o difícil resulta de leer para una audiencia específica. Tradicionalmente, esta tarea se realizaba mediante fórmulas basadas en características superficiales del texto, como longitud promedio de palabras y oraciones (por ejemplo, Flesch Reading Ease\parencite{Flesch1948} o Flesch-Kincaid\parencite{Kincaid1975}). Con el avance del NLP y los LLMs, los sistemas modernos de ARA pueden considerar aspectos más sofisticados como complejidad sintáctica, densidad léxica, cohesión textual y características semánticas.
 
 \subsection{Marco de referencia para aprendizaje de lenguas} \label{subsec:aprend_leng}
 En el ámbito de la enseñanza y evaluación de lenguas extranjeras, adoptamos como referencia principal el Common European Framework of Reference for Languages (CEFR). Este marco, desarrollado por el Consejo de Europa, establece una escala estandarizada de seis niveles (A1, A2, B1, B2, C1, C2), que permiten describir de manera consistente las competencias lingüísticas de un aprendiz en distintas dimensiones: comprensión, producción y mediación.
@@ -56,12 +56,11 @@ No obstante, la adopción de este marco conlleva desafíos inherentes a su estru
 \subsection{Modelos de lenguaje pre-entrenados} \label{subsec:modelos_pretrain}
 Los Pre-Trained Models han transformado de manera decisiva el campo del NLP. Entrenados sobre grandes cantidades de texto sin etiquetar, estos modelos aprenden representaciones que capturan relaciones semánticas y gramaticales, lo que los convierte en una base versátil para diversas tareas, como por ejemplo: generacion de texto y dialogos, resumen y traducción, adaptacion de textos, etc.
 
-Existen distintos paradigmas de pre-entrenamiento. Los modelos masked language modeling (por ejemplo, BERT\cite{Devlin2018}) aprenden a predecir palabras ocultas en una oración (tambien se los llama encoder-only), mientras que los modelos causales (por ejemplo, GPT\cite{paper_gpt}) se entrenan para predecir la siguiente palabra en una secuencia (tambien se los llama decoder-only). En ambos casos, el context window es un factor determinante, ya que limita la cantidad de información que el modelo puede considerar en cada predicción.
+Existen distintos paradigmas de pre-entrenamiento. Los modelos masked language modeling (por ejemplo, BERT\parencite{Devlin2018}) aprenden a predecir palabras ocultas en una oración (tambien se los llama encoder-only), mientras que los modelos causales (por ejemplo, GPT\parencite{paper_gpt}) se entrenan para predecir la siguiente palabra en una secuencia (tambien se los llama decoder-only). En ambos casos, el context window es un factor determinante, ya que limita la cantidad de información que el modelo puede considerar en cada predicción.
 
 La evolución tecnológica ha permitido pasar de ventanas reducidas (512-1024 tokens en modelos como BERT o GPT-2) a context windows de decenas de miles en modelos recientes como GPT-4. Esto amplía el rango de aplicaciones posibles, pero también plantea restricciones de cómputo y memoria que debemos tener en cuenta en nuestro trabajo.
 
-\revisar{En el marco de esta tesis, los LLMs constituyen la base para experimentar con clasificación y adaptación de textos. Sin embargo, como discutiremos más adelante, su carácter generalista los hace propensos a producir salidas plausibles pero no necesariamente alineadas con criterios pedagógicos como los definidos por el CEFR.
-revisar si realmente esta la discucion}
+En el marco de esta tesis, los LLMs constituyen la base para experimentar con clasificación y adaptación de textos. Sin embargo, como discutiremos más adelante, su carácter generalista los hace propensos a producir salidas plausibles pero no necesariamente alineadas con criterios pedagógicos como los definidos por el CEFR.
 
 \subsection{Programación con instrucciones sobre LLMs} \label{subsec:propmting}
 Una de las formas más accesibles de adaptar un LLM a tareas específicas es a través de la programación con instrucciones en leguaje natural (prompt). En lugar de modificar sus parámetros internos, se manipula su comportamiento mediante el diseño del prompt.
