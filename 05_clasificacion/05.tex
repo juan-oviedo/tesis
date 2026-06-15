@@ -5,7 +5,7 @@ Históricamente, la clasificación de dificultad textual se basó en enfoques es
 
 Con el surgimiento de los LLMs, se abre la posibilidad de adoptar estrategias más flexibles, capaces de capturar patrones semánticos, sintácticos y discursivos sin necesidad de diseñar manualmente los rasgos relevantes. En este capítulo analizamos el rendimiento de distintos LLMs open-source y privativos en la clasificación CEFR, empleando estrategias livianas basadas en prompting, incluyendo prompts pedagógicos, descriptores CEFR, ejemplos seleccionados por docentes expertos y, cuando es relevante, técnicas de “conocimiento de dominio” incorporado mediante instrucciones estructuradas. Estas aproximaciones permiten explorar el conocimiento lingüístico latente en los modelos sin recurrir necesariamente a entrenamiento adicional.
 
-No obstante, dado que los LLMs no siempre alcanzan niveles de precisión suficientes mediante prompting, integramos también una etapa de fine-tuning específica para la tarea. A través de este proceso, buscamos evaluar hasta qué punto la adaptación supervisada de un modelo preentrenado mejora su capacidad para discriminar niveles cercanos y estabiliza su comportamiento ante variaciones en la longitud o estructura del prompt.
+No obstante, dado que los LLMs no siempre alcanzan niveles de precisión suficientes mediante prompting, integramos también una etapa de fine-tuning específica para la tarea. A través de este proceso, buscamos evaluar hasta qué punto la adaptación supervisada de un modelo pre-entrenado mejora su capacidad para discriminar niveles cercanos y estabiliza su comportamiento ante variaciones en la longitud o estructura del prompt.
 
 La sección se organiza de la siguiente manera. En primer lugar, revisamos la literatura existente en evaluación de legibilidad, clasificación CEFR y aplicaciones de LLMs en educación (\Cref{subsection:clas_trabajo}). Luego describimos los experimentos diseñados (\Cref{subsection:clas_diseño}), los prompts utilizados (\Cref{subsection:clas_prompt}), las métricas empleadas (\Cref{subsection:clas_metrica}), el proceso de fine-tuning (\Cref{subsection:clas_finetuning}) y, finalmente, presentamos un análisis detallado de los resultados (\Cref{subsection:clas_resuslt}), discusión (\Cref{subsection:clas_discusion}), conclusiones (\Cref{subsection:clas_conclusiones}) y trabajo futuro (\Cref{subsection:clas_trab_fut}).
 
@@ -20,7 +20,7 @@ A partir de los años 2000, el campo incorporó técnicas de PLN que permiten mo
 La evaluación para L2 presenta desafíos propios: el vocabulario disponible para un aprendiz crece de manera incremental, la gramática internalizada se desarrolla heterogéneamente y la familiaridad con distintos géneros textuales varía ampliamente. En consecuencia, las herramientas diseñadas para hablantes nativos no siempre se trasladan adecuadamente a contextos educativos de lengua extranjera. Esto motivó el desarrollo de sistemas especializados, muchos de ellos adoptados por plataformas educativas y pruebas estandarizadas.
 
 \subsubsection*{Clasificación de textos en PLN}
-La clasificación de textos es una de las tareas más estudiadas del PLN. Los enfoques clásicos basados en bag-of-words o n-grams han sido progresivamente desplazados por arquitecturas profundas, especialmente CNNs, RNNs y transformers. La aparición de modelos preentrenados a gran escala, como BERT, RoBERTa o GPT, transformó por completo la manera de abordar esta tarea, desplazando la ingeniería de características hacia estrategias basadas en transferencia de conocimiento \parencite{Zhou2020, Li2021, benchmark}.
+La clasificación de textos es una de las tareas más estudiadas del PLN. Los enfoques clásicos basados en bag-of-words o n-grams han sido progresivamente desplazados por arquitecturas profundas, especialmente CNNs, RNNs y transformers. La aparición de modelos pre-entrenados a gran escala, como BERT, RoBERTa o GPT, transformó por completo la manera de abordar esta tarea, desplazando la ingeniería de características hacia estrategias basadas en transferencia de conocimiento \parencite{Zhou2020, Li2021, benchmark}.
 
 Los estudios de revisión coinciden en que los transformers superan sistemáticamente a los métodos tradicionales, tanto en precisión como en estabilidad, incluso en escenarios con datos limitados. Esto es especialmente relevante para CEFR, donde la disponibilidad de corpus no siempre es uniforme y donde las fronteras entre clases adyacentes pueden resultar difusas incluso para anotadores humanos \parencite{Kerz2021, Wisniewski2017}.
 
@@ -184,7 +184,7 @@ En esta sección presentamos y analizamos los resultados obtenidos en los experi
 
 En la Figura \ref{fig:finetuning} se observa una diferencia clara y consistente entre el modelo ajustado mediante fine-tuning y aquellos evaluados únicamente con estrategias de prompting (incluyendo prompting pedagógico, descriptores CEFR y prompting con conocimiento lingüístico).
 
-El modelo con fine-tuning alcanza niveles de precisión considerablemente superior, lo que evidencia la importancia de adaptar los LLMs preentrenados al dominio específico de clasificación CEFR.
+El modelo con fine-tuning alcanza niveles de precisión considerablemente superior, lo que evidencia la importancia de adaptar los LLMs pre-entrenados al dominio específico de clasificación CEFR.
 
 \begin{figure}[H]
   \centering

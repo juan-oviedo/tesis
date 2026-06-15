@@ -10,8 +10,8 @@ El NLP es un área de la inteligencia artificial dedicada a la interacción entr
 \paragraph{Large Language Models (LLMs) - Grandes Modelos de Lenguaje.\parencite{llms}}
 Los LLMs son modelos de gran escala entrenados con enormes volúmenes de texto y con miles de millones de parámetros. Han demostrado un desempeño sobresaliente en múltiples tareas lingüísticas, muchas veces sin necesidad de entrenamiento adicional específico. En este trabajo nos enfocamos en LLMs de código abierto.
 
-\paragraph{Pre-Trained Models - Modelos Preentrenados.\parencite{pretrained}}
-Un modelo pre entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores.
+\paragraph{Pre-Trained Models - Modelos Pre-entrenados.\parencite{pretrained}}
+Un modelo pre-entrenado es aquel que ha sido entrenado previamente sobre un gran corpus de texto general antes de aplicarse a una tarea específica. Este enfoque aprovecha el conocimiento adquirido en la fase inicial de entrenamiento, reduciendo costos computacionales y datos necesarios para tareas posteriores.
 
 \paragraph{Tokens - Unidades de procesamiento.\parencite{Grefenstette1999}}
 Los tokens son las unidades mínimas con las que trabajan los modelos de lenguaje. Dependiendo del método de tokenización, un token puede representar una palabra, una sub-palabra o incluso un carácter. El número de tokens de un texto afecta directamente los recursos necesarios para procesarlo.
@@ -22,14 +22,14 @@ Un prompt es el texto de entrada que damos a un LLM para obtener una respuesta. 
 \paragraph{Context Window - Ventana de contexto.\parencite{context_window}}
 El context window se refiere a la cantidad máxima de tokens que un modelo puede procesar simultáneamente. Una ventana más amplia permite trabajar con textos largos y mantener coherencia global, aunque incrementa los requerimientos de memoria y cómputo.
 
-\paragraph{Prompt Engineering - Ingeniería de prompts.\parencite{Brown2020}}
+\paragraph{Prompt Engineering - Ingeniería de prompts.\parencite{Schulhoff2025}}
 El prompt engineering hace referencia a las técnicas para diseñar prompts que guíen de forma efectiva el comportamiento de un LLM. Un buen diseño de prompt puede ser decisivo para obtener resultados útiles en tareas específicas.
 
 \paragraph{In-Context Learning - Aprendizaje en contexto.\parencite{Brown2020}}
 El in-context learning describe la capacidad de un LLM de aprender patrones o comportamientos a partir de ejemplos incluidos en el mismo prompt, sin necesidad de ajustar parámetros del modelo. Esta propiedad permite adaptar rápidamente un modelo a nuevas tareas.
 
 \paragraph{Fine-Tuning - Ajuste fino. \parencite{finetuning_1, finetuning_2}}
-El fine-tuning consiste en continuar el entrenamiento de un modelo pre entrenado en un conjunto de datos específico, con el fin de adaptarlo a una tarea concreta. En este trabajo, aplicamos esta técnica para mejorar el desempeño en la clasificación y adaptación de textos por nivel CEFR.
+El fine-tuning consiste en continuar el entrenamiento de un modelo pre-entrenado en un conjunto de datos específico, con el fin de adaptarlo a una tarea concreta. En este trabajo, aplicamos esta técnica para mejorar el desempeño en la clasificación y adaptación de textos por nivel CEFR.
 
 \paragraph{Common European Framework of Reference for Languages (CEFR) - Marco Común Europeo de Referencia para las Lenguas.\parencite{cefr}}
 El CEFR es un estándar internacional que define niveles de competencia lingüística desde A1 (principiante) hasta C2 (dominio avanzado). Permite clasificar textos y producciones lingüísticas de acuerdo con el nivel de los estudiantes, y constituye la base de referencia que utilizamos para la clasificación y adaptación de textos en inglés.
@@ -54,16 +54,16 @@ No obstante, la adopción de este marco conlleva desafíos inherentes a su estru
 
 
 \subsection{Modelos de lenguaje pre-entrenados} \label{subsec:modelos_pretrain}
-Los Pre-Trained Models han transformado de manera decisiva el campo del NLP. Entrenados sobre grandes cantidades de texto sin etiquetar, estos modelos aprenden representaciones que capturan relaciones semánticas y gramaticales, lo que los convierte en una base versátil para diversas tareas, como por ejemplo: generacion de texto y dialogos, resumen y traducción, adaptacion de textos, etc.
+Los Pre-Trained Models han transformado de manera decisiva el campo del NLP. Entrenados sobre grandes cantidades de texto sin etiquetar, estos modelos aprenden representaciones que capturan relaciones semánticas y gramaticales, lo que los convierte en una base versátil para diversas tareas, como por ejemplo: generación de texto y diálogos, resumen y traducción, adaptación de textos, etc.
 
-Existen distintos paradigmas de pre-entrenamiento. Los modelos masked language modeling (por ejemplo, BERT\parencite{Devlin2018}) aprenden a predecir palabras ocultas en una oración (tambien se los llama encoder-only), mientras que los modelos causales (por ejemplo, GPT\parencite{paper_gpt}) se entrenan para predecir la siguiente palabra en una secuencia (tambien se los llama decoder-only). En ambos casos, el context window es un factor determinante, ya que limita la cantidad de información que el modelo puede considerar en cada predicción.
+Existen distintos paradigmas de pre-entrenamiento. Los modelos masked language modeling (por ejemplo, BERT\parencite{Devlin2018}) aprenden a predecir palabras ocultas en una oración (también se los llama encoder-only), mientras que los modelos causales (por ejemplo, GPT\parencite{paper_gpt}) se entrenan para predecir la siguiente palabra en una secuencia (también se los llama decoder-only). En ambos casos, el context window es un factor determinante, ya que limita la cantidad de información que el modelo puede considerar en cada predicción.
 
 La evolución tecnológica ha permitido pasar de ventanas reducidas (512-1024 tokens en modelos como BERT o GPT-2) a context windows de decenas de miles en modelos recientes como GPT-4. Esto amplía el rango de aplicaciones posibles, pero también plantea restricciones de cómputo y memoria que debemos tener en cuenta en nuestro trabajo.
 
 En el marco de esta tesis, los LLMs constituyen la base para experimentar con clasificación y adaptación de textos. Sin embargo, como discutiremos más adelante, su carácter generalista los hace propensos a producir salidas plausibles pero no necesariamente alineadas con criterios pedagógicos como los definidos por el CEFR.
 
 \subsection{Programación con instrucciones sobre LLMs} \label{subsec:propmting}
-Una de las formas más accesibles de adaptar un LLM a tareas específicas es a través de la programación con instrucciones en leguaje natural (prompt). En lugar de modificar sus parámetros internos, se manipula su comportamiento mediante el diseño del prompt.
+Una de las formas más accesibles de adaptar un LLM a tareas específicas es a través de la programación con instrucciones en lenguaje natural (prompt). En lugar de modificar sus parámetros internos, se manipula su comportamiento mediante el diseño del prompt.
 
 El Prompt Engineering consiste en definir cuidadosamente el texto de entrada para guiar la salida del modelo hacia lo esperado. Variaciones en la redacción, el orden o el nivel de detalle de un prompt pueden modificar significativamente los resultados.
 
@@ -72,7 +72,7 @@ Complementariamente, el In-Context Learning aprovecha la capacidad del modelo de
 Estas estrategias resultan especialmente útiles en escenarios donde los recursos anotados son limitados, permitiendo evaluar rápidamente el potencial de un modelo sin necesidad de entrenamiento adicional.
 
 \subsection{Ajuste fino} \label{subsec:finetuning}
-Cuando disponemos de datasets específicos del dominio, es posible recurrir al Fine-Tuning, es decir, continuar el entrenamiento de un modelo preentrenado con ejemplos adaptados a la tarea particular. Esta técnica permite modificar internamente los parámetros del modelo para alinearlo mejor con objetivos pedagógicos concretos.
+Cuando disponemos de datasets específicos del dominio, es posible recurrir al Fine-Tuning, es decir, continuar el entrenamiento de un modelo pre-entrenado con ejemplos adaptados a la tarea particular. Esta técnica permite modificar internamente los parámetros del modelo para alinearlo mejor con objetivos pedagógicos concretos.
 
 En nuestro caso, el fine-tuning puede aplicarse tanto a la clasificación de textos por nivel CEFR como a la adaptación de textos entre niveles, buscando superar las limitaciones de los enfoques basados exclusivamente en prompts. Por ejemplo, un modelo ajustado con ejemplos representativos del dominio educativo puede aprender a reconocer con mayor precisión las características lingüísticas de cada nivel y producir adaptaciones más consistentes con criterios didácticos.
 
