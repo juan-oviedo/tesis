@@ -1,5 +1,5 @@
 \section{Arquitectura}\label{sec:Arquitectura}
-La propuesta central de este trabajo se fundamenta en el uso de modelos de lenguaje de gran escala (LLMs) de código abierto como una alternativa superadora a los métodos tradicionales de procesamiento de lenguaje natural. A diferencia de los enfoques basados en la ingeniería manual de características, los cuales suelen ser estáticos y dependientes de corpus específicos, en cambio los LLMs ofrecen ventajas cruciales como una mayor flexibilidad, una alta capacidad de generalización y la potencia necesaria para adaptarse a diferentes contextos y estilos textuales con un menor esfuerzo de diseño. Para materializar esta propuesta y permitir el análisis y ajuste fino de estos modelos, es indispensable contar con un entorno tecnológico y una infraestructura robusta.
+La propuesta central de este trabajo se fundamenta en el uso de modelos de lenguaje de gran escala (LLMs) de código abierto como una alternativa superadora a los métodos tradicionales de procesamiento de lenguaje natural. A diferencia de los enfoques basados en la ingeniería manual de características, los cuales suelen ser estáticos y dependientes de corpus específicos, los LLMs ofrecen ventajas cruciales como una mayor flexibilidad, una alta capacidad de generalización y la potencia necesaria para adaptarse a diferentes contextos y estilos textuales con un menor esfuerzo de diseño. Para materializar esta propuesta y permitir el análisis y ajuste fino de estos modelos, es indispensable contar con un entorno tecnológico e infraestructura robusta.
 
 En este capítulo describimos la arquitectura general de nuestro trabajo experimental. Presentamos primero la tecnología usada para el desarrollo, ejecución y análisis de los experimentos (\Cref{subsec:stack}), seguido de una caracterización de los LLMs considerados (\Cref{subsec:llms}), y finalmente los detalles de infraestructura utilizada (\Cref{subsec:hardware}).
 
@@ -51,6 +51,6 @@ Ministral-8B-Instruct-2410 & 8B & 29.91 GB & 29.88 GB & 14.94 GB \\
 Mistral-Nemo-Instruct-2407 & 12B & 45.64 GB & 45.63 GB & 22.82 GB \\ \bottomrule
 \end{tabular}%
 }
-\caption{Requerimientos de memoria en GPU segun precisión fp32 y fp16 de los modelos}
+\caption{Requerimientos de memoria en GPU según precisión fp32 y fp16 de los modelos}
 \label{tab:modelos-peso}
 \end{table}
