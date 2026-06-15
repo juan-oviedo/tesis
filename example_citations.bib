@@ -32,17 +32,18 @@
 #05---------------------------------
 
 
-
-
-
 @article{aleman,
-  abstract = {Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.},
-  author   = {Elias-Leander Ahlers and Witold Brunsmann and Malte Schilling},
-  keywords = {cs.AI,cs.CL},
-  title    = {CLASSIFYING GERMAN LANGUAGE PROFICIENCY LEVELS USING LARGE LANGUAGE MODELS}
+   abstract = {Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.},
+   author = {Elias-Leander Ahlers and Witold Brunsmann and Malte Schilling},
+   keywords = {cs.AI,cs.CL},
+   month = {12},
+   title = {Classifying German Language Proficiency Levels Using Large Language Models},
+   url = {https://arxiv.org/pdf/2512.06483},
+   year = {2025}
 }
 
-@article{benchmark,
+
+@@misc{benchmark,
   abstract = {Automatic text classification (ATC) has experienced remarkable advancements in the past decade, best exemplified by recent small and large language models (SLMs and LLMs), leveraged by Transformer architectures. Despite recent effectiveness improvements, a comprehensive cost-benefit analysis investigating whether the effectiveness gains of these recent approaches compensate their much higher costs when compared to more traditional text classification approaches such as SVMs and Logistic Regression is still missing in the literature. In this context, this work's main contributions are twofold: (i) we provide a scientifically sound comparative analysis of the cost-benefit of twelve traditional and recent ATC solutions including five open LLMs, and (ii) a large benchmark comprising 22 datasets, including sentiment analysis and topic classification, with their (train-validation-test) partitions based on folded cross-validation procedures, along with documentation, and code. The release of code, data, and documentation enables the community to replicate experiments and advance the field in a more scientifically sound manner. Our comparative experimental results indicate that LLMs outperform traditional approaches (up to 26\%-7.1\% on average) and SLMs (up to 4.9\%-1.9\% on average) in terms of effectiveness. However, LLMs incur significantly higher computational costs due to fine-tuning, being, on average 590x and 8.5x slower than traditional methods and SLMs, respectively. Results suggests the following recommendations: (1) LLMs for applications that require the best possible effectiveness and can afford the costs; (2) traditional methods such as Logistic Regression and SVM for resource-limited applications or those that cannot afford the cost of tuning large LLMs; and (3) SLMs like Roberta for near-optimal effectiveness-efficiency trade-off. Documentation, code, and datasets can be ac-cessed on GitHub-https://github.com/waashk/atcBench/.},
   author   = {Washington Cunha and Leonardo Rocha and Marcos André Gonçalves},
   journal  = {Proceedings of Washington Cunha et al.},
