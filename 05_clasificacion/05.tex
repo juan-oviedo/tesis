@@ -37,7 +37,7 @@ La investigación orientada específicamente a predecir niveles CEFR ha seguido 
     Con la llegada de modelos como BERT, los F1-scores mejoraron notablemente. Estos avances mostraron que las representaciones profundas capturan diferencias lingüísticas más sutiles que los enfoques basados en reglas \parencite{JulianaSchmalz2021}.
 
     \item \textbf{Herramientas especializadas}
-    Sistemas como el EDIA CEFR Tagger \parencite{edia}, Text Inspector \parencite{text_inspector} o Cathoven \parencite{cathoven} que integran modelos clasicos con recursos lingüísticos interpretables, aunque ultimamente tambien implementan modelos neuronales o LLMs. Su uso se ha extendido en contextos educativos, aunque generalmente operan como cajas cerradas.
+    Sistemas como el EDIA CEFR Tagger \parencite{edia}, Text Inspector \parencite{text_inspector} o Cathoven \parencite{cathoven} que integran modelos clasicos con recursos lingüísticos interpretables, aunque ultimamente también implementan modelos neuronales o LLMs. Su uso se ha extendido en contextos educativos, aunque generalmente operan como cajas cerradas.
 
     \item \textbf{LLMs y prompting}
     Investigaciones recientes han explorado hasta qué punto los LLMs internalizan el conocimiento de la escala CEFR y son capaces de replicar el juicio de un evaluador experto. Trabajos como el de \parencite{Benedetto2025} evalúan esta capacidad mediante una suite de tareas diseñadas para medir si los modelos han codificado adecuadamente los requisitos pedagógicos del marco, utilizando técnicas de prompting que van desde el zero-shot hasta enfoques orientados al razonamiento. Por otro lado, estudios centrados en idiomas específicos, como el de \parencite{aleman} para el alemán, demuestran que si bien el prompt engineering ofrece resultados prometedores, el fine-tuning de modelos como Llama-3-8B permite alcanzar niveles de precisión superiores. No obstante, los resultados globales siguen siendo dispares: aunque los modelos logran distinguir diferencias amplias entre niveles (ej. A1 vs. C2), persiste una dificultad significativa para clasificar niveles adyacentes, especialmente en la transición B1–B2 y B2–C1, donde las fronteras de los descriptores cualitativos suelen solaparse.
@@ -60,7 +60,7 @@ Por motivos de costo y políticas de acceso, los modelos propietarios solo pudie
 Por otro lado, incorporamos herramientas especializadas en análisis de dificultad textual, como Text Inspector, Cathoven y el clasificador del TSAR, utilizadas como referencias simbólicas off-the-shelf del estado del arte. Esta doble estrategia nos permitió contrastar las capacidades de los LLMs con aproximaciones tradicionales diseñadas específicamente para esta tarea.
 
 \subsection{Modalidades de prompting}\label{subsection:clas_prompt}
-Ademas de los modelos, se decidio comparar distintas estrategias de prompting que buscan orientar al modelo desde aproximaciones con prompt simples, hasta variantes que incorporan conocimiento lingüístico explícito o ejemplos representativos.
+Además de los modelos, se decidió comparar distintas estrategias de prompting que buscan orientar al modelo desde aproximaciones con prompts simples, hasta variantes que incorporan conocimiento lingüístico explícito o ejemplos representativos.
 
 Se definieron tres grandes grupos:
 \begin{itemize}
@@ -74,9 +74,9 @@ Se definieron tres grandes grupos:
     Los ejemplos fueron seleccionados por docentes expertos de manera cuidadosa. Se proporcionaron textos con su nivel CEFR correspondiente, con el fin de suministrar patrones lingüísticos representativos.
 \end{itemize}
 
-En todos los grupos, también se evaluó la influencia del sesgo de sobre-clasificación en B2 (descubierta en etapas tempranas del proyecto) y como mitigar esto, diseñando prompts que excluían explícitamente dicho nivel o que se le indicaba al modelo del problema y se le pedia que lo corrigiera. Además, se evaluó la diferencia entre la clasificacion dada si se pide que sea para una tarea de lecto comprensión o no.
+En todos los grupos, también se evaluó la influencia del sesgo de sobre-clasificación en B2 (descubierta en etapas tempranas del proyecto) y cómo mitigar esto, diseñando prompts que excluían explícitamente dicho nivel o que se le indicaba al modelo del problema y se le pedía que lo corrigiera. Además, se evaluó la diferencia entre la clasificación dada si se pide que sea para una tarea de lecto comprensión o no.
 
-Esto dio lugar a un conjunto amplio de prompts, enumerados y resumidos posteriormente en la Tabla \ref{tab:resumen_prompts}, ademas en el \Cref{sec:prompts} se encuentran en mas detalle cada prompt. Luego, cada experimento corresponde a la combinación de un modelo y un prompt, asegurando la comparabilidad entre modelos y estrategias.
+Esto dio lugar a un conjunto amplio de prompts, enumerados y resumidos posteriormente en la Tabla \ref{tab:resumen_prompts}, además en el \Cref{sec:prompts} se encuentran en más detalle cada prompt. Luego, cada experimento corresponde a la combinación de un modelo y un prompt, asegurando la comparabilidad entre modelos y estrategias.
 
 \input{05_clasificacion/tabla_prompt}
 
@@ -189,7 +189,7 @@ El modelo con fine-tuning alcanza niveles de precisión considerablemente superi
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_con_finetuning_vs_sin_Accuracy_aprox.png}
-  \caption{Acuraccy Aproximada de los modelos sin finetuning (celeste) vs modelos con finetuning propios (rojo), con promedio de todos los prompts usados}
+  \caption{Accuracy Aproximada de los modelos sin finetuning (celeste) vs modelos con finetuning propios (rojo), con promedio de todos los prompts usados}
   \label{fig:finetuning}
 \end{figure}
 
@@ -201,7 +201,7 @@ Al analizar la partición de holdout, se observa un desempeño sobresaliente por
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_privativo_vs_libre_acuraccy_aprox.png}
-  \caption{Acuraccy Aproximada de los modelos libres (celeste) vs modelos privativos (naranja), con promedio de los prompts 15 a 18}
+  \caption{Accuracy Aproximada de los modelos libres (celeste) vs modelos privativos (naranja), con promedio de los prompts 15 a 18}
   \label{fig:privativos}
 \end{figure}
 
@@ -216,7 +216,7 @@ En función de estos resultados y considerando además su menor tamaño y requer
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_differencias_entre_libres_acuracy_aprox.png}
-  \caption{Acuraccy Aproximada de los modelos libres, con promedio de todos los prompts}
+  \caption{Accuracy Aproximada de los modelos libres, con promedio de todos los prompts}
   \label{fig:libres}
 \end{figure}
 
@@ -238,7 +238,7 @@ Las tendencias dependen del modelo.
     \item Gemma 2 9B: en el experimento 23 obtiene accuracy 0 debido a una ventana de contexto insuficiente, luego tiene baja variabilidad sin mostrar un patron claro.
     \item LLaMA 3.1 8B: leve mejora progresiva de 0-shot $\rightarrow$ 1-shot $\rightarrow$ 2-shot.
     \item LLaMA 3.2 11B: comportamiento similar, aunque con menor gradiente de mejora.
-    \item llama 3.2 3B: alta variabilidad, los prompts con correccion de sesgo parece influir negativamente.
+    \item LLaMA 3.2 3B: alta variabilidad, los prompts con corrección de sesgo parecen influir negativamente.
     \item Mistral 12B: tiene variabilidad media, sin un patron claro.
     \item Mistral 8B: su rendimiento es el mas bajo, sin mostrar algun patron.
     \item Fine-tuning: muy poca variabilidad, resultados muy buenos.
@@ -250,14 +250,14 @@ Estos resultados sugieren que, para algunos modelos, proporcionar más informaci
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_experimentos_Accuracy_aprox.png}
-  \caption{Acuraccy Aproximada de todos los experimentos realizados, con promedio de todos los modelos segun los prompts. Los resultados fueron coloreados segun el tipo de modelo, colores nitidos modelos libres, colores claros modelos con finetuning, colores oscuros modelos privativos y colores grises herramientas.}
+  \caption{Accuracy Aproximada de todos los experimentos realizados, con promedio de todos los modelos según los prompts. Los resultados fueron coloreados según el tipo de modelo, colores nítidos modelos libres, colores claros modelos con finetuning, colores oscuros modelos privativos y colores grises herramientas.}
   \label{fig:todos_los_modelos}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_stripplot_por_modelo.png}
-  \caption{Acuraccy Aproximada de todos los experimentos realizados, separados por modelo.}
+  \caption{Accuracy Aproximada de todos los experimentos realizados, separados por modelo.}
   \label{fig:modelos_ind}
 \end{figure}
 
@@ -270,32 +270,32 @@ MANTENGO ESTE PARRAFO?}
 
 \paragraph{Preferencias de los modelos}
 
-Anteriormente mencionamos que existian modelos que tenian una preferencia (bias) hacia categorias particulares, en el grafico \ref{fig:bias} podemos observar que todos los modelos tienen una clase que tiene sobre representacion con respecto de la distribucion original del dataset. Se puede ver que para Llama 3.1 8B, Llama 3.2 11B, Mistral 12B, tiene un bias sobre B2.
+Anteriormente mencionamos que existian modelos que tenian una preferencia (bias) hacia categorias particulares, en el gráfico \ref{fig:bias} podemos observar que todos los modelos tienen una clase que tiene sobre representacion con respecto de la distribucion original del dataset. Se puede ver que para Llama 3.1 8B, Llama 3.2 11B, Mistral 12B, tiene un bias sobre B2.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_bias.png}
-  \caption{Cantidad de predicciones promedias hechas por cada modelo, agrupadas por el tipo de prompt. El area de B2 se ecuentra sobreada para una lectura mas facil. Sin cat significa que no se encontro una clasificacion valida}
+  \caption{Cantidad de predicciones promedias hechas por cada modelo, agrupadas por el tipo de prompt. El área de B2 se encuentra sombreada para una lectura mas facil. Sin cat significa que no se encontro una clasificacion valida}
   \label{fig:bias}
 \end{figure}
 
 Ademas se puede observar las categorias que tienen una baja representacion, como C2 para Gemma 2 9B o A1 para Llama 3.1 8B. Es de esperar que los extremos tengan una baja representacion, pero hay casos distintos como B2 para Llama 3.2 3B.
 
-Para el caso de los modelos con finetuning tiene una distribucion mas similar a la original, pero se puede observar que hay una sobre representacion de A2 y baja representacion hacia B1, esto necesita un estudio particular sobre los textos de la particion de evaluacion que se estan clasificando mal de B1, ya que es posible que sean estructuralemente parecidos a los textos de A2 de la particion de entrenamiento, o sean distintos a los textos de B1 de la particion de entrenamiento. Tambien esta la posibilidad de que se encuentren mal clasificados, ya que no hay una clara distincion entre los niveles.
+Para el caso de los modelos con finetuning tiene una distribucion mas similar a la original, pero se puede observar que hay una sobre representacion de A2 y baja representacion hacia B1, esto necesita un estudio particular sobre los textos de la particion de evaluacion que se estan clasificando mal de B1, ya que es posible que sean estructuralemente parecidos a los textos de A2 de la particion de entrenamiento, o sean distintos a los textos de B1 de la particion de entrenamiento. También esta la posibilidad de que se encuentren mal clasificados, ya que no hay una clara distincion entre los niveles.
 
 
-\paragraph{Matriz de confucion para los modelos}
+\paragraph{Matriz de confusión para los modelos}
 
-En la tabla \ref{tab:mejores_prompts_modelos} se encuentra el mejor prompt segun su Aproximated Acuraccy de cada modelo. En esta tabla se puede observar que no hay un prompt que destaque en para todos los modelos, tampoco se puede encontrar una estrategia de prompting que sea ampliamente superadora a las demas, ya que esta tabla sugiere que varios modelos mejoran con 2-shot, pero no es definitiva para todos los modelo.
+En la tabla \ref{tab:mejores_prompts_modelos} se encuentra el mejor prompt según su Accuracy Aproximada de cada modelo. En esta tabla se puede observar que no hay un prompt que destaque en para todos los modelos, tampoco se puede encontrar una estrategia de prompting que sea ampliamente superadora a las demas, ya que esta tabla sugiere que varios modelos mejoran con 2-shot, pero no es definitiva para todos los modelo.
 
-En el grafico \ref{fig:matriz_confucion} se encuentran las matrices de confucion para los experimentos anteriores, cada modelo con su mejor prompt. Se puede observar que cada modelo mantiene la tendencia que se ve en el grafico \ref{fig:bias}. Ademas se puede hacer foco en que es lo que no se desea en los modelos, lo primero es que su matriz de confucion sea disperza como la matriz de Mistral 8B y lo segundo es que hay algunos errores que son peores que otros, por ejemplo clasificar un texto como A2 siendo que su clasificacion original es C2 es un error mas severo que clasificar textos como B1 siendo originalmente A2, tanto por la proximidad como por la relacion de dificulad (una persona con nivel B1 deberia poder interpretar correctamente un texto de A2).
+En el gráfico \ref{fig:matriz_confucion} se encuentran las matrices de confusión para los experimentos anteriores, cada modelo con su mejor prompt. Se puede observar que cada modelo mantiene la tendencia que se ve en el gráfico \ref{fig:bias}. Ademas se puede hacer foco en que es lo que no se desea en los modelos, lo primero es que su matriz de confusión sea dispersa como la matriz de Mistral 8B y lo segundo es que hay algunos errores que son peores que otros, por ejemplo clasificar un texto como A2 siendo que su clasificacion original es C2 es un error mas severo que clasificar textos como B1 siendo originalmente A2, tanto por la proximidad como por la relacion de dificulad (una persona con nivel B1 deberia poder interpretar correctamente un texto de A2).
 
 \begin{table}[H]
 \centering
 \resizebox{\linewidth}{!}{
 \begin{tabular}{@{}cllcc@{}}
 \toprule
-Orden & Modelo & Prompt & Approximated Accuracy & Accuracy \\ \midrule
+Orden & Modelo & Prompt & Accuracy Aproximada & Accuracy \\ \midrule
 1 & D) TSAR Clasification & No toma Prompt & \textbf{0.915} & \textbf{0.829} \\
 2 & C) Chat GPT & Prompt 15 & 0.841 & 0.707 \\
 3 & B) Fine-tuning Adaptado & Prompt 22 & 0.829 & 0.707 \\
@@ -310,14 +310,14 @@ Orden & Modelo & Prompt & Approximated Accuracy & Accuracy \\ \midrule
 112 & A) Mistral 8B & Prompt 16 & 0.500 & 0.341 \\
 \bottomrule
 \end{tabular}}
-\caption{Mejor prompt para cada modelo según la Approximated Accuracy, para la partición de holdout.}
+\caption{Mejor prompt para cada modelo según la Accuracy Aproximada, para la partición de holdout.}
 \label{tab:mejores_prompts_modelos}
 \end{table}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_todas_matrices.png}
-  \caption{Matriz de confucion de todos los modelos, con su mejor prompt segun Aproximated Acuraccy.}
+  \caption{Matriz de confusión de todos los modelos, con su mejor prompt según Accuracy Aproximada.}
   \label{fig:matriz_confucion}
 \end{figure}
 
@@ -325,7 +325,7 @@ Orden & Modelo & Prompt & Approximated Accuracy & Accuracy \\ \midrule
 
 Los experimentos realizados demuestran que los modelos de lenguaje de gran tamaño generativos (de tipo decoder-only) son capaces de identificar de manera confiable el nivel del Marco Común Europeo de Referencia de un texto, particularmente cuando han sido sometidos a un fine-tuning. Los modelos ajustados superan sistemáticamente a todas las estrategias basadas en ingeniería de prompts.
 
-Si bien el la ingeniería de prompts y el conocimiento linguistico, mejora ligeramente el desempeño en ciertos casos, también provoca una degradación en otros, lo que evidencia una notable variabilidad intermodelo. De hecho, la inconsistencia en los resultados de algunos modelos específicos llega a comprometer su confiabilidad para esta tarea.
+Si bien la ingeniería de prompts y el conocimiento lingüístico, mejora ligeramente el desempeño en ciertos casos, también provoca una degradación en otros, lo que evidencia una notable variabilidad intermodelo. De hecho, la inconsistencia en los resultados de algunos modelos específicos llega a comprometer su confiabilidad para esta tarea.
 
 Asimismo, la comparación entre prompts revela que, más allá de la variabilidad individual, existe una marcada tendencia en la mayoría de los modelos evaluados a sobreclasificar los textos en niveles intermedios (predominantemente en el nivel B2) y a infraclasificar las clases situadas en los extremos de la escala. Una de las causas subyacentes a este fenómeno podría ser el desbalance en el corpus de preentrenamiento; al igual que ocurre con el nivel A1, la escasez de material académico o literario representativo en los extremos de la distribución dificulta que el modelo generalice adecuadamente estas categorías.
 
@@ -343,7 +343,7 @@ Finalmente, la evaluación comparativa frente a herramientas comerciales cerrada
 
 \subsection{Conclusiones}\label{subsection:clas_conclusiones}
 
-Este estudio demuestra que los modelos de lenguaje de gran tamaño generativos de código abierto constituyen una alternativa confiable para la clasificación automática del nivel del Marco Común Europeo de Referencia, siempre que se implemente una estrategia adecuada de ajuste fino. Mientras que las aproximaciones basadas en zero-shot y conocimiento linguistico derivan en un desempeño moderado y, en ocasiones, inconsistente, los modelos ajustados logran niveles de precisión que superan a evaluadores comerciales e institucionales de referencia, incluso habiendo sido entrenados con conjuntos de datos significativamente más reducidos.
+Este estudio demuestra que los modelos de lenguaje de gran tamaño generativos de código abierto constituyen una alternativa confiable para la clasificación automática del nivel del Marco Común Europeo de Referencia, siempre que se implemente una estrategia adecuada de ajuste fino. Mientras que las aproximaciones basadas en zero-shot y conocimiento lingüístico derivan en un desempeño moderado y, en ocasiones, inconsistente, los modelos ajustados logran niveles de precisión que superan a evaluadores comerciales e institucionales de referencia, incluso habiendo sido entrenados con conjuntos de datos significativamente más reducidos.
 
 Por otra parte, se determinó que la escala del modelo es un factor determinante solo hasta un umbral crítico, dado que las arquitecturas con 8B de parámetros o más convergen en perfiles de rendimiento y estabilidad equivalentes. Asimismo, la disponibilidad de datos etiquetados que sean diversos y rigurosamente curados, particularmente en los niveles inferiores e intermedios de la escala, se consolida como un factor decisivo para la robustez global del sistema.
 
