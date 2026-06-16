@@ -1,6 +1,218 @@
+#02-------------------------------
+@misc{nlp,
+  author = {{IBM}},
+  title = {What Is NLP (Natural Language Processing)? | IBM},
+  year = {2024},
+  url   = {https://www.ibm.com/think/topics/natural-language-processing}
+}
+
+@misc{llms,
+  author = {{IBM}},
+  title = {What Are Large Language Models (LLMs)? | IBM},
+  year = {2024},
+  url   = {https://www.ibm.com/think/topics/large-language-models}
+}
+
+@misc{pretrained,
+  author = {{IBM}},
+  title = {What Is A Pretrained Model? | IBM},
+  year = {2024},
+  url   = {https://www.ibm.com/think/topics/pretrained-model}
+}
+
+@article{Grefenstette1999,
+  abstract  = {The linguistic annotation of naturally occurring text can be seen as a progression of transformations of the original text, with each step abstracting away surface differences. Tokenization is one of the earliest steps in this transformation during natural language...},
+  author    = {Gregory Grefenstette},
+  doi       = {10.1007/978-94-015-9273-4_9},
+  isbn      = {978-94-015-9273-4},
+  pages     = {117-133},
+  publisher = {Springer, Dordrecht},
+  title     = {Tokenization},
+  url       = {https://link.springer.com/chapter/10.1007/978-94-015-9273-4_9},
+  year      = {1999}
+}
+
+@article{Schulhoff2025,
+  abstract = {Generative Artificial Intelligence (GenAI) systems are increasingly being deployed across diverse industries and research domains. Developers and end-users interact with these systems through the use of prompting and prompt engineering. Although prompt engineering is a widely adopted and extensively researched area, it suffers from conflicting terminology and a fragmented ontological understanding of what constitutes an effective prompt due to its relatively recent emergence. We establish a structured understanding of prompt engineering by assembling a taxonomy of prompting techniques and analyzing their applications. We present a detailed vocabulary of 33 vocabulary terms, a taxonomy of 58 LLM prompting techniques, and 40 techniques for other modalities. Additionally, we provide best practices and guidelines for prompt engineering, including advice for prompting engineering ChatGPT and other state-of-the-art (SOTA) LLMs. We further present a meta-analysis of the entire literature on natural language prefix-prompting. As a culmination of these efforts, this paper presents the most comprehensive survey on prompt engineering to date.},
+  author   = {Sander Schulhoff and Michael Ilie and Nishant Balepur and Konstantine Kahadze and Amanda Liu and Chenglei Si and Yinheng Li and Aayush Gupta and Hyojung Han and Sevien Schulhoff and Pranav Sandeep Dulepet and Saurav Vidyadhara and Dayeon Ki and Sweta Agrawal and Chau Pham and Gerson Kroiz and Feileen Li and Hudson Tao and Ashay Srivastava and Hevander Da Costa and Saloni Gupta and Megan L Rogers and Inna Goncearenco and Giuseppe Sarli and Igor Galynker and Denis Peskoff and Marine Carpuat and Jules White and Shyamal Anadkat and Alexander Hoyle and Philip Resnik},
+  title    = {The Prompt Report: A Systematic Survey of Prompt Engineering Techniques},
+  year     = {2025}
+}
+
+@misc{context_window,
+  author = {{IBM}},
+  title = {What is a context window? | IBM},
+  year = {2024},
+  url   = {https://www.ibm.com/think/topics/context-window}
+}
+
+@article{Brown2020,
+  abstract = {Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions-something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.},
+  author   = {Tom B Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam Mccandlish and Alec Radford and Ilya Sutskever and Dario Amodei Openai},
+  title    = {Language Models are Few-Shot Learners},
+  year     = {2020}
+}
+
+@article{finetuning_1,
+  abstract = {Foundation models (FM) have demonstrated remarkable performance across a wide range of tasks (especially in the fields of natural language processing and computer vision), primarily attributed to their ability to comprehend instructions and access extensive, high-quality data. This not only showcases their current effectiveness but also sets a promising trajectory towards the development of artificial general intelligence. Unfortunately, due to multiple constraints, the raw data of the model used for large model training are often inaccessible, so the use of end-to-end models for downstream tasks has become a new research trend, which we call Learn From Model (LFM) in this article. LFM focuses on the research, modification, and design of FM based on the model interface, so as to better understand the model structure and weights (in a black box environment), and to generalize the model to downstream tasks. The study of LFM techniques can be broadly categorized into five major areas: model tuning, model distillation, model reuse, meta learning and model editing. Each category encompasses a repertoire of methods and strategies that aim to enhance the capabilities and performance of FM. This paper gives a comprehensive review of the current methods based on FM from the perspective of LFM, in order to help readers better understand the current research status and ideas. To conclude, we summarize the survey by highlighting several critical areas for future exploration and addressing open issues that require further attention from the research community. The relevant papers we investigated in this article can be accessed at https://github.com/ruthless-man/Awesome-Learn-from-Model.},
+  author   = {Hongling Zheng and Li Shen and Anke Tang and Yong Luo and Han Hu and Bo Du and Yonggang Wen and Dacheng Tao},
+  keywords = {Fine-tuning,Foundation model,Index Terms-Learn from model,Knowledge distillation ✦},
+  title    = {Learning from models beyond fine-tuning},
+  url      = {https://github.com/ruthless-man/Awesome-Learn-from-Model.}
+}
+
+@article{finetuning_2,
+  abstract = {In this work, we explore ``prompt tuning,'' a simple yet effective mechanism for learning ``soft prompts'' to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through back-propagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3's few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method ``closes the gap'' and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed ``prefix tuning'' of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient ``prompt ensembling.'' We release code and model checkpoints to reproduce our experiments. 1},
+  author   = {Brian Lester and Rami Al-Rfou and Noah Constant and Google Research},
+  pages    = {3045-3059},
+  title    = {The Power of Scale for Parameter-Efficient Prompt Tuning},
+  url      = {https://github.com/google-research/}
+}
+
+@book{CouncilEurope2020,
+  author    = {{Council of Europe}},
+  year      = {2020},
+  title     = {Common European Framework of Reference for Languages: Learning, teaching, assessment – Companion volume},
+  publisher = {Council of Europe Publishing},
+  address   = {Strasbourg},
+  url       = {https://www.coe.int/lang-cefr}
+}
+
+@article{Feng2010,
+  abstract = {Several sets of explanatory variables-including shallow, language modeling, POS, syntactic, and discourse features-are compared and evaluated in terms of their impact on predicting the grade level of reading material for primary school students. We find that features based on in-domain language models have the highest predic-tive power. Entity-density (a discourse feature) and POS-features, in particular nouns, are individually very useful but highly correlated. Average sentence length (a shallow feature) is more useful-and less expensive to compute-than individual syntactic features. A judicious combination of features examined here results in a significant improvement over the state of the art.},
+  author   = {Lijun Feng and Martin Jansche and Matt Huenerfauth and Noémie Elhadad},
+  pages    = {276-284},
+  title    = {A Comparison of Features for Automatic Readability Assessment},
+  url      = {http://www.weeklyreader.com},
+  year     = {2010}
+}
+
+@article{Flesch1948,
+  abstract = {The author provides a revised system for determining the comprehension difficulty of written material through the use of two new formulae which measure reading ease and human interest. The following elements are used in analyzing text passages: (1) average sentence length in words; (2) average word length in syllables; (3) average percentage of ``personal words''; (4) average percentage of personal sentences. A step-by-step procedure for using the formulae, and interpretative table of scores, and an analysis of passages in ``Life'' and ``The New Yorker'' are given. 20-item bibliography. (PsycINFO Database Record (c) 2006 APA, all rights reserved). © 1948 American Psychological Association.},
+  author   = {Rudolph Flesch},
+  doi      = {10.1037/h0057532},
+  issn     = {00219010},
+  issue    = {3},
+  journal  = {Journal of Applied Psychology},
+  keywords = {BUSINESS &,COMMERCE,COMMUNICATION,FLESCH INDEX, DESCRIPTION,LANGUAGE &,READABILITY, FLESCH FORMULA},
+  month    = {6},
+  pages    = {221-233},
+  pmid     = {18867058},
+  title    = {A new readability yardstick},
+  volume   = {32},
+  year     = {1948}
+}
+
+@article{Kincaid1975,
+  abstract    = {Three readability formulas were recalculated to be more suitable for Navy use. The three formulas are the Automated Readability Index ARI, Fog Count, and Flesch Reading Ease Formula. They were derived from test results of 531 Navy enlisted personnel enrolled in four technical training schools. Personnel were tested for their reading comprehension level according to the comprehension section of the Gates-McGinitie reading test. At the same time, they were tested for their comprehension of 18 passages taken from Rate Training Manuals. Scores on the reading test and training material passages allowed the calculation of the grade level of the passages. This scaled reading grade level is based on Navy personnel reading Navy training material and comprehending it.},
+  author      = {J. P. Kincaid and Jr. Fishburne and Rogers Robert P. and Chissom Richard L. and Brad S.},
+  doi         = {10.21236/ADA006655},
+  institution = {US Dept of the Navy},
+  keywords    = {Accuracy,Air Force,Comprehension,Education,Enlisted Personnel,Equations,Fresh Water,Geographic Regions,Globe Valves,Human Resources,Human Systems,Humanities And History,Instructions,Intelligibility,Manuals,Materials,Naval Air Stations,Navy,Personnel Management,Reading,Standards,Students,Test Methods,United States,United States Government,Weapons Technologies,Wind Velocity},
+  month       = {2},
+  title       = {Derivation of New Readability Formulas (Automated Readability Index, Fog Count and Flesch Reading Ease Formula) for Navy Enlisted Personnel},
+  url         = {https://apps.dtic.mil/sti/citations/tr/ADA006655},
+  year        = {1975}
+}
+
+@article{Devlin2018,
+  abstract  = {We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5\% (7.7\% point absolute improvement), MultiNLI accuracy to 86.7\% (4.6\% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).},
+  author    = {Jacob Devlin and Ming Wei Chang and Kenton Lee and Kristina Toutanova},
+  isbn      = {9781950737130},
+  journal   = {NAACL HLT 2019 - 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies - Proceedings of the Conference},
+  month     = {10},
+  pages     = {4171-4186},
+  publisher = {Association for Computational Linguistics (ACL)},
+  title     = {BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  volume    = {1},
+  url       = {https://arxiv.org/pdf/1810.04805},
+  year      = {2018}
+}
+
+@article{paper_gpt,
+  abstract = {Natural language understanding comprises a wide range of diverse tasks such as textual entailment, question answering, semantic similarity assessment, and document classification. Although large unlabeled text corpora are abundant, labeled data for learning these specific tasks is scarce, making it challenging for discriminatively trained models to perform adequately. We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding. Our general task-agnostic model outperforms discriminatively trained models that use architectures specifically crafted for each task, significantly improving upon the state of the art in 9 out of the 12 tasks studied. For instance, we achieve absolute improvements of 8.9\% on commonsense reasoning (Stories Cloze Test), 5.7\% on question answering (RACE), and 1.5\% on textual entailment (MultiNLI).},
+  author   = {Alec Radford Openai and Karthik Narasimhan Openai and Tim Salimans Openai and Ilya Sutskever Openai},
+  title    = {Improving Language Understanding by Generative Pre-Training},
+  url      = {https://gluebenchmark.com/leaderboard}
+}
+
+
+
+
+
+#03---------------------------------------------------------------------------
+@article{transformers,
+  abstract = {Recent progress in natural language processing has been driven by advances in both model architecture and model pretraining. Transformer architectures have facilitated building higher-capacity models and pretraining has made it possible to effectively utilize this capacity for a wide variety of tasks. Transformers is an open-source library with the goal of opening up these advances to the wider machine learning community. The library consists of carefully engineered state-of-the art Transformer architectures under a unified API. Backing this library is a cu-rated collection of pretrained models made by and available for the community. Transformers is designed to be extensible by researchers , simple for practitioners, and fast and robust in industrial deployments. The library is available at https://github.com/ huggingface/transformers.},
+  author   = {Thomas Wolf and Lysandre Debut and Victor Sanh and Julien Chaumond and Clement Delangue and Anthony Moi and Pierric Cistac and Tim Rault and Rémi Louf and Morgan Funtowicz and Joe Davison and Sam Shleifer and Patrick Von Platen and Clara Ma and Yacine Jernite and Julien Plu and Canwen Xu and Teven Le Scao and Sylvain Gugger and Mariama Drame and Quentin Lhoest and Alexander M Rush},
+  title    = {Transformers: State-of-the-Art Natural Language Processing},
+  url      = {https://github.com/huggingface/}
+}
+
+@misc{llama,
+  author = {{Meta AI}},
+  title  = {Meta Llama},
+  year   = {2024},
+  url    = {https://huggingface.co/meta-llama}
+}
+
+@misc{mistral,
+  author = {{Mistral AI}},
+  title = {mistralai (Mistral AI)},
+  year   = {2024},
+  url   = {https://huggingface.co/mistralai}
+}
+
+@misc{gemma,
+  author = {{Google Research}},
+  title = {Gemma 2 Release - a google Collection},
+  year = {2024},
+  url = {https://huggingface.co/collections/google/gemma-2-release}
+}
+
+@misc{gpt,
+  author = {{OpenAI}},
+  title = {GPT-4 | OpenAI},
+  year = {2024},
+  url   = {https://openai.com/es-419/index/gpt-4/}
+}
+
+@misc{deepsek,
+  author = {{DeepSeek AI}},
+  title = {DeepSeek},
+  year = {2025},
+  url   = {https://www.deepseek.com/en/}
+}
+
+@misc{ccad,
+  author = {{Centro de Computación de Alto Desempeño (CCAD)}},
+  title  = {UNC Supercómputo},
+  year   = {2026},
+  url    = {https://supercomputo.unc.edu.ar/}
+}
+
+
+
+
+
 
 
 #04------------------------
+
+@misc{kagle,
+  author = {Montgomerie, Antony},
+  title = {CEFR Levelled English Texts},
+  year = {2021},
+  url   = {https://www.kaggle.com/datasets/amontgomerie/cefr-levelled-english-texts}
+}
+
+@article{Imperial2025,
+  abstract = {We introduce UNIVERSALCEFR, a large-scale multilingual multidimensional dataset of texts annotated according to the CEFR (Com-mon European Framework of Reference) scale in 13 languages. To enable open research in both automated readability and language proficiency assessment, UNIVERSALCEFR comprises 505,807 CEFR-labeled texts cu-rated from educational and learner-oriented resources , standardized into a unified data format to support consistent processing, analysis, and modeling across tasks and languages. To demonstrate its utility, we conduct benchmark experiments using three modelling paradigms: a\) linguistic feature-based classification, b\) fine-tuning pre-trained LLMs, and c\) descriptor-based prompting of instruction-tuned LLMs. Our results further support using linguistic features and fine-tuning pretrained models in multilingual CEFR level assessment. Overall, UNI-VERSALCEFR aims to establish best practices in data distribution in language proficiency research by standardising dataset formats and promoting their accessibility to the global research community. universalcefr.github.io huggingface.co/UniversalCEFR github.com/UniversalCEFR},
+  author   = {Joseph Marvin Imperial and Abdullah Barayan and Regina Stodden and Rodrigo Wilkens and Ricardo Muñoz Sánchez and Lingyun Gao and Melissa Torgbi and Dawn Knight and Gail Forey and Reka R Jablonkai and Ekaterina Kochmar and Robert Reynolds and Eugénio Ribeiro and Horacio Saggion and Elena Volodina and Sowmya Vajjala and Thomas François and Fernando Alva-Manchego and Harish Tayyar Madabushi},
+  keywords = {cs.CL},
+  title    = {UNIVERSALCEFR: Enabling Open Multilingual Research on Language Proficiency Assessment},
+  url      = {https://www.coe.int/en/web/common-european-f},
+  year     = {2025}
+}
 
 @inproceedings{alva-manchego-etal-2025-findings,
     title = "Findings of the {TSAR} 2025 Shared Task on Readability-Controlled Text Simplification",
@@ -29,197 +241,41 @@
     abstract = "This paper presents the findings of the first Shared Task on Readability-Controlled Text Simplification at TSAR 2025. The task required systems to simplify English texts to specific target readability levels of the Common European Framework of Reference for Languages (CEFR). We received 48 submissions from 20 participating teams, with approaches predominantly based on large language models (LLMs), which included iterative refinement, multi-agent setups, and LLM-as-a-judge pipelines. For this shared task, we developed a new dataset of pedagogical texts and evaluated submissions using a weighted combination of semantic similarity and CEFR-level accuracy. The results of the participating teams demonstrate that while LLMs can perform substantially well on this task, dependable and controlled simplification often requires complex, multi-iterative processes. Our findings also suggest that the capabilities of current systems are beginning to saturate existing automatic evaluation metrics, underscoring the need for reevaluation and practicality."
 }
 
+@article{wikipedia,
+  abstract = {In this paper we examine the task of sentence simplification which aims to reduce the reading complexity of a sentence by incorporating more accessible vocabulary and sentence structure. We introduce a new data set that pairs English Wikipedia with Simple English Wikipedia and is orders of magnitude larger than any previously examined for sentence simplification. The data contains the full range of simplification operations including rewording , reordering, insertion and deletion. We provide an analysis of this corpus as well as preliminary results using a phrase-based translation approach for simplification.},
+  author   = {William Coster and David Kauchak},
+  pages    = {665-669},
+  title    = {Simple English Wikipedia: A New Text Simplification Task},
+  url      = {http://en.wikipedia.org/}
+}
+
+
+
+
+
 #05---------------------------------
 
-
-@article{aleman,
-   abstract = {Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.},
-   author = {Elias-Leander Ahlers and Witold Brunsmann and Malte Schilling},
-   keywords = {cs.AI,cs.CL},
-   month = {12},
-   title = {Classifying German Language Proficiency Levels Using Large Language Models},
-   url = {https://arxiv.org/pdf/2512.06483},
-   year = {2025}
+@article{smog,
+   author = {G. Harry and M. Laughlin},
+   journal = {The Journal of Reading},
+   title = {SMOG Grading - A New Readability Formula.},
+   year = {1969}
 }
 
-
-@misc{benchmark,
-  author = {Washington Cunha and Leonardo Rocha and Marcos André Gonçalves},
-  title  = {A Thorough Benchmark of Automatic Text Classification:
-             From Traditional Approaches to Large Language Models},
-  month  = {4},
-  year   = {2025},
-  url    = {https://arxiv.org/pdf/2504.01930}
-}
-
-
-@article{Benedetto2025,
-  abstract  = {Large Language Models (LLMs) can have a transformative effect on a variety of domains, including education, and it is therefore pressing to understand whether these models have knowledge of – or, in other words, how they have encoded – the specific pedagogical requirements of different educational domains, and whether they use this when performing educational tasks. In this work, we propose an approach to evaluate the knowledge – or encoding – that the LLMs have of the Common European Framework of Reference for Languages (CEFR), and use it to evaluate five modern LLMs. Our study shows that the suite of tasks we propose is quite challenging for all the LLMs, and they often provide results which are not satisfactory and would be unusable in educational applications, suggesting that – even if they encode some information about the CEFR – this knowledge is not really leveraged when performing downstream tasks.},
-  author    = {Luca Benedetto and Gabrielle Gaudeau and Andrew Caines and Paula Buttery},
-  doi       = {10.1016/j.caeai.2024.100353},
-  issn      = {2666920X},
-  journal   = {Computers and Education: Artificial Intelligence},
-  keywords  = {Common European Framework of Reference for Languages,Language learning,Large language models},
-  month     = {6},
-  pages     = {100353},
-  publisher = {Elsevier},
-  title     = {Assessing how accurately large language models encode and apply the common European framework of reference for languages},
-  volume    = {8},
-  url       = {https://doi.org/10.18653/v1/2022.acl-long.144},
-  year      = {2025}
-}
-
-@article{Brown2020,
-  abstract = {Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions-something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.},
-  author   = {Tom B Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam Mccandlish and Alec Radford and Ilya Sutskever and Dario Amodei Openai},
-  title    = {Language Models are Few-Shot Learners},
-  year     = {2020}
-}
-
-@misc{cathoven,
-  title = {Cefr Checker - Cathoven},
-  url   = {https://www.cathoven.com/cefr-checker/}
-}
-
-@misc{ccad,
-  author = {{Centro de Computación de Alto Desempeño (CCAD)}},
-  title  = {UNC Supercómputo},
-  year   = {2026},
-  url    = {https://supercomputo.unc.edu.ar/}
-}
-
-@article{cefr,
-  isbn  = {9789287186218},
-  title = {Companion volume COMMON EUROPEAN FRAMEWORK OF REFERENCE FOR LANGUAGES: LEARNING, TEACHING, ASSESSMENT},
-  url   = {www.coe.int/lang-cefr}
-}
-
-@misc{context_window,
-  title = {What is a context window? | IBM},
-  url   = {https://www.ibm.com/think/topics/context-window}
-}
-@misc{deepsek,
-  title = {DeepSeek},
-  url   = {https://www.deepseek.com/en/}
-}
-@article{Devlin2018,
-  abstract  = {We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5\% (7.7\% point absolute improvement), MultiNLI accuracy to 86.7\% (4.6\% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).},
-  author    = {Jacob Devlin and Ming Wei Chang and Kenton Lee and Kristina Toutanova},
-  isbn      = {9781950737130},
-  journal   = {NAACL HLT 2019 - 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies - Proceedings of the Conference},
-  month     = {10},
-  pages     = {4171-4186},
-  publisher = {Association for Computational Linguistics (ACL)},
-  title     = {BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding},
-  volume    = {1},
-  url       = {https://arxiv.org/pdf/1810.04805},
-  year      = {2018}
-}
-@misc{edia,
-  title = {CEFR CLASSIFICATION BY EDIA — EDIA},
-  url   = {https://www.edia.nl/cefr-classification}
-}
-
-@article{Feng2010,
-  abstract = {Several sets of explanatory variables-including shallow, language modeling, POS, syntactic, and discourse features-are compared and evaluated in terms of their impact on predicting the grade level of reading material for primary school students. We find that features based on in-domain language models have the highest predic-tive power. Entity-density (a discourse feature) and POS-features, in particular nouns, are individually very useful but highly correlated. Average sentence length (a shallow feature) is more useful-and less expensive to compute-than individual syntactic features. A judicious combination of features examined here results in a significant improvement over the state of the art.},
-  author   = {Lijun Feng and Martin Jansche and Matt Huenerfauth and Noémie Elhadad},
-  pages    = {276-284},
-  title    = {A Comparison of Features for Automatic Readability Assessment},
-  url      = {http://www.weeklyreader.com},
-  year     = {2010}
-}
-@article{finetuning_1,
-  abstract = {Foundation models (FM) have demonstrated remarkable performance across a wide range of tasks (especially in the fields of natural language processing and computer vision), primarily attributed to their ability to comprehend instructions and access extensive, high-quality data. This not only showcases their current effectiveness but also sets a promising trajectory towards the development of artificial general intelligence. Unfortunately, due to multiple constraints, the raw data of the model used for large model training are often inaccessible, so the use of end-to-end models for downstream tasks has become a new research trend, which we call Learn From Model (LFM) in this article. LFM focuses on the research, modification, and design of FM based on the model interface, so as to better understand the model structure and weights (in a black box environment), and to generalize the model to downstream tasks. The study of LFM techniques can be broadly categorized into five major areas: model tuning, model distillation, model reuse, meta learning and model editing. Each category encompasses a repertoire of methods and strategies that aim to enhance the capabilities and performance of FM. This paper gives a comprehensive review of the current methods based on FM from the perspective of LFM, in order to help readers better understand the current research status and ideas. To conclude, we summarize the survey by highlighting several critical areas for future exploration and addressing open issues that require further attention from the research community. The relevant papers we investigated in this article can be accessed at https://github.com/ruthless-man/Awesome-Learn-from-Model.},
-  author   = {Hongling Zheng and Li Shen and Anke Tang and Yong Luo and Han Hu and Bo Du and Yonggang Wen and Dacheng Tao},
-  keywords = {Fine-tuning,Foundation model,Index Terms-Learn from model,Knowledge distillation ✦},
-  title    = {Learning from models beyond fine-tuning},
-  url      = {https://github.com/ruthless-man/Awesome-Learn-from-Model.}
-}
-
-@article{finetuning_2,
-  abstract = {In this work, we explore ``prompt tuning,'' a simple yet effective mechanism for learning ``soft prompts'' to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through back-propagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3's few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method ``closes the gap'' and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed ``prefix tuning'' of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient ``prompt ensembling.'' We release code and model checkpoints to reproduce our experiments. 1},
-  author   = {Brian Lester and Rami Al-Rfou and Noah Constant and Google Research},
-  pages    = {3045-3059},
-  title    = {The Power of Scale for Parameter-Efficient Prompt Tuning},
-  url      = {https://github.com/google-research/}
-}
-@article{Flesch1948,
-  abstract = {The author provides a revised system for determining the comprehension difficulty of written material through the use of two new formulae which measure reading ease and human interest. The following elements are used in analyzing text passages: (1) average sentence length in words; (2) average word length in syllables; (3) average percentage of ``personal words''; (4) average percentage of personal sentences. A step-by-step procedure for using the formulae, and interpretative table of scores, and an analysis of passages in ``Life'' and ``The New Yorker'' are given. 20-item bibliography. (PsycINFO Database Record (c) 2006 APA, all rights reserved). © 1948 American Psychological Association.},
-  author   = {Rudolph Flesch},
-  doi      = {10.1037/h0057532},
-  issn     = {00219010},
-  issue    = {3},
-  journal  = {Journal of Applied Psychology},
-  keywords = {BUSINESS &,COMMERCE,COMMUNICATION,FLESCH INDEX, DESCRIPTION,LANGUAGE &,READABILITY, FLESCH FORMULA},
-  month    = {6},
-  pages    = {221-233},
-  pmid     = {18867058},
-  title    = {A new readability yardstick},
-  volume   = {32},
-  year     = {1948}
-}
-
-@misc{gemma,
-  author = {{Google Research}},
-  title = {Gemma 2 Release - a google Collection},
-  year = {2024},
-  url = {https://huggingface.co/collections/google/gemma-2-release}
-}
-
-@misc{gpt,
-  author = {{OpenAI}},
-  title = {GPT-4 | OpenAI},
-  year = {2024},
-  url   = {https://openai.com/es-419/index/gpt-4/}
-}
-@article{Grefenstette1999,
-  abstract  = {The linguistic annotation of naturally occurring text can be seen as a progression of transformations of the original text, with each step abstracting away surface differences. Tokenization is one of the earliest steps in this transformation during natural language...},
-  author    = {Gregory Grefenstette},
-  doi       = {10.1007/978-94-015-9273-4_9},
-  isbn      = {978-94-015-9273-4},
-  pages     = {117-133},
-  publisher = {Springer, Dordrecht},
-  title     = {Tokenization},
-  url       = {https://link.springer.com/chapter/10.1007/978-94-015-9273-4_9},
-  year      = {1999}
-}
-@article{Imperial2025,
-  abstract = {We introduce UNIVERSALCEFR, a large-scale multilingual multidimensional dataset of texts annotated according to the CEFR (Com-mon European Framework of Reference) scale in 13 languages. To enable open research in both automated readability and language proficiency assessment, UNIVERSALCEFR comprises 505,807 CEFR-labeled texts cu-rated from educational and learner-oriented resources , standardized into a unified data format to support consistent processing, analysis, and modeling across tasks and languages. To demonstrate its utility, we conduct benchmark experiments using three modelling paradigms: a\) linguistic feature-based classification, b\) fine-tuning pre-trained LLMs, and c\) descriptor-based prompting of instruction-tuned LLMs. Our results further support using linguistic features and fine-tuning pretrained models in multilingual CEFR level assessment. Overall, UNI-VERSALCEFR aims to establish best practices in data distribution in language proficiency research by standardising dataset formats and promoting their accessibility to the global research community. universalcefr.github.io huggingface.co/UniversalCEFR github.com/UniversalCEFR},
-  author   = {Joseph Marvin Imperial and Abdullah Barayan and Regina Stodden and Rodrigo Wilkens and Ricardo Muñoz Sánchez and Lingyun Gao and Melissa Torgbi and Dawn Knight and Gail Forey and Reka R Jablonkai and Ekaterina Kochmar and Robert Reynolds and Eugénio Ribeiro and Horacio Saggion and Elena Volodina and Sowmya Vajjala and Thomas François and Fernando Alva-Manchego and Harish Tayyar Madabushi},
-  keywords = {cs.CL},
-  title    = {UNIVERSALCEFR: Enabling Open Multilingual Research on Language Proficiency Assessment},
-  url      = {https://www.coe.int/en/web/common-european-f},
-  year     = {2025}
-}
-@article{JulianaSchmalz2021,
-  abstract = {The automatic assessment of language learners' competences represents an increasingly promising task thanks to recent developments in NLP and deep learning technologies. In this paper, we propose the use of neural models for classifying En-glish written exams into one of the Common European Framework of Reference for Languages (CEFR) competence levels. We employ pre-trained Bidirectional En-coder Representations from Transformers (BERT) models which provide efficient and rapid language processing on account of attention-based mechanisms and the capacity of capturing long-range sequence features. In particular, we investigate on augmenting the original learner's text with corrections provided by an automatic tool or by human evaluators. We consider different architectures where the texts and corrections are combined at an early stage, via concatenation before the BERT network , or as late fusion of the BERT em-beddings. The proposed approach is evaluated on two open-source datasets: the English First Cambridge open language Database (EFCAMDAT) and the Cam-bridge Learner Corpus for the First Certificate in English (CLC-FCE). The experimental results show that the proposed approach can predict the learner's competence level with remarkably high accuracy, in particular when large labelled corpora are available. In addition, we observed that augmenting the input text with corrections provides further improvement in the automatic language assessment task.},
-  author   = {Veronica Juliana Schmalz and Alessio Brutti and Fondazione Bruno Kessler and Ku Leuven},
-  title    = {Automatic Assessment of English CEFR Levels Using BERT Embeddings-mitted under Creative Commons License Attribution 4.0 In-ternational (CC BY 4.0)},
-  year     = {2021}
-}
-@misc{kagle,
-  title = {CEFR Levelled English Texts},
-  url   = {https://www.kaggle.com/datasets/amontgomerie/cefr-levelled-english-texts}
-}
-@article{Kerz2021,
-  abstract = {Automatically predicting the level of second language (L2) learner proficiency is an emerging topic of interest and research based on machine learning approaches to language learning and development. The key to the present paper is the combined use of what we refer to as 'complexity contours', a series of measurements of indices of L2 proficiency obtained by a computational tool that implements a sliding window technique, and recurrent neural network (RNN) classifiers that adequately capture the sequential information in those contours. We used the EF-Cambridge Open Language Database (Geertzen et al., 2014) with its labelled Common European Framework of Reference (CEFR) levels (Council of Europe, 2018) to predict six classes of L2 proficiency levels (A1, A2, B1, B2, C1, C2) in the assessment of writing skills. Our experiments demonstrate that an RNN classifier trained on complexity contours achieves higher classification accuracy than one trained on text-average complexity scores. In a secondary experiment, we determined the relative importance of features from four distinct categories through a sensitivity-based pruning technique. Our approach makes an important contribution to the field of automated identification of language proficiency levels, more specifically, to the increasing efforts towards the empirical validation of CEFR levels.},
-  author   = {Elma Kerz and Daniel Wiechmann and Yu Qiao and Emma Tseng and Marcus Ströbel},
-  pages    = {199-209},
-  title    = {Automated Classification of Written Proficiency Levels on the CEFR-Scale through Complexity Contours and RNNs},
-  url      = {http://evkk.tlu.ee/?language=en},
-  year     = {2021}
-}
-
-@article{Kincaid1975,
-  abstract    = {Three readability formulas were recalculated to be more suitable for Navy use. The three formulas are the Automated Readability Index ARI, Fog Count, and Flesch Reading Ease Formula. They were derived from test results of 531 Navy enlisted personnel enrolled in four technical training schools. Personnel were tested for their reading comprehension level according to the comprehension section of the Gates-McGinitie reading test. At the same time, they were tested for their comprehension of 18 passages taken from Rate Training Manuals. Scores on the reading test and training material passages allowed the calculation of the grade level of the passages. This scaled reading grade level is based on Navy personnel reading Navy training material and comprehending it.},
-  author      = {J. P. Kincaid and Jr. Fishburne and Rogers Robert P. and Chissom Richard L. and Brad S.},
-  doi         = {10.21236/ADA006655},
-  institution = {US Dept of the Navy},
-  keywords    = {Accuracy,Air Force,Comprehension,Education,Enlisted Personnel,Equations,Fresh Water,Geographic Regions,Globe Valves,Human Resources,Human Systems,Humanities And History,Instructions,Intelligibility,Manuals,Materials,Naval Air Stations,Navy,Personnel Management,Reading,Standards,Students,Test Methods,United States,United States Government,Weapons Technologies,Wind Velocity},
-  month       = {2},
-  title       = {Derivation of New Readability Formulas (Automated Readability Index, Fog Count and Flesch Reading Ease Formula) for Navy Enlisted Personnel},
-  url         = {https://apps.dtic.mil/sti/citations/tr/ADA006655},
-  year        = {1975}
+@article{Zhou2020,
+  abstract  = {Text classification (a.k.a text categorisation) is an effective and efficient technology for information organisation and management. With the explosion of information resources on the Web and corporate intranets continues to increase, it has being become more and more important and has attracted wide attention from many different research fields. In the literature, many feature selection methods and classification algorithms have been proposed. It also has important applications in the real world. However, the dramatic increase in the availability of massive text data from various sources is creating a number of issues and challenges for text classification such as scalability issues. The purpose of this report is to give an overview of existing text classification technologies for building more reliable text classification applications, to propose a research direction for addressing the challenging problems in text mining.},
+  author    = {Xujuan Zhou and Raj Gururajan and Yuefeng Li and Revathi Venkataraman and Xiaohui Tao and Ghazal Bargshady and Prabal D. Barua and Srinivas Kondalsamy-Chennakesavan},
+  doi       = {10.3233/WEB-200442},
+  issn      = {24056464},
+  issue     = {3},
+  journal   = {Web Intelligence},
+  keywords  = {Text classification,feature selection,machine learning,text mining},
+  pages     = {205-216},
+  publisher = {IOS Press BV},
+  title     = {A survey on text classification and its applications},
+  volume    = {18},
+  url       = {/doi/pdf/10.3233/WEB-200442?download=true},
+  year      = {2020}
 }
 
 @article{Li2021,
@@ -236,75 +292,22 @@
   year     = {2021}
 }
 
-@misc{llama,
-  author = {{Meta AI}},
-  title  = {Meta Llama},
-  year   = {2024},
-  url    = {https://huggingface.co/meta-llama}
+@misc{benchmark,
+  author = {Washington Cunha and Leonardo Rocha and Marcos André Gonçalves},
+  title  = {A Thorough Benchmark of Automatic Text Classification:
+             From Traditional Approaches to Large Language Models},
+  month  = {4},
+  year   = {2025},
+  url    = {https://arxiv.org/pdf/2504.01930}
 }
 
-@misc{llms,
-  title = {What Are Large Language Models (LLMs)? | IBM},
-  url   = {https://www.ibm.com/think/topics/large-language-models}
-}
-
-@misc{mistral,
-  author = {{Mistral AI}},
-  title = {mistralai (Mistral AI)},
-  year   = {2024},
-  url   = {https://huggingface.co/mistralai}
-}
-
-@misc{nlp,
-  title = {What Is NLP (Natural Language Processing)? | IBM},
-  url   = {https://www.ibm.com/think/topics/natural-language-processing}
-}
-
-@article{paper_gpt,
-  abstract = {Natural language understanding comprises a wide range of diverse tasks such as textual entailment, question answering, semantic similarity assessment, and document classification. Although large unlabeled text corpora are abundant, labeled data for learning these specific tasks is scarce, making it challenging for discriminatively trained models to perform adequately. We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative fine-tuning on each specific task. In contrast to previous approaches, we make use of task-aware input transformations during fine-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding. Our general task-agnostic model outperforms discriminatively trained models that use architectures specifically crafted for each task, significantly improving upon the state of the art in 9 out of the 12 tasks studied. For instance, we achieve absolute improvements of 8.9\% on commonsense reasoning (Stories Cloze Test), 5.7\% on question answering (RACE), and 1.5\% on textual entailment (MultiNLI).},
-  author   = {Alec Radford Openai and Karthik Narasimhan Openai and Tim Salimans Openai and Ilya Sutskever Openai},
-  title    = {Improving Language Understanding by Generative Pre-Training},
-  url      = {https://gluebenchmark.com/leaderboard}
-}
-
-@misc{pretrained,
-  title = {What Is A Pretrained Model? | IBM},
-  url   = {https://www.ibm.com/think/topics/pretrained-model}
-}
-
-@article{Schulhoff2025,
-  abstract = {Generative Artificial Intelligence (GenAI) systems are increasingly being deployed across diverse industries and research domains. Developers and end-users interact with these systems through the use of prompting and prompt engineering. Although prompt engineering is a widely adopted and extensively researched area, it suffers from conflicting terminology and a fragmented ontological understanding of what constitutes an effective prompt due to its relatively recent emergence. We establish a structured understanding of prompt engineering by assembling a taxonomy of prompting techniques and analyzing their applications. We present a detailed vocabulary of 33 vocabulary terms, a taxonomy of 58 LLM prompting techniques, and 40 techniques for other modalities. Additionally, we provide best practices and guidelines for prompt engineering, including advice for prompting engineering ChatGPT and other state-of-the-art (SOTA) LLMs. We further present a meta-analysis of the entire literature on natural language prefix-prompting. As a culmination of these efforts, this paper presents the most comprehensive survey on prompt engineering to date.},
-  author   = {Sander Schulhoff and Michael Ilie and Nishant Balepur and Konstantine Kahadze and Amanda Liu and Chenglei Si and Yinheng Li and Aayush Gupta and Hyojung Han and Sevien Schulhoff and Pranav Sandeep Dulepet and Saurav Vidyadhara and Dayeon Ki and Sweta Agrawal and Chau Pham and Gerson Kroiz and Feileen Li and Hudson Tao and Ashay Srivastava and Hevander Da Costa and Saloni Gupta and Megan L Rogers and Inna Goncearenco and Giuseppe Sarli and Igor Galynker and Denis Peskoff and Marine Carpuat and Jules White and Shyamal Anadkat and Alexander Hoyle and Philip Resnik},
-  title    = {The Prompt Report: A Systematic Survey of Prompt Engineering Techniques},
-  year     = {2025}
-}
-
-@article{smog,
-   author = {G. Harry and M. Laughlin},
-   journal = {The Journal of Reading},
-   title = {SMOG Grading - A New Readability Formula.},
-   year = {1969}
-}
-
-
-@misc{text_inspector,
-  title = {Text Inspector: Analyse the Difficulty Level of English Texts},
-  url   = {https://textinspector.com/}
-}
-
-@article{transformers,
-  abstract = {Recent progress in natural language processing has been driven by advances in both model architecture and model pretraining. Transformer architectures have facilitated building higher-capacity models and pretraining has made it possible to effectively utilize this capacity for a wide variety of tasks. Transformers is an open-source library with the goal of opening up these advances to the wider machine learning community. The library consists of carefully engineered state-of-the art Transformer architectures under a unified API. Backing this library is a cu-rated collection of pretrained models made by and available for the community. Transformers is designed to be extensible by researchers , simple for practitioners, and fast and robust in industrial deployments. The library is available at https://github.com/ huggingface/transformers.},
-  author   = {Thomas Wolf and Lysandre Debut and Victor Sanh and Julien Chaumond and Clement Delangue and Anthony Moi and Pierric Cistac and Tim Rault and Rémi Louf and Morgan Funtowicz and Joe Davison and Sam Shleifer and Patrick Von Platen and Clara Ma and Yacine Jernite and Julien Plu and Canwen Xu and Teven Le Scao and Sylvain Gugger and Mariama Drame and Quentin Lhoest and Alexander M Rush},
-  title    = {Transformers: State-of-the-Art Natural Language Processing},
-  url      = {https://github.com/huggingface/}
-}
-
-@article{wikipedia,
-  abstract = {In this paper we examine the task of sentence simplification which aims to reduce the reading complexity of a sentence by incorporating more accessible vocabulary and sentence structure. We introduce a new data set that pairs English Wikipedia with Simple English Wikipedia and is orders of magnitude larger than any previously examined for sentence simplification. The data contains the full range of simplification operations including rewording , reordering, insertion and deletion. We provide an analysis of this corpus as well as preliminary results using a phrase-based translation approach for simplification.},
-  author   = {William Coster and David Kauchak},
-  pages    = {665-669},
-  title    = {Simple English Wikipedia: A New Text Simplification Task},
-  url      = {http://en.wikipedia.org/}
+@article{Kerz2021,
+  abstract = {Automatically predicting the level of second language (L2) learner proficiency is an emerging topic of interest and research based on machine learning approaches to language learning and development. The key to the present paper is the combined use of what we refer to as 'complexity contours', a series of measurements of indices of L2 proficiency obtained by a computational tool that implements a sliding window technique, and recurrent neural network (RNN) classifiers that adequately capture the sequential information in those contours. We used the EF-Cambridge Open Language Database (Geertzen et al., 2014) with its labelled Common European Framework of Reference (CEFR) levels (Council of Europe, 2018) to predict six classes of L2 proficiency levels (A1, A2, B1, B2, C1, C2) in the assessment of writing skills. Our experiments demonstrate that an RNN classifier trained on complexity contours achieves higher classification accuracy than one trained on text-average complexity scores. In a secondary experiment, we determined the relative importance of features from four distinct categories through a sensitivity-based pruning technique. Our approach makes an important contribution to the field of automated identification of language proficiency levels, more specifically, to the increasing efforts towards the empirical validation of CEFR levels.},
+  author   = {Elma Kerz and Daniel Wiechmann and Yu Qiao and Emma Tseng and Marcus Ströbel},
+  pages    = {199-209},
+  title    = {Automated Classification of Written Proficiency Levels on the CEFR-Scale through Complexity Contours and RNNs},
+  url      = {http://evkk.tlu.ee/?language=en},
+  year     = {2021}
 }
 
 @article{Wisniewski2017,
@@ -332,86 +335,65 @@
   year     = {2019}
 }
 
-@article{Zhou2020,
-  abstract  = {Text classification (a.k.a text categorisation) is an effective and efficient technology for information organisation and management. With the explosion of information resources on the Web and corporate intranets continues to increase, it has being become more and more important and has attracted wide attention from many different research fields. In the literature, many feature selection methods and classification algorithms have been proposed. It also has important applications in the real world. However, the dramatic increase in the availability of massive text data from various sources is creating a number of issues and challenges for text classification such as scalability issues. The purpose of this report is to give an overview of existing text classification technologies for building more reliable text classification applications, to propose a research direction for addressing the challenging problems in text mining.},
-  author    = {Xujuan Zhou and Raj Gururajan and Yuefeng Li and Revathi Venkataraman and Xiaohui Tao and Ghazal Bargshady and Prabal D. Barua and Srinivas Kondalsamy-Chennakesavan},
-  doi       = {10.3233/WEB-200442},
-  issn      = {24056464},
-  issue     = {3},
-  journal   = {Web Intelligence},
-  keywords  = {Text classification,feature selection,machine learning,text mining},
-  pages     = {205-216},
-  publisher = {IOS Press BV},
-  title     = {A survey on text classification and its applications},
-  volume    = {18},
-  url       = {/doi/pdf/10.3233/WEB-200442?download=true},
-  year      = {2020}
+@article{JulianaSchmalz2021,
+  abstract = {The automatic assessment of language learners' competences represents an increasingly promising task thanks to recent developments in NLP and deep learning technologies. In this paper, we propose the use of neural models for classifying En-glish written exams into one of the Common European Framework of Reference for Languages (CEFR) competence levels. We employ pre-trained Bidirectional En-coder Representations from Transformers (BERT) models which provide efficient and rapid language processing on account of attention-based mechanisms and the capacity of capturing long-range sequence features. In particular, we investigate on augmenting the original learner's text with corrections provided by an automatic tool or by human evaluators. We consider different architectures where the texts and corrections are combined at an early stage, via concatenation before the BERT network , or as late fusion of the BERT em-beddings. The proposed approach is evaluated on two open-source datasets: the English First Cambridge open language Database (EFCAMDAT) and the Cam-bridge Learner Corpus for the First Certificate in English (CLC-FCE). The experimental results show that the proposed approach can predict the learner's competence level with remarkably high accuracy, in particular when large labelled corpora are available. In addition, we observed that augmenting the input text with corrections provides further improvement in the automatic language assessment task.},
+  author   = {Veronica Juliana Schmalz and Alessio Brutti and Fondazione Bruno Kessler and Ku Leuven},
+  title    = {Automatic Assessment of English CEFR Levels Using BERT Embeddings-mitted under Creative Commons License Attribution 4.0 In-ternational (CC BY 4.0)},
+  year     = {2021}
+}
+
+@misc{edia,
+  author= {{EDIA}},
+  title = {CEFR CLASSIFICATION BY EDIA — EDIA},
+  year = {2025},
+  url   = {https://www.edia.nl/cefr-classification}
+}
+
+@misc{text_inspector,
+  author = {{Text Inspector}},
+  title = {Text Inspector: Analyse the Difficulty Level of English Texts},
+  year = {2025},
+  url   = {https://textinspector.com/}
+}
+
+@misc{cathoven,
+  author = {{Cathoven AI}},
+  title = {Cefr Checker - Cathoven},
+  year = {2025},
+  url   = {https://www.cathoven.com/cefr-checker/}
+}
+
+@article{Benedetto2025,
+  abstract  = {Large Language Models (LLMs) can have a transformative effect on a variety of domains, including education, and it is therefore pressing to understand whether these models have knowledge of – or, in other words, how they have encoded – the specific pedagogical requirements of different educational domains, and whether they use this when performing educational tasks. In this work, we propose an approach to evaluate the knowledge – or encoding – that the LLMs have of the Common European Framework of Reference for Languages (CEFR), and use it to evaluate five modern LLMs. Our study shows that the suite of tasks we propose is quite challenging for all the LLMs, and they often provide results which are not satisfactory and would be unusable in educational applications, suggesting that – even if they encode some information about the CEFR – this knowledge is not really leveraged when performing downstream tasks.},
+  author    = {Luca Benedetto and Gabrielle Gaudeau and Andrew Caines and Paula Buttery},
+  doi       = {10.1016/j.caeai.2024.100353},
+  issn      = {2666920X},
+  journal   = {Computers and Education: Artificial Intelligence},
+  keywords  = {Common European Framework of Reference for Languages,Language learning,Large language models},
+  month     = {6},
+  pages     = {100353},
+  publisher = {Elsevier},
+  title     = {Assessing how accurately large language models encode and apply the common European framework of reference for languages},
+  volume    = {8},
+  url       = {https://doi.org/10.18653/v1/2022.acl-long.144},
+  year      = {2025}
+}
+
+@article{aleman,
+   abstract = {Assessing language proficiency is essential for education, as it enables instruction tailored to learners needs. This paper investigates the use of Large Language Models (LLMs) for automatically classifying German texts according to the Common European Framework of Reference for Languages (CEFR) into different proficiency levels. To support robust training and evaluation, we construct a diverse dataset by combining multiple existing CEFR-annotated corpora with synthetic data. We then evaluate prompt-engineering strategies, fine-tuning of a LLaMA-3-8B-Instruct model and a probing-based approach that utilizes the internal neural state of the LLM for classification. Our results show a consistent performance improvement over prior methods, highlighting the potential of LLMs for reliable and scalable CEFR classification.},
+   author = {Elias-Leander Ahlers and Witold Brunsmann and Malte Schilling},
+   keywords = {cs.AI,cs.CL},
+   month = {12},
+   title = {Classifying German Language Proficiency Levels Using Large Language Models},
+   url = {https://arxiv.org/pdf/2512.06483},
+   year = {2025}
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#adaptacion
-
-@misc{oviedo2024recursos,
-  author       = {Oviedo, Juan},
-  title        = {Recursos Lingüísticos para Experimentos de Adaptación de Texto},
-  year         = {2024}, % Año de creación o última actualización importante
-  publisher    = {GitHub},
-  journal      = {GitHub Repository},
-  howpublished = {\url{https://github.com/juan-oviedo/Recursos-Linguisticos}},
-  note         = {Accedido el 9 de junio de 2026} % Revisa si tu estilo te pide fecha de acceso
-}
-
-
+#06-----------------------------------------------adaptacion
 @article{Siddharthan2014,
    abstract = {Text simplification, defined narrowly, is the process of reducing the linguistic complexity of a text, while still retaining the original information and meaning. More broadly, text simplification encompasses other operations; for example, conceptual simplification to simplify content as well as form, elaborative modification, where redundancy and explicitness are used to emphasise key points, and text summarisation to omit peripheral or inappropriate information. There is substantial evidence that manual text simplification is an effective intervention for many readers, but automatic simplification has only recently become an established research field. There have been several recent papers on the topic, however, which bring to the table a multitude of methodologies, each with their strengths and weaknesses. The goal of this paper is to summarise the large interdisciplinary body of work on text simplification and highlight the most promising research directions to move the field forward.},
    author = {Advaith Siddharthan},
@@ -428,13 +410,14 @@
    year = {2014}
 }
 
-@book{CouncilEurope2020,
-  author    = {{Council of Europe}},
-  year      = {2020},
-  title     = {Common European Framework of Reference for Languages: Learning, teaching, assessment – Companion volume},
-  publisher = {Council of Europe Publishing},
-  address   = {Strasbourg},
-  url       = {https://www.coe.int/lang-cefr}
+@misc{oviedo2024recursos,
+  author       = {Oviedo, Juan},
+  title        = {Recursos Lingüísticos para Experimentos de Adaptación de Texto},
+  year         = {2024}, % Año de creación o última actualización importante
+  publisher    = {GitHub},
+  journal      = {GitHub Repository},
+  howpublished = {\url{https://github.com/juan-oviedo/Recursos-Linguisticos}},
+  note         = {Accedido el 9 de junio de 2026} % Revisa si tu estilo te pide fecha de acceso
 }
 
 @misc{Oxford3000,
@@ -477,39 +460,6 @@
    year = {2025}
 }
 
-@article{Shimada2025,
-   abstract = {We describe our submission to the TSAR 2025 shared task on readability-controlled text simplification, which evaluates systems on their ability to adjust linguistic complexity to specified CEFR levels while preserving meaning and coherence. We explored two complementary frameworks leveraging the shared task CEFR classifier as feedback. The first is an ensemble approach generating diverse candidates using multiple LLMs under zero-shot prompting with level-specific instructions and vocabulary lists, one-shot prompting, and round-trip translation. Candidates were filtered by predicted CEFR level before an LLM judge selected the final output. The second framework is a self-refinement loop, where a single candidate is iteratively revised with classifier feedback until matching the target level or reaching a maximum number of iterations. This study is among the first to apply round-trip translation and iterative self-refinement to controlled simplification, broadening the toolkit for adapting linguistic complexity.},
-   author = {Mao Shimada and Kexin Bian and Zhidong Ling and Mamoru Komachi},
-   doi = {10.18653/V1/2025.TSAR-1.20},
-   month = {11},
-   pages = {231-241},
-   publisher = {Association for Computational Linguistics (ACL)},
-   title = {HIT-YOU at TSAR 2025 Shared Task Leveraging Similarity-Based Few-Shot Prompting, Round-Trip Translation, and Self-Refinement for Readability-Controlled Text Simplification},
-   url = {https://aclanthology.org/2025.tsar-1.20/},
-   year = {2025}
-}
-@article{Hayakawa2025,
-   abstract = {The TSAR 2025 Shared Task on Readability-Controlled Text Simplification focuses on simplifying English paragraphs written at an advanced level (B2 or higher) and rewriting them to target CEFR levels (A2 or B1). The challenge is to reduce linguistic complexity without sacrificing coherence or meaning. We developed three complementary approaches based on large language models (LLMs). The first approach (Run 1) generates a diverse set of paragraph-level simplifications. It then applies filters to enforce CEFR alignment, preserve meaning, and encourage diversity, and finally selects the candidates with the lowest perceived risk. The second (Run 2) performs simplification at the sentence level, combining structured prompting, coreference resolution, and explainable AI techniques to highlight influential phrases, with candidate selection guided by automatic and LLM-based judges. The third hybrid approach (Run 3) integrates both strategies by pooling paragraph- and sentence-level simplifications, and subsequently applying the identical filtering and selection architecture used in Run 1. In the official TSAR evaluation, the hybrid system ranked 2nd overall, while its component systems also achieved competitive results.},
-   author = {Akio Hayakawa and Nouran Khallaf and Horacio Saggion and Serge Sharoff},
-   doi = {10.18653/V1/2025.TSAR-1.16},
-   month = {11},
-   pages = {193-210},
-   publisher = {Association for Computational Linguistics (ACL)},
-   title = {UoL-UPF at TSAR 2025 Shared Task A Generate-and-Select Approach for Readability-Controlled Text Simplification},
-   url = {https://aclanthology.org/2025.tsar-1.16/},
-   year = {2025}
-}
-@article{Miyata2025,
-   abstract = {We introduce the EhiMeNLP submission, which won the TSAR 2025 Shared Task on Readability-Controlled Text Simplification. Our system employed a two-step strategy of candidate generation and reranking. For candidate generation, we simplified the given text into more readable versions by combining multiple large language models with prompts. Then, for reranking, we selected the best candidate by readability-based filtering and ranking based on semantic similarity to the original text.},
-   author = {Rina Miyata and Koki Horiguchi and Risa Kondo and Yuki Fujiwara and Tomoyuki Kajiwara},
-   doi = {10.18653/V1/2025.TSAR-1.18},
-   month = {11},
-   pages = {217-222},
-   publisher = {Association for Computational Linguistics (ACL)},
-   title = {EhiMeNLP at TSAR 2025 Shared Task Candidate Generation via Iterative Simplification and Reranking by Readability and Semantic Similarity},
-   url = {https://aclanthology.org/2025.tsar-1.18/},
-   year = {2025}
-}
 @article{Oviedo2025,
    abstract = {TaskGen ranked as 6th best team in the TSAR 2025 shared task for English text adaptation to a target CEFR level. Our experiments consisted of prompting a Llama-3.1-8B-Instruct model with linguistic descriptors of the target level, examples of adaptations and multi-step approaches. Our best run, 13th in the overall ranking, applied an ensemble strategy using a voting mechanism to find the most adequate among 10 texts, each produced by a different prompting strategy.},
    author = {Juan Cruz Oviedo and Elisabet Comelles Pujadas and Laura Alonso Alemany and Jordi Atserias Batalla},
@@ -522,17 +472,42 @@
    year = {2025}
 }
 
-@article{Rocan2025,
-   abstract = {Large language models (LLMs) have demonstrated strong performance in text simplification tasks, but their high computational cost and proprietary nature often limit practical use, especially in education. We explore open-source LLMs for CEFR-level text simplification. By reducing model size and computational requirements, our approach enables greater accessibility and deployment in educational environments. Our results show some of the lowest error rates in producing CEFR-compliant texts at TSAR 2025, using models with 8 billion and 1 billion parameters. Such approaches have the potential to democratize NLP technologies for real-world applications.},
-   author = {Rareş-Alexandru Roşcan and Sergiu Nisioi},
-   doi = {10.18653/V1/2025.TSAR-1.22},
+@article{Miyata2025,
+   abstract = {We introduce the EhiMeNLP submission, which won the TSAR 2025 Shared Task on Readability-Controlled Text Simplification. Our system employed a two-step strategy of candidate generation and reranking. For candidate generation, we simplified the given text into more readable versions by combining multiple large language models with prompts. Then, for reranking, we selected the best candidate by readability-based filtering and ranking based on semantic similarity to the original text.},
+   author = {Rina Miyata and Koki Horiguchi and Risa Kondo and Yuki Fujiwara and Tomoyuki Kajiwara},
+   doi = {10.18653/V1/2025.TSAR-1.18},
    month = {11},
-   pages = {251-260},
+   pages = {217-222},
    publisher = {Association for Computational Linguistics (ACL)},
-   title = {Archaeology at TSAR 2025 Shared Task Teaching Small Models to do CEFR Simplifications},
-   url = {https://aclanthology.org/2025.tsar-1.22/},
+   title = {EhiMeNLP at TSAR 2025 Shared Task Candidate Generation via Iterative Simplification and Reranking by Readability and Semantic Similarity},
+   url = {https://aclanthology.org/2025.tsar-1.18/},
    year = {2025}
 }
+
+@article{Hayakawa2025,
+   abstract = {The TSAR 2025 Shared Task on Readability-Controlled Text Simplification focuses on simplifying English paragraphs written at an advanced level (B2 or higher) and rewriting them to target CEFR levels (A2 or B1). The challenge is to reduce linguistic complexity without sacrificing coherence or meaning. We developed three complementary approaches based on large language models (LLMs). The first approach (Run 1) generates a diverse set of paragraph-level simplifications. It then applies filters to enforce CEFR alignment, preserve meaning, and encourage diversity, and finally selects the candidates with the lowest perceived risk. The second (Run 2) performs simplification at the sentence level, combining structured prompting, coreference resolution, and explainable AI techniques to highlight influential phrases, with candidate selection guided by automatic and LLM-based judges. The third hybrid approach (Run 3) integrates both strategies by pooling paragraph- and sentence-level simplifications, and subsequently applying the identical filtering and selection architecture used in Run 1. In the official TSAR evaluation, the hybrid system ranked 2nd overall, while its component systems also achieved competitive results.},
+   author = {Akio Hayakawa and Nouran Khallaf and Horacio Saggion and Serge Sharoff},
+   doi = {10.18653/V1/2025.TSAR-1.16},
+   month = {11},
+   pages = {193-210},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {UoL-UPF at TSAR 2025 Shared Task A Generate-and-Select Approach for Readability-Controlled Text Simplification},
+   url = {https://aclanthology.org/2025.tsar-1.16/},
+   year = {2025}
+}
+
+@article{Shimada2025,
+   abstract = {We describe our submission to the TSAR 2025 shared task on readability-controlled text simplification, which evaluates systems on their ability to adjust linguistic complexity to specified CEFR levels while preserving meaning and coherence. We explored two complementary frameworks leveraging the shared task CEFR classifier as feedback. The first is an ensemble approach generating diverse candidates using multiple LLMs under zero-shot prompting with level-specific instructions and vocabulary lists, one-shot prompting, and round-trip translation. Candidates were filtered by predicted CEFR level before an LLM judge selected the final output. The second framework is a self-refinement loop, where a single candidate is iteratively revised with classifier feedback until matching the target level or reaching a maximum number of iterations. This study is among the first to apply round-trip translation and iterative self-refinement to controlled simplification, broadening the toolkit for adapting linguistic complexity.},
+   author = {Mao Shimada and Kexin Bian and Zhidong Ling and Mamoru Komachi},
+   doi = {10.18653/V1/2025.TSAR-1.20},
+   month = {11},
+   pages = {231-241},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {HIT-YOU at TSAR 2025 Shared Task Leveraging Similarity-Based Few-Shot Prompting, Round-Trip Translation, and Self-Refinement for Readability-Controlled Text Simplification},
+   url = {https://aclanthology.org/2025.tsar-1.20/},
+   year = {2025}
+}
+
 @article{Arias-Russi2025,
    abstract = {We present an agent-based system for the TSAR 2025 Shared Task on Readability-Controlled Text Simplification, which requires simplifying English paragraphs from B2+ levels to target A2 or B1 levels while preserving meaning. Our approach employs specialized agents for keyword extraction, text generation, and evaluation, coordinated through an iterative refinement loop. The system integrates a CEFR vocabulary classifier, pretrained evaluation models, and few-shot learning from trial data. Through iterative feedback between the evaluator and writer agents, our system automatically refines outputs until they meet both readability and semantic preservation constraints. This architecture achieved 4th position among participating teams, showing the effectiveness of combining specialized LLMs with automated quality control strategies for text simplification.},
    author = {Felipe Arias-Russi and Kevin Cohen Solano and Rubén Manrique},
@@ -542,5 +517,17 @@
    publisher = {Association for Computational Linguistics (ACL)},
    title = {Uniandes at TSAR 2025 Shared Task Multi-Agent CEFR Text Simplification with Automated Quality Assessment and Iterative Refinement},
    url = {https://aclanthology.org/2025.tsar-1.17/},
+   year = {2025}
+}
+
+@article{Rocan2025,
+   abstract = {Large language models (LLMs) have demonstrated strong performance in text simplification tasks, but their high computational cost and proprietary nature often limit practical use, especially in education. We explore open-source LLMs for CEFR-level text simplification. By reducing model size and computational requirements, our approach enables greater accessibility and deployment in educational environments. Our results show some of the lowest error rates in producing CEFR-compliant texts at TSAR 2025, using models with 8 billion and 1 billion parameters. Such approaches have the potential to democratize NLP technologies for real-world applications.},
+   author = {Rareş-Alexandru Roşcan and Sergiu Nisioi},
+   doi = {10.18653/V1/2025.TSAR-1.22},
+   month = {11},
+   pages = {251-260},
+   publisher = {Association for Computational Linguistics (ACL)},
+   title = {Archaeology at TSAR 2025 Shared Task Teaching Small Models to do CEFR Simplifications},
+   url = {https://aclanthology.org/2025.tsar-1.22/},
    year = {2025}
 }
