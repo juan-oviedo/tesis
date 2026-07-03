@@ -74,7 +74,7 @@ Se definieron tres grandes grupos:
     Los ejemplos fueron seleccionados por docentes expertos de manera cuidadosa. Se proporcionaron textos con su nivel CEFR correspondiente, con el fin de suministrar patrones lingüísticos representativos.
 \end{itemize}
 
-En todos los grupos, también se evaluó la influencia del sesgo de sobre-clasificación en B2 (descubierta en etapas tempranas del proyecto) y cómo mitigar esto, diseñando prompts que excluían explícitamente dicho nivel o que se le indicaba al modelo del problema y se le pedía que lo corrigiera. Además, se evaluó la diferencia entre la clasificación dada si se pide que sea para una tarea de lecto comprensión o no.
+En todos los grupos, también se evaluó la influencia del sesgo de sobre-clasificación en B2 (descubierta en etapas tempranas del proyecto) y cómo mitigar esto, diseñando prompts que excluían explícitamente dicho nivel o que se le indicaba al modelo del problema y se le pedía que lo corrigiera. Además, se evaluó la diferencia entre la clasificación dada si se pide que sea para una tarea de lecto-comprensión o no.
 
 Esto dio lugar a un conjunto amplio de prompts, enumerados y resumidos posteriormente en la Tabla \ref{tab:resumen_prompts}, además en el \Cref{sec:prompts} se encuentran en más detalle cada prompt. Luego, cada experimento corresponde a la combinación de un modelo y un prompt, asegurando la comparabilidad entre modelos y estrategias.
 
@@ -231,7 +231,7 @@ Se puede obsevar que los modelos con fine-tuning mantienen ventaja incluso frent
 
 La longitud excesiva del prompt puede degradar el rendimiento. Especialmente en prompting con conocimiento lingüístico, que requiere instrucciones más extensas y algunos modelos muestran una caída notable, posiblemente originada por efectos adversos en los mecanismos de atención (“olvido” parcial del contenido relevante). Este comportamiento se observa con mayor fuerza en modelos medianos como Mistral 3B o Gemma 2 9B.
 
-Además para algunos prompt particulares se puede ver una caída en el rendimiento en comparacion a prompts similares, por ejemplo para los prompt 11, 12 (1-shot con correccion de sesgo) y prompt 17 y 18 (2-shot con correccion de sesgo) se puede observar una caída en el promedio del prompt en comparacion con prompts similares.
+Además para algunos prompt particulares se puede ver una caída en el rendimiento en comparación a prompts similares, por ejemplo para los prompt 11, 12 (1-shot con corrección de sesgo) y prompt 17 y 18 (2-shot con corrección de sesgo) se puede observar una caída en el promedio del prompt en comparación con prompts similares.
 
 Las tendencias dependen del modelo.
 \begin{itemize}
@@ -261,34 +261,31 @@ Estos resultados sugieren que, para algunos modelos, proporcionar más informaci
   \label{fig:modelos_ind}
 \end{figure}
 
-\revisar{
 \paragraph{Análisis de Tablas de resultados}
 
-En el \Cref{sec:tab_res} se muestran tablas detalladas con los resultados de cada modelo, cada prompt y cada particion del dataset. Estas tablas permiten un análisis más granular de las tendencias observadas en los gráficos anteriores, así como identificar casos específicos donde ciertos modelos o prompts presentan comportamientos atípicos.
-
-MANTENGO ESTE PARRAFO?}
+En el \Cref{sec:tab_res} se muestran tablas detalladas con los resultados de cada modelo, cada prompt y cada partición del dataset. Estas tablas permiten un análisis más granular de las tendencias observadas en los gráficos anteriores, así como identificar casos específicos donde ciertos modelos o prompts presentan comportamientos atípicos.
 
 \paragraph{Preferencias de los modelos}
 
-Anteriormente mencionamos que existian modelos que tenian una preferencia (bias) hacia categorias particulares, en el gráfico \ref{fig:bias} podemos observar que todos los modelos tienen una clase que tiene sobre representacion con respecto de la distribucion original del dataset. Se puede ver que para Llama 3.1 8B, Llama 3.2 11B, Mistral 12B, tiene un bias sobre B2.
+Anteriormente mencionamos que existian modelos que tenian una preferencia (bias) hacia categorias particulares, en el gráfico \ref{fig:bias} podemos observar que todos los modelos tienen una clase que tiene sobre representación con respecto de la distribución original del dataset. Se puede ver que para Llama 3.1 8B, Llama 3.2 11B, Mistral 12B, tiene un bias sobre B2.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Graficos_Tesis/custom_dataset_holdout_bias.png}
-  \caption{Cantidad de predicciones promedias hechas por cada modelo, agrupadas por el tipo de prompt. El área de B2 se encuentra sombreada para una lectura mas facil. Sin cat significa que no se encontro una clasificacion valida}
+  \caption{Cantidad de predicciones promedias hechas por cada modelo, agrupadas por el tipo de prompt. El área de B2 se encuentra sombreada para una lectura mas facil. Sin cat significa que no se encontro una clasificación valida}
   \label{fig:bias}
 \end{figure}
 
-Ademas se puede observar las categorias que tienen una baja representacion, como C2 para Gemma 2 9B o A1 para Llama 3.1 8B. Es de esperar que los extremos tengan una baja representacion, pero hay casos distintos como B2 para Llama 3.2 3B.
+Ademas se puede observar las categorias que tienen una baja representación, como C2 para Gemma 2 9B o A1 para Llama 3.1 8B. Es de esperar que los extremos tengan una baja representación, pero hay casos distintos como B2 para Llama 3.2 3B.
 
-Para el caso de los modelos con finetuning tiene una distribucion mas similar a la original, pero se puede observar que hay una sobre representacion de A2 y baja representacion hacia B1, esto necesita un estudio particular sobre los textos de la particion de evaluacion que se estan clasificando mal de B1, ya que es posible que sean estructuralemente parecidos a los textos de A2 de la particion de entrenamiento, o sean distintos a los textos de B1 de la particion de entrenamiento. También esta la posibilidad de que se encuentren mal clasificados, ya que no hay una clara distincion entre los niveles.
+Para el caso de los modelos con finetuning tiene una distribución mas similar a la original, pero se puede observar que hay una sobre representación de A2 y baja representación hacia B1, esto necesita un estudio particular sobre los textos de la partición de evaluación que se estan clasificando mal de B1, ya que es posible que sean estructuralemente parecidos a los textos de A2 de la partición de entrenamiento, o sean distintos a los textos de B1 de la partición de entrenamiento. También esta la posibilidad de que se encuentren mal clasificados, ya que no hay una clara distinción entre los niveles.
 
 
 \paragraph{Matriz de confusión para los modelos}
 
 En la tabla \ref{tab:mejores_prompts_modelos} se encuentra el mejor prompt según su Accuracy Aproximada de cada modelo. En esta tabla se puede observar que no hay un prompt que destaque en para todos los modelos, tampoco se puede encontrar una estrategia de prompting que sea ampliamente superadora a las demas, ya que esta tabla sugiere que varios modelos mejoran con 2-shot, pero no es definitiva para todos los modelo.
 
-En el gráfico \ref{fig:matriz_confucion} se encuentran las matrices de confusión para los experimentos anteriores, cada modelo con su mejor prompt. Se puede observar que cada modelo mantiene la tendencia que se ve en el gráfico \ref{fig:bias}. Ademas se puede hacer foco en que es lo que no se desea en los modelos, lo primero es que su matriz de confusión sea dispersa como la matriz de Mistral 8B y lo segundo es que hay algunos errores que son peores que otros, por ejemplo clasificar un texto como A2 siendo que su clasificacion original es C2 es un error mas severo que clasificar textos como B1 siendo originalmente A2, tanto por la proximidad como por la relacion de dificulad (una persona con nivel B1 deberia poder interpretar correctamente un texto de A2).
+En el gráfico \ref{fig:matriz_confucion} se encuentran las matrices de confusión para los experimentos anteriores, cada modelo con su mejor prompt. Se puede observar que cada modelo mantiene la tendencia que se ve en el gráfico \ref{fig:bias}. Ademas se puede hacer foco en que es lo que no se desea en los modelos, lo primero es que su matriz de confusión sea dispersa como la matriz de Mistral 8B y lo segundo es que hay algunos errores que son peores que otros, por ejemplo clasificar un texto como A2 siendo que su clasificación original es C2 es un error mas severo que clasificar textos como B1 siendo originalmente A2, tanto por la proximidad como por la relación de dificulad (una persona con nivel B1 deberia poder interpretar correctamente un texto de A2).
 
 \begin{table}[H]
 \centering

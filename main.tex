@@ -2,7 +2,7 @@
 
 \usepackage[spanish, es-tabla]{babel} % soporte para lenguaje español
 
-\usepackage[spanish, textsize=tiny]{todonotes}
+%\usepackage[spanish, textsize=tiny]{todonotes}
 
 \usepackage{microtype}
 
@@ -145,6 +145,9 @@
 
 \clearpage
 
+\include{08_agradecimientos/08}
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Índice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,11 +167,11 @@
 \include{05_clasificacion/05}
 \include{06_Adaptacion/06}
 \include{07_conclusiones/07}
-\include{08_agradecimientos/08}
+\include{09_publicaciones/09}
+
+
 
 %\todo{agredecimientos}
-%\todo{revisar que queden bien las citas}
-%\todo{revisar ortografia}
 %\todo{poner en negrita y italica}
 %\todo{mejorar formato parametros}
 %\todo{agregar textos utilizados en los prompts}
@@ -178,7 +181,7 @@
 % Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\printbibliography
+\printbibliography[heading=bibintoc]
 
 \begin{appendices}
   \include{anexos/Parametros}
